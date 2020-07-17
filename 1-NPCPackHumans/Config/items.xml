@@ -1,0 +1,158 @@
+﻿<configs>
+	<append xpath="/items">
+  
+		<item name="MechFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="MechFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ChangeFactionSDX, Mods" value="mechs" />
+		  </effect_group>
+		</item>
+
+		<item name="VaultDwellersFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="VaultDwellersFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ChangeFactionSDX, Mods" value="vaultdwellers" />
+		  </effect_group>
+		</item>
+
+<!--  Join a team!  -->
+
+		<item name="RedteamFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="RedTeamFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ChangeFactionSDX, Mods" value="redteam" />
+		  </effect_group>
+		</item>
+
+		<item name="BlueteamFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="BlueTeamFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ChangeFactionSDX, Mods" value="blueteam" />
+		  </effect_group>
+		</item>
+		
+		<item name="GreenteamFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="GreenTeamFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ChangeFactionSDX, Mods" value="greenteam" />
+		  </effect_group>
+		</item>	
+		
+<!-- Adds or subtracts 100 pointa to your faction for these groups  -->
+
+		<item name="MechPositiveFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="MechPositiveFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			  <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="mech" value="100" /> 
+		  </effect_group>
+		</item>
+
+		<item name="MechNegativeFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="MechNegativeFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="mech" value="-100" />
+		  </effect_group>
+		</item>
+		
+		<item name="VaultPositiveFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="VaultPositiveFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			  <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="vault" value="100" /> 
+		  </effect_group>
+		</item>
+
+		<item name="VaultNegativeFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="VaultNegativeFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="vault" value="-100" />
+		  </effect_group>
+		</item> 
+		
+		<item name="RedteamPositiveFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="RedteamPositiveFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			  <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="redteam" value="100" /> 
+		  </effect_group>
+		</item>
+
+		<item name="RedteamNegativeFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="RedteamNegativeFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="redteam" value="-100" />
+		  </effect_group>	  
+		</item>
+		
+		<item name="BlueteamPositiveFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="BlueteamPositiveFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			  <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="blueteam" value="100" /> 
+		  </effect_group>
+		</item>
+
+		<item name="BlueteamNegativeFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="BlueteamNegativeFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="blueteam" value="-100" />
+		  </effect_group>	  
+		</item>	
+		
+		<item name="GreenteamPositiveFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="GreenteamPositiveFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			  <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="greenteam" value="100" /> 
+		  </effect_group>
+		</item>
+
+		<item name="GreenteamNegativeFactionSchematic">
+		  <property name="Extends" value="schematicMaster" />
+		  <property name="DescriptionKey" value="GreenteamNegativeFactionSchematicDesc" />
+		  <property name="CreativeMode" value="Player" />
+		  <property name="CustomIcon" value="schematicMaster" />
+		  <effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyFactionSDX, Mods" target="self" faction="greenteam" value="-100" />
+		  </effect_group>	  
+		</item>	
+	</append>	
+</configs>

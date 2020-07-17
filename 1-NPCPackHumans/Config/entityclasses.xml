@@ -1,0 +1,1156 @@
+<configs>
+
+<!--  Edits to convert zombies to Faction based targeting for whisperers -->
+
+		<set xpath="//entity_class[starts-with(@name, 'zombieTemplate')]/property[@value='SetNearestEntityAsTarget']/@data">class=EntityPlayer,0,0,EntityAlive,0,0</set> 
+
+
+
+
+				
+	
+<!--  Weapons can be spawned based on the entities RightHandJointName.  
+		For spawned Melee weapons and pistol type weapons, the standard child object name is: RightWeapon (or LeftWeapon for melee but not both)
+		For spawned Ranged Rifle type weapons, including xbows, the standard child object name is: Gunjoint	
+		For spawned longbows, the standard child object name is: LeftWeapon -->
+		
+<!-- Walktypes: 1. Unarmed/Melee BruteWalk, 2. PistolWalk, 3. BowWalk, 4. Not Used/crawler, 5. Not Used/Crippled, 6. RifleWalk, 7. NormalWalk 8. Not Used/Spider, 9. Not Used/Behemoth -->
+
+	<append xpath="/entity_classes">
+	
+<!-- Melee and Ranged templates -->
+
+
+		<entity_class name="npcMeleeMaleTemplate"> <!-- If you want to make a bandit without spawning in weapons, use this template  -->
+			<property name="Class" value="EntityAliveSDX, Mods" /> 
+			<property name="NPCID" value="spheretest"/>
+			<property name="EntityType" value="Player"/>
+			<property name="Tags" value="entity,male,npc,melee"/> <!-- entity/sex/type/role/attacktype/name: Entity is required for code filtering, sex for sound filtering, type/role and Atype for buff filtering.  These DO NOT Extend! -->
+			<property name="Faction" value="whiteriver"/>
+			<property name="IsEnemyEntity" value="false"/> 
+			<property name="LootListAlive" value="62"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll_X"/>
+			<property name="AvatarController" value="AvatarZombie01Controller"/>
+			<property name="HideInSpawnMenu" value="true"/> <!-- A19  -->
+			<property name="ModelType" value="Standard"/>
+			<property name="HasRagdoll" value="true"/>
+			<property name="Prefab" value="NPC"/>
+			<!--<property name="Class" value="EntityEnemyAnimal"/> -->
+			<property name="Parent" value="Enemies"/>
+			<property name="Mass" value="150"/>
+			<property name="Weight" value="70"/>			
+			<property name="PhysicsBody" value="mixamoConvertedStandard"/>
+			<!--<property name="MapIcon" value="ui_game_symbol_enemy_dot" />  --> 
+			<property name="CompassIcon" value="ui_game_symbol_enemy_dot" />  <!-- comment out these lines if you dont want to see the NPC name and location on map -->
+			<property name="CompassUpIcon" value="ui_game_symbol_enemy_dot_up" />
+			<property name="CompassDownIcon" value="ui_game_symbol_enemy_dot_down" />
+			<property name="TrackerIcon" value="ui_game_symbol_run"/>		
+			<property name="AINoiseSeekDist" value="20"/>	
+			<property name="AIPathCostScale" value=".9, 1"/>
+			<property name="LookAtAngle" value="60"/> 
+			<property name="AttackTimeoutDay" value="1.2"/> 
+			<property name="AttackTimeoutNight" value="1.2"/>
+			<property name="RightHandJointName" value="RightWeapon" />  <!-- melee weapons goes on this child object -->
+			<property class="FallLandBehavior">
+				<property name="1None" data="anim=None;height=0,1;weight=0.4"/>
+				<property name="1Land" data="anim=Land;height=0,1;weight=0.4"/>
+				<property name="1LandLow" data="anim=LandLow;height=0,1;weight=0.15"/>
+				<property name="1Stumble" data="anim=Stumble;height=0,1;weight=0.05"/>
+
+				<property name="LowLand" data="anim=LandLow;height=1,3;weight=0.7"/>
+				<property name="LowStumble" data="anim=Stumble;height=1,3;weight=0.3"/>
+
+				<property name="MidStumble" data="anim=Stumble;height=3,5;weight=0.3"/>
+				<property name="MidStumbleAndRage" data="anim=Stumble;height=3,5;weight=0.3;ragePer=0.5,1.5;rageTime=1.0,2.0"/>
+				<property name="MidLandHard" data="anim=LandHard;height=3,5;weight=0.3"/>
+				<property name="MidLandHardAndRage" data="anim=LandHard;height=3,5;weight=0.3;ragePer=0.5,1.5;rageTime=1.0,2.0"/>
+
+				<property name="Ragdoll" data="anim=Ragdoll;height=3;weight=0.4"/>
+			</property>
+			<property class="DestroyBlockBehavior">
+				<property name="None" data="weight=0.0"/>
+				<property name="Stumble" data="weight=0.2"/>
+				<property name="Ragdoll" data="weight=0.2"/>
+			</property>
+			<property name="SwimSpeed" value="1.3"/><!-- A19  -->
+			<property name="SwimStrokeRate" value="1.1,1.5"/><!-- A19  -->
+			<property name="NavObject" value="clear_sleeper" /><!-- A19  -->
+			<property name="AITask-1" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0"/>
+			<property name="AITask-2" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
+			<property name="AITask-3" value="Look"/>
+			<property name="AITask-4" value="ApproachDistraction"/>
+			<property name="AITask-5" value="ApproachSpot"/> 
+			<property name="AITask-6" value="WanderSDX, Mods"/>
+			<property name="AITask-7" value="BreakBlock"/>
+			<property name="AITask-8" value="Territorial"/>
+			<property name="AITask-9" value="" />
+			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
+            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
+            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
+			<property name="AITarget-4" value=""/>
+			<property name="WalkType" value="7"/>
+			<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
+			<property name="SoundStamina" value="Player_Male/player1stamina"/>
+			<property name="SoundDrownPain" value="Player_Male/player1drownpain"/>
+			<property name="SoundWaterSurface" value="Player_Male/player1drownsurface"/>
+			<property name="SoundDrownDeath" value="Player_Male/player1drowndeath"/>
+			<property name="SoundJump" value="Player_Male/player1Jump"/>
+			<property name="SoundLandSoft" value="Player_Male/player1LandSoft"/>
+			<property name="SoundLandHard" value="Player_Male/player1LandHard"/>
+			<property name="SoundPlayerLandThump" value="PlayerLandThump"/>
+			<property name="SoundSleeperSense" value="sleepersense"/>
+			<property name="SoundSleeperBackToSleep" value="sleeperbacktosleep"/>
+			<property name="SoundAlertTime" value="25.0"/>
+			<property name="SoundRandomTime" value="200.0"/>
+			<property name="SoundRandom" value="malehateroam"/>
+			<property name="SoundAlert" value="malehatealert"/>
+			<property name="SoundSense" value="malehatesense"/>
+			<property name="SoundHurt" value="malehatepain"/>
+			<property name="SoundDeath" value="malehatedeath"/>
+			<property name="SoundAttack" value="malehateattack"/>			
+			<property name="RootMotion" value="true"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="ParticleOnDeath" value="blood_death"/>
+			<property name="SurfaceCategory" value="organic"/> 
+			<property name="DismemberMultiplierHead" value="1"/>
+			<property name="DismemberMultiplierArms" value="1"/>
+			<property name="DismemberMultiplierLegs" value="1"/>
+			<property name="LegCrippleScale" value="1"/> 
+			<property name="LegCrawlerThreshold" value="0"/> 
+			<property name="KnockdownProneDamageThreshold" value="0.5"/>
+			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
+			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.4"/>
+			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
+			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegsExplosionDamageMultiplier" value="1"/>
+			<property name="ArmsExplosionDamageMultiplier" value="1"/>
+			<property name="HeadExplosionDamageMultiplier" value="1"/>
+			<property name="ChestExplosionDamageMultiplier" value="1"/>
+			<property name="PainResistPerHit" value=".5"/>		
+			<property name="MaxViewAngle" value="270"/>
+			<property name="SightRange" value="50"/>
+			<property name="LegCrippleScale" value="0"/><!--  Needed to prevent crippling which changes walktype to zombie (may change that eventually  -->
+			<property name="SightLightThreshold" value="-2,150"/> 
+			<property name="SleeperWakeupSightDetectionMin" value="-40,5"/> 
+			<property name="SleeperWakeupSightDetectionMax" value="340,480"/> 
+			<property name="SleeperSenseSightDetectionMin" value="-10,0"/> 
+			<property name="SleeperSenseSightDetectionMax" value="200,300"/>
+			<property name="SleeperNoiseSenseThreshold" value="3,8"/> 
+			<property name="SleeperNoiseWakeThreshold" value="9,12"/>
+			<property name="SleeperSmellSenseThreshold" value="20,50"/> 
+			<property name="SoundSleeperSenseChance" value=".5"/> 
+			<property name="SleeperSmellWakeThreshold" value="40,100"/>
+			<property name="NoiseAlertThreshold" value="30"/> 
+			<property name="SmellAlertThreshold" value="40"/> 
+			<property name="MaxTurnSpeed" value="250"/>
+			<property name="MoveSpeed" value="0.25"/> 
+			<property name="MoveSpeedAggro" value="1.1, 1.1"/> 
+			<property name="MoveSpeedPanic" value="1.1"/>
+			<property name="MoveSpeedRand" value="-.2, .25"/> 
+			<property name="CanClimbLadders" value="true"/>
+			<property name="CanClimbVertical" value="false"/>
+			<property name="JumpMaxDistance" value="2.8, 3.9"/>
+			<property name="Immunity" value="sickness;disease;wellness"/> 
+			<property name="ExperienceGain" value="1000"/> 
+			<property name="LootDropProb" value="1.0"/> 
+			<property name="LootDropEntityClass" value="EntityLootContainerNPC"/>	
+			<!--<property name="MapIcon" value="ui_game_symbol_bullet_point"/> -->
+			<property name="Names" value="TemplateBob" />		
+			<property name="Beds" value="mattressFlat" />
+			<!--<property name="BedTimeBuffs" value="buffAnimalChickenEgg" />
+			<property name="ProductionFinishedBuff" value="buffAnimalChickenEgg" />   Which buff is on the entity when its produced something -->
+			 <!-- This is the block it'll call home -->
+			<property name="HomeBlocks" value="cntNPCHomeBlock"/>
+			<property name="HireCurrency" value="casinoCoin" />
+			<property name="HireCost" value="1000" />
+			<property name="TimeStayAfterDeath" value="30"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
+				<passive_effect name="HealthMax" operation="base_set" value="200"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="200"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10" />
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryBleeding,buffInjuryBleedingZombie,buffInfectionCatch"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffLegSprained,buffLegBroken,buffArmSprained,buffPlayerFallingDamage"/>
+			</effect_group>	
+			<effect_group name="SelfMedicate Effects">
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+			</effect_group>	
+			<effect_group name="IsHuman"> <!-- This activates thr IsHuman Buff which sets an animator parameter value to path to only human animations  -->
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="IsHuman"/>		
+			</effect_group>	
+			<effect_group name="UseFactions"> <!-- This activates thr Usefactions Buff which tells the game not to use DMT faction classes  -->
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="UseFactions"/>		
+			</effect_group>	
+			<property name="RotateToGround" value="false"/>	
+			<property name="PushFactor" value="10"/>
+		</entity_class>
+		
+		<entity_class name="npcMeleeFemaleTemplate" extends="npcMeleeMaleTemplate">
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="SoundHurt" value="Player_Female/player2painlg"/>
+			<property name="SoundHurtSmall" value="Player_Female/player2painsm"/>
+			<property name="SoundDeath" value="Player_Female/player2death"/>
+			<property name="SoundStamina" value="Player_Female/player2stamina"/>
+			<property name="SoundDrownPain" value="Player_Female/player2drownpain"/>
+			<property name="SoundWaterSurface" value="Player_Female/player2drownsurface"/>
+			<property name="SoundDrownDeath" value="Player_Female/player2drowndeath"/>
+			<property name="SoundJump" value="Player_Male/player2Jump"/>
+			<property name="SoundLandSoft" value="Player_Male/player2LandSoft"/>
+			<property name="SoundLandHard" value="Player_Male/player2LandHard"/>
+			<property name="SoundPlayerLandThump" value="PlayerLandThump"/>
+			<property name="SoundRandom" value="Player_Female/player2stamina" />
+			<property name="SoundRandomTime" value="60.0"/>
+			<property name="SoundAlert" value="Player_Female/player2stamina"/>
+			<property name="SoundAttack" value="Player_Female/player2stamina"/>
+			<property name="SoundSense" value="Player_Female/player2stamina"/>			
+		</entity_class>
+		
+		<entity_class name="npcRangedMaleTemplate" extends="npcMeleeMaleTemplate"> 	<!-- If you want to make a ranged bandit without spawning in weapons, use this template  -->
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="MoveSpeed" value="0.25"/> 
+			<property name="MoveSpeedAggro" value="1.0, 1.0"/> 
+			<property name="MoveSpeedPanic" value="1.0"/>
+			<property name="MoveSpeedRand" value="-.2, .25"/> 		
+			<property name="SightRange" value="70"/>
+			<property name="LegCrippleScale" value="0"/>
+			<property name="RightHandJointName" value="Gunjoint" /> <!-- Ranged weapons goes on this child object (Except longbows) -->
+			<property name="HandItem" value="gunBanditHuntingRifle"/>
+			<property name="AITask-1" value="RangedAttackTargetSDX, Mods" data="itemType=0;attackPeriod=10"/> <!--  New class  -->
+			<property name="AITask-2" value="RangedAttackTargetSDX, Mods" data="itemType=0;attackPeriod=10"/>
+			<property name="AITask-3" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0" />
+			<property name="AITask-4" value="Look"/>	
+            <property name="AITask-5" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
+            <property name="AITask-6" value="WanderSDX, Mods"/>
+			<property name="AITask-7" value="ApproachDistraction"/>
+			<property name="AITask-8" value="ApproachSpot"/> 
+			<property name="AITask-9" value="Territorial"/>
+            <property name="AITask-10" value="" />
+            <property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
+            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
+            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
+            <property name="AITarget-4" value="" />
+		</entity_class>	
+		
+		<entity_class name="npcRangedFemaleTemplate" extends="npcRangedMaleTemplate">
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="SoundHurt" value="Player_Female/player2painlg"/>
+			<property name="SoundHurtSmall" value="Player_Female/player2painsm"/>
+			<property name="SoundDeath" value="Player_Female/player2death"/>
+			<property name="SoundStamina" value="Player_Female/player2stamina"/>
+			<property name="SoundDrownPain" value="Player_Female/player2drownpain"/>
+			<property name="SoundWaterSurface" value="Player_Female/player2drownsurface"/>
+			<property name="SoundDrownDeath" value="Player_Female/player2drowndeath"/>
+			<property name="SoundJump" value="Player_Male/player2Jump"/>
+			<property name="SoundLandSoft" value="Player_Male/player2LandSoft"/>
+			<property name="SoundLandHard" value="Player_Male/player2LandHard"/>
+			<property name="SoundPlayerLandThump" value="PlayerLandThump"/>
+			<property name="SoundRandom" value="Player_Female/player2stamina" />
+			<property name="SoundRandomTime" value="60.0"/>
+			<property name="SoundAlert" value="Player_Female/player2stamina"/>
+			<property name="SoundAttack" value="Player_Female/player2stamina"/>
+			<property name="SoundSense" value="Player_Female/player2stamina"/>				
+		</entity_class>	
+		
+		<!--  NPC Weapon Templates -->
+		
+		<entity_class name="npcEmptyHandMaleTemplate" extends="npcMeleeMaleTemplate"><property name="HideInSpawnMenu" value="true"/>
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="7"/>			
+			<property name="Names" value="TemplateTom" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="RightHandJointName" value="RightWeapon" />  
+			<property name="HandItem" value="handEmpty"/>			
+		</entity_class>	
+
+		<entity_class name="npcClubMaleTemplate" extends="npcMeleeMaleTemplate"><property name="HideInSpawnMenu" value="true"/>
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="7"/>	
+			<property name="Names" value="TemplateTom" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="RightHandJointName" value="RightWeapon" /> 
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="meleeBanditClubWood"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeBanditClubWood"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="meleeBanditClubWood"/> 
+		</entity_class>
+		
+		<entity_class name="npcKnifeMaleTemplate" extends="npcMeleeMaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="7"/>	
+			<property name="Names" value="TemplateTom" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="meleeBanditKnifeIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeBanditKnifeIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="meleeBanditKnifeIron"/> 
+		</entity_class>	
+		
+		<entity_class name="npcSMGMaleTemplate" extends="npcRangedMaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="6"/> <!-- Walktype for rifles  -->
+			<property name="Names" value="TemplateTom" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="RightHandJointName" value="Gunjoint" />  <!--  Rifle spawn point  -->
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/> 
+		</entity_class>	
+		
+		<entity_class name="npcAK47MaleTemplate" extends="npcRangedMaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="6"/>
+			<property name="Names" value="TemplateTom" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="RightHandJointName" value="Gunjoint" />  
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/> 
+		</entity_class>
+		
+		<entity_class name="npcHunterMaleTemplate" extends="npcRangedMaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+            <property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+            <property name="WalkType" value="6"/>
+			<property name="Names" value="TemplateTom" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 			
+            <property name="RightHandJointName" value="Gunjoint" />  
+            <property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/>
+            <property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/>
+            <property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/> 
+        </entity_class>    		
+		
+		<entity_class name="npcPistolMaleTemplate" extends="npcRangedMaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="2"/> <!-- Walktype for Pistols  -->
+			<property name="Names" value="TemplateTom" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="RightHandJointName" value="RightWeapon" />  
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/> 
+		</entity_class>			
+		
+		<entity_class name="npcXBowMaleTemplate" extends="npcRangedMaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="6"/>
+			<property name="Names" value="TemplateTom" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/> 
+		</entity_class>	
+		
+		<entity_class name="npcBowMaleTemplate" extends="npcRangedMaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="3"/>
+			<property name="Names" value="TemplateTom" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 			
+			<property name="RightHandJointName" value="LeftWeapon" />  <!--  Bows go in lefthand  -->
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/> 
+		</entity_class> 
+		
+		<entity_class name="npcShottyMaleTemplate" extends="npcRangedMaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="6"/>
+			<property name="Names" value="TemplateTom" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 			
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/> 
+		</entity_class> 		
+		
+		
+		
+		
+		<entity_class name="npcEmptyHandFemaleTemplate" extends="npcMeleeFemaleTemplate"><property name="HideInSpawnMenu" value="true"/>
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="7"/>			
+			<property name="Names" value="TemplateTammy" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="RightHandJointName" value="RightWeapon" />  
+			<property name="HandItem" value="handEmpty"/>			
+		</entity_class>	
+
+		<entity_class name="npcClubFemaleTemplate" extends="npcMeleeFemaleTemplate"><property name="HideInSpawnMenu" value="true"/>
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="7"/>	
+			<property name="Names" value="TemplateTammy" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="RightHandJointName" value="RightWeapon" /> 
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="meleeBanditClubWood"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeBanditClubWood"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="meleeBanditClubWood"/> 
+		</entity_class>
+		
+		<entity_class name="npcKnifeFemaleTemplate" extends="npcMeleeFemaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="7"/>	
+			<property name="Names" value="TemplateTammy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="meleeBanditKnifeIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeBanditKnifeIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="meleeBanditKnifeIron"/> 
+		</entity_class>	
+		
+		<entity_class name="npcSMGFemaleTemplate" extends="npcRangedFemaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="6"/> <!-- Walktype for rifles  -->
+			<property name="Names" value="TemplateTammy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="RightHandJointName" value="Gunjoint" />  <!--  Rifle spawn point  -->
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/> 
+		</entity_class>	
+		
+		<entity_class name="npcAK47FemaleTemplate" extends="npcRangedFemaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="6"/>
+			<property name="Names" value="TemplateTammy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="RightHandJointName" value="Gunjoint" />  
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/> 
+		</entity_class>
+		
+		<entity_class name="npcHunterFemaleTemplate" extends="npcRangedFemaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+            <property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+            <property name="WalkType" value="6"/>
+			<property name="Names" value="TemplateTammy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>			
+            <property name="RightHandJointName" value="Gunjoint" />  
+            <property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/>
+            <property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/>
+            <property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/> 
+        </entity_class>    		
+		
+		<entity_class name="npcPistolFemaleTemplate" extends="npcRangedFemaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="2"/> <!-- Walktype for Pistols  -->
+			<property name="Names" value="TemplateTammy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/> 
+			<property name="RightHandJointName" value="RightWeapon" />  
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/> 
+		</entity_class>			
+		
+		<entity_class name="npcXBowFemaleTemplate" extends="npcRangedFemaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="6"/>
+			<property name="Names" value="TemplateTammy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/> 
+		</entity_class>	
+		
+		<entity_class name="npcBowFemaleTemplate" extends="npcRangedFemaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="3"/>
+			<property name="Names" value="TemplateTammy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>			
+			<property name="RightHandJointName" value="LeftWeapon" />  <!--  Bows go in lefthand  -->
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/> 
+		</entity_class> 
+		
+		<entity_class name="npcShottyFemaleTemplate" extends="npcRangedFemaleTemplate"><property name="HideInSpawnMenu" value="true"/> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="WalkType" value="6"/>
+			<property name="Names" value="TemplateTammy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 			
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/> 
+		</entity_class> 				
+		
+<!--  End Of Template Section  -->
+
+<!-- Loot drop containers  -->
+		
+		<entity_class name="EntityLootContainerNPC"> 
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="Mesh" value="#Entities/LootContainers?zpackPrefab.prefab"/>
+			<property name="ModelType" value="Custom"/>
+			<property name="Prefab" value="Backpack"/>
+			<property name="Class" value="EntityLootContainer"/>
+			<property name="Parent" value="Backpack"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="TimeStayAfterDeath" value="300"/>
+			<property name="LootListOnDeath" value="74"/> <!-- bandit loot -->
+			<property name="Faction" value="none"/>
+		</entity_class>
+
+
+<!-- Xyth NPC Characters  Version order: Fixed weapon, Empty Hand, then melee and ranged types  -->
+
+<!--		<entity_class name="NPCMinstrel" extends="NPCHumanMeleeTemplate" >
+			<property name='Class' value='EntityAliveSDX, Mods' />
+			<property name="PhysicsBody" value="mixamoConvertedStandard"/>
+			<property name="NPCID" value="xythtest"/>
+			<property name="Faction" value="vault"/>
+			<property name="Tags" value="entity,npc"/>
+			<property name="Mass" value="150"/>
+			<property name="WalkType" value="7"/>			
+			<property name="Names" value="Mack" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Minstrel.unity3d?Minstrel2_X"/> 
+			<property name="MoveSpeed" value="0.3"/> 
+			<property name="MoveSpeedAggro" value="1.1,1.1"/> 
+			<property name="MoveSpeedPanic" value="1.4"/>
+			<property name="HireCurrency" value="casinoCoin" />
+			<property name="HireCost" value="1000" />
+		</entity_class> -->
+
+		<!--  Farmer  -->	
+
+		<entity_class name="npcFarmerEmptyHand" extends="npcEmptyHandMaleTemplate">
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="MoveSpeed" value="0.3"/> <!--  Examples in case you want to add additional property changes not in the parent template, like a different speed or hiring price  -->
+			<property name="MoveSpeedAggro" value="1.1,1.1"/> 
+			<property name="MoveSpeedPanic" value="1.4"/>
+			<property name="HireCurrency" value="casinoCoin" />
+			<property name="HireCost" value="1000" />		
+		</entity_class>	
+
+		<entity_class name="npcFarmerClub" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+		</entity_class>
+		
+		<entity_class name="npcFarmerKnife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcFarmerSMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcFarmerAK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+		</entity_class>
+		
+		<entity_class name="npcFarmerHunter" extends="npcHunterMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+        </entity_class>    		
+		
+		<entity_class name="npcFarmerPistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+		</entity_class>			
+		
+		<entity_class name="npcFarmerXBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcFarmerBow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+		</entity_class> 
+		
+		<entity_class name="npcFarmerShotty" extends="npcShottyMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+		</entity_class> 
+
+		<!--  Baker  -->
+
+		<entity_class name="npcBakerEmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+		</entity_class>	
+
+		<entity_class name="npcBakerClub" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+		</entity_class>
+		
+		<entity_class name="npcBakerKnife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+		</entity_class>	
+		
+		<entity_class name="npcBakerSMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+		</entity_class>	
+		
+		<entity_class name="npcBakerAK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+		</entity_class>
+		
+		<entity_class name="npcBakerHunter" extends="npcHunterMaleTemplate"> 
+            <property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+        </entity_class>    		
+		
+		<entity_class name="npcBakerPistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+		</entity_class>			
+		
+		<entity_class name="npcBakerXBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+		</entity_class>	
+		
+		<entity_class name="npcBakerBow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+		</entity_class> 		
+		
+		<!--  Nurse  -->
+		
+		<entity_class name="npcNurseEmptyHand" extends="npcEmptyHandFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 		
+		</entity_class>	
+
+		<entity_class name="npcNurseClub" extends="npcClubFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+		</entity_class>
+		
+		<entity_class name="npcNurseKnife" extends="npcKnifeFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+		</entity_class>	
+		
+		<entity_class name="npcNurseSMG" extends="npcSMGFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+		</entity_class>	
+		
+		<entity_class name="npcNurseAK47" extends="npcAK47FemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+		</entity_class>
+		<entity_class name="npcNurseHunter" extends="npcHunterFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+        </entity_class>    		
+		
+		<entity_class name="npcNursePistol" extends="npcPistolFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+		</entity_class>			
+		
+		<entity_class name="npcNurseXBow" extends="npcXBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+		</entity_class>	
+		
+		<entity_class name="npcNurseBow" extends="npcBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+		</entity_class> 		
+
+		<!--  Eve  -->	
+		
+		<entity_class name="npcEveEmptyHand" extends="npcEmptyHandFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+		</entity_class>	
+
+		<entity_class name="npcEveClub" extends="npcClubFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+		</entity_class>
+		
+		<entity_class name="npcEveKnife" extends="npcKnifeFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcEveSMG" extends="npcSMGFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcEveAK47" extends="npcAK47FemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+		</entity_class>
+		<entity_class name="npcEveHunter" extends="npcHunterFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+        </entity_class>    		
+		
+		<entity_class name="npcEvePistol" extends="npcPistolFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+		</entity_class>			
+		
+		<entity_class name="npcEveXBow" extends="npcXBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcEveBow" extends="npcBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+		</entity_class> 	
+
+		<!--  Heavy Guy  -->
+
+		<entity_class name="npcHeavyGuyEmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Hank,Hero,Homer,Guy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+		</entity_class>	
+
+		<entity_class name="npcHeavyGuyClub" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Hank,Hero,Homer,Guy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+		</entity_class>
+		
+		<entity_class name="npcHeavyGuyKnife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Hank,Hero,Homer,Guy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcHeavyGuySMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Hank,Hero,Homer,Guy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcHeavyGuyAK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Hank,Hero,Homer,Guy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+		</entity_class>
+		
+		<entity_class name="npcHeavyGuyHunter" extends="npcHunterMaleTemplate"> 
+            <property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Hank,Hero,Homer,Guy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+        </entity_class>    		
+		
+		<entity_class name="npcHeavyGuyPistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Hank,Hero,Homer,Guy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+		</entity_class>			
+		
+		<entity_class name="npcHeavyGuyXBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Hank,Hero,Homer,Guy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcHeavyGuyBow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Hank,Hero,Homer,Guy" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+		</entity_class> 		
+
+
+
+		<!--  Cowboy Guy  -->
+		
+		<entity_class name="npcCowboyEmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+		</entity_class>	
+
+		<entity_class name="npcCowboyClub" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+		</entity_class>
+		
+		<entity_class name="npcCowboyKnife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+		</entity_class>	
+		
+		<entity_class name="npcCowboySMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+		</entity_class>	
+		
+		<entity_class name="npcCowboyAK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+		</entity_class>
+		
+		<entity_class name="npcCowboyHunter" extends="npcHunterMaleTemplate"> 
+            <property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+        </entity_class>    		
+		
+		<entity_class name="npcCowboyPistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+		</entity_class>			
+		
+		<entity_class name="npcCowboyXBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+		</entity_class>	
+		
+		<entity_class name="npcCowboyBow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+		</entity_class> 				
+		
+		<!--  Joel  -->
+		
+		<entity_class name="npcJoel" extends="npcMeleeMaleTemplate"> <!--  Joel has a weapon already so lets test this  -->
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Joel.unity3d?JoelRagdoll_X"/>
+			<property name="HandItem" value="handChefKnife"/>
+			<property name="MoveSpeed" value="0.3"/> 
+			<property name="MoveSpeedAggro" value="1.1, 1.1"/> 
+			<property name="MoveSpeedPanic" value="1.1"/>
+			<property name="AIPathCostScale" value=".9, 1"/>
+			<property name="Names" value="Joel,Jim,James,Jed,John,Jake" />		
+			<property name="HireCurrency" value="casinoCoin" />
+			<property name="HireCost" value="1000" />
+		</entity_class> 		
+		
+<!--  Testing  -->
+
+		<!--<entity_class name="npcTurret" extends="npcHumanRangedTemplate">
+			<property name="Mesh" value="#@modfolder:Resources/Turret.unity3d?MecTurret_X" />	
+			<property name="Tags" value="entity,mech"/>			
+			<property name="HasRagdoll" value="true"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="RootMotion" value="false"/>
+			<property name="RagdollOnDeathChance" value="0"/>
+			<property name="Mass" value="120"/>			
+			<property name="ExperienceGain" value="230"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="HandItem" value="handDrone"/>
+			<property name="SurfaceCategory" value="metal"/>
+			<property name="AttackTimeoutDay" value="1.5"/>
+			<property name="AttackTimeoutNight" value="1.5"/>
+			<property name="RightHandJointName" value="Gunjoint" />  
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/> 
+			<property name="AITask-1" value="RangedAttackTargetSDX, Mods" data="itemType=0;attackPeriod=10"/>
+			<property name="AITask-2" value="ApproachAndAttackSDX, Mods" data="class=Entity,0" />
+			<property name="AITask-3" value="Look"/>	
+            <property name="AITask-4" value="" />
+            <property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=Entity"/>  
+            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=Entity"/> 
+            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=Entity,80"/> 
+            <property name="AITarget-4" value="" />			
+			<property name="SoundRandomTime" value="20.0"/>
+			<property name="SoundRandom" value="DroneRandom" />
+			<property name="SoundAlert" value="DroneRandom" />
+			<property name="SoundAttack" value="DroneRandom" />
+			<property name="SoundDeath" value="DroneDie" />
+			<property name="SoundHurt" value="DroneRandom" />
+			<property name="SoundSense" value="DroneRandom" /> 
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceMechanicalParts" tag="salvageHarvest" count="10"/> 
+			<drop event="Harvest" name="resourceScrapIron" tag="salvageHarvest" count="9"/>
+			<drop event="Harvest" name="resourceElectricParts" tag="salvageHarvest" count="12"/> 
+			<drop event="Harvest" name="resourceScrapPolymers" tag="salvageHarvest" count="9"/>
+			<property name="Immunity" value="sickness;disease;wellness"/>
+			<property name="MoveSpeed" value="0"/>
+			<property name="MoveSpeedAggro" value="0, 0"/> 
+			<property name="MoveSpeedPanic" value="0"/>
+			<property name="DeadBodyHitPoints" value="800"/>
+			<property name="TimeStayAfterDeath" value="300"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="400"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="200"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10" />
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryBleeding,buffInjuryBleedingZombie,buffInfectionCatch"/>
+			</effect_group>
+		</entity_class> -->
+	</append>
+	
+		<!-- Old edits used for selective changes to CPHuman files held in case needed later  -->
+				<!-- Edits to make a few NPC groups join factions other than whiteriver  -->
+
+				<!--<set xpath="//entity_class[starts-with(@name, 'npcRaider')]/property[@name='Faction']/@value">bandits</set>
+				<set xpath="//entity_class[starts-with(@name, 'npcGhost')]/property[@name='Faction']/@value">whisperers</set>
+				<set xpath="//entity_class[starts-with(@name, 'npcGupSoldier')]/property[@name='Faction']/@value">redteam</set>
+				<set xpath="//entity_class[starts-with(@name, 'npcDelta')]/property[@name='Faction']/@value">blueteam</set>
+				<set xpath="//entity_class[starts-with(@name, 'npcRanger')]/property[@name='Faction']/@value">blueteam</set>
+				<set xpath="//entity_class[starts-with(@name, 'npcNational')]/property[@name='Faction']/@value">greenteam</set>
+				<set xpath="//entity_class[starts-with(@name, 'npcArmy')]/property[@name='Faction']/@value">greenteam</set> -->
+				
+				<!--  Lets get rid of the all creaturepackHumans that are also in the NPC pack  -->
+				<!--<remove xpath="//entity_class[starts-with(@name, 'humanRaider')]" />
+				<remove xpath="//entity_class[starts-with(@name, 'humanDelta')]" />	-->		
+				
+				<!--  Edits to convert the remaining CreaturePackHumans to faction based targeting  -->
+
+				<!--<remove xpath="//entity_class[@name='humanMeleeMaleTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanMeleeMaleTemplate']/property[@value='SetNearestEntityAsTarget']" />
+				
+				<remove xpath="//entity_class[@name='humanRangedMaleTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanRangedMaleTemplate']/property[@value='SetNearestEntityAsTarget']" />
+				
+				<remove xpath="//entity_class[@name='humanMeleeMaleSurvivorTimidTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanMeleeMaleSurvivorTimidTemplate']/property[@value='SetNearestEntityAsTarget']" />
+				
+				<remove xpath="//entity_class[@name='humanMeleeMaleSurvivorTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanMeleeMaleSurvivorTemplate']/property[@value='SetNearestEntityAsTarget']" />
+				
+				<remove xpath="//entity_class[@name='humanRangedMaleSurvivorTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanRangedMaleSurvivorTemplate']/property[@value='SetNearestEntityAsTarget']" />
+				
+				<remove xpath="//entity_class[@name='humanMeleeFemaleSurvivorTimidTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanMeleeFemaleSurvivorTimidTemplate']/property[@value='SetNearestEntityAsTarget']" />
+				
+				<remove xpath="//entity_class[@name='humanMeleeFemaleSurvivorTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanMeleeFemaleSurvivorTemplate']/property[@value='SetNearestEntityAsTarget']" />
+				
+				<remove xpath="//entity_class[@name='humanRangedFemaleSurvivorTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanRangedFemaleSurvivorTemplate']/property[@value='SetNearestEntityAsTarget']" />		
+				
+				<remove xpath="//entity_class[@name='humanHarleyBanditSleeperPistol']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanHarleyBanditSleeperPistol']/property[@value='SetNearestEntityAsTarget']" /> 		
+				
+				<remove xpath="//entity_class[@name='humanHarleyBanditSleeperSlugger']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanHarleyBanditSleeperSlugger']/property[@value='SetNearestEntityAsTarget']" /> 
+				
+				<remove xpath="//entity_class[@name='humanMeleeMaleTraderTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanMeleeMaleTraderTemplate']/property[@value='SetNearestEntityAsTarget']" /> 		
+				
+				<remove xpath="//entity_class[@name='humanRangedMaleTraderTemplate']/property[@value='ApproachAndAttackTarget']" />
+				<remove xpath="//entity_class[@name='humanRangedMaleTraderTemplate']/property[@value='SetNearestEntityAsTarget']" /> 
+				
+				<insertAfter xpath="//entity_class[@name='humanMeleeMaleTemplate']/property[@value='ApproachDistraction']" >		
+					<property name="AITask-5" value="ApproachAndAttackSDX, Mods" data="class=Entity,90"/>
+				</insertAfter>
+				<insertAfter xpath="//entity_class[@name='humanMeleeMaleTemplate']/property[@value='BlockingTargetTask']" >		
+					<property name="AITarget-4" value="SetAsTargetNearestEnemySDX, Mods" data="class=Entity,90"/> 
+				</insertAfter>
+				
+				<insertAfter xpath="//entity_class[@name='humanRangedMaleTemplate']/property[@value='RangedAttackTarget']" >		
+					<property name="AITask-5" value="ApproachAndAttackSDX, Mods" data="class=Entity,90"/>
+				</insertAfter>
+				<insertAfter xpath="//entity_class[@name='humanRangedMaleTemplate']/property[@value='BlockingTargetTask']" >		
+					<property name="AITarget-4" value="SetAsTargetNearestEnemySDX, Mods" data="class=Entity,90"/> 
+				</insertAfter> -->	
+
+<!--		<entity_class name="humanMeleeMaleTraderTemplate" extends="humanMeleeMaleTemplate">
+			<property name="Class" value="EntitySurvivor"/> 
+			<property name="Tags" value="entity,male,human,trader,melee"/>
+			<property name="AvatarController" value="AvatarZombie01Controller"/>
+			<property name="Mesh" value="#@modfolder:Resources/Joel.unity3d?JoelRagdoll_X"/> 
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="PhysicsBody" value="traderStandard"/>
+			<property name="PainResistPerHit" value=".65"/>
+			<property name="SightRange" value="50"/>
+			<property name="RightHandJointName" value="RightWeapon" />
+			<property name="HandItem" value="handChefKnife"/>
+			<property name="MoveSpeed" value="0.25"/> 
+			<property name="MoveSpeedAggro" value="1.1, 1.1"/> 
+			<property name="MoveSpeedPanic" value="1.1"/>
+			<property name="MoveSpeedRand" value="-.2, .25"/> 				
+			<property name="AIPathCostScale" value=".9, 1"/>
+			<property name="AINoiseSeekDist" value="20"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="LootListAlive" value="62"/>
+			<property name="NPCID" value="traderJoel"/>
+			<property name="SoundHurt" value="Player_Male/player1painlg"/>
+			<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
+			<property name="SoundDeath" value="Player_Male/player1death"/>
+			<property name="SoundStamina" value="Player_Male/player1stamina"/>
+			<property name="SoundDrownPain" value="Player_Male/player1drownpain"/>
+			<property name="SoundWaterSurface" value="Player_Male/player1drownsurface"/>
+			<property name="SoundDrownDeath" value="Player_Male/player1drowndeath"/>
+			<property name="SoundJump" value="Player_Male/player1Jump"/>
+			<property name="SoundLandSoft" value="Player_Male/player1LandSoft"/>
+			<property name="SoundLandHard" value="Player_Male/player1LandHard"/>
+			<property name="SoundPlayerLandThump" value="PlayerLandThump"/>
+			<property name="AttackTimeoutDay" value=".8"/>
+			<property name="AttackTimeoutNight" value=".8"/>
+			<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityZombie,0,EntityBandit,0,EntityEnemyAnimal,0,EntityPlayer,0"/>
+			<property name="AITask-2" value="ApproachDistraction"/> 
+			<property name="AITask-3" value="ApproachSpot"/> 
+			<property name="AITask-4" value="Look"/>
+			<property name="AITask-5" value="BreakBlock"/> 
+			<property name="AITask-6" value="Wander"/> 
+			<property name="AITask-7" value=""/>
+			<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityZombie,EntityEnemyAnimal,EntityBandit"/> 
+			<property name="AITarget-2" value="BlockingTargetTask"/> 
+			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityBandit,0,0,EntityZombie,0,0,EntityEnemyAnimal,0,0"/> 
+			<property name="AITarget-4" value=""/> 
+		</entity_class> 
+
+		<entity_class name="humanRangedMaleTraderTemplate" extends="humanMeleeMaleTraderTemplate">
+			<property name="Class" value="EntitySurvivor"/> 
+			<property name="Tags" value="entity,male,human,trader,ranged"/>
+			<property name="HideInSpawnMenu" value="true"/>	
+			<property name="Faction" value="whiteriver"/>
+			<property name="AvatarController" value="AvatarZombie01Controller"/>
+			<property name="Mesh" value="#@modfolder:Resources/Rifleman.unity3d?RifleManAll_X"/> 
+			<property name="PhysicsBody" value="mixamoConvertedStandard"/>
+			<property name="Mass" value="150"/> 
+			<property name="RightHandJointName" value="Muzzle" />
+			<property name="HandItem" value="handBanditMP7"/> 
+			<property name="MoveSpeed" value="0.25"/> 
+			<property name="MoveSpeedAggro" value="1.1, 1.1"/> 
+			<property name="MoveSpeedPanic" value="1.1"/>
+			<property name="MoveSpeedRand" value="-.2, .25"/> 				
+			<property name="LootListAlive" value="62"/>
+			<property name="NPCID" value="traderWeapons"/>
+			<property name="AITask-1" value="RangedAttackTarget" data="itemType=1;cooldown=3;duration=4;minRange=3;maxRange=80"/>
+			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityZombie,0,EntityBandit,0,EntityEnemyAnimal,0,EntityPlayer,0"/>
+			<property name="AITask-3" value="ApproachDistraction"/> 
+			<property name="AITask-4" value="ApproachSpot"/> 
+			<property name="AITask-5" value="Look"/>
+			<property name="AITask-6" value="BreakBlock"/> 
+			<property name="AITask-7" value="Wander"/> 
+			<property name="AITask-8" value=""/>
+			<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityZombie,EntityEnemyAnimal,EntityBandit"/> 
+			<property name="AITarget-2" value="BlockingTargetTask"/> 
+			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityBandit,0,0,EntityZombie,0,0,EntityEnemyAnimal,0,0"/> 
+			<property name="AITarget-4" value=""/> 
+		</entity_class> -->
+
+</configs>

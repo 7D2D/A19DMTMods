@@ -1,0 +1,13 @@
+<configs>
+	 <append xpath="/buffs">
+	 
+		<buff name="UseFactions">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group name="UseFactions"> 
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="HasFactions" operation="set" value="1"/>				
+			</effect_group>
+		</buff>		
+	
+	</append>
+</configs>

@@ -19,7 +19,7 @@
 			<property name="Mass" value="150"/>
 			<property name="Weight" value="70"/>
 			<property name="PushFactor" value="30"/>				
-			<property name="Tags" value="entity,npc,mech"/>			
+			<property name="Tags" value="entity,cp,npc,mech"/>			
 			<property name="Prefab" value="NPC"/>
 			<property name='Class' value='EntityAliveSDX, Mods' />
 			<property name="Parent" value="Enemies"/>
@@ -104,7 +104,7 @@
 
 		<entity_class name="NPCMechRangedTemplate" extends="NPCMechMeleeTemplate">
 			<property name="Faction" value="mechs"/>
-			<property name="Tags" value="entity,npc,mech"/>
+			<property name="Tags" value="entity,cp,npc,mech"/>
 			<property name="MoveSpeed" value="0.3"/> 
 			<property name="MoveSpeedAggro" value="1.1,1.1"/> 
 			<property name="MoveSpeedPanic" value="1.1"/>
@@ -139,20 +139,20 @@
 
 		<entity_class name="NPCMechDrone" extends="NPCMechMeleeTemplate">
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Drone.unity3d?Drone_X"/>	<!-- Free CC model by Willy Decarpentrie -->
-			<property name="Tags" value="entity,mech,npc"/>			
+			<property name="Tags" value="entity,cp,mech,npc"/>			
 			<property name="Faction" value="mechs"/>
 			<property name="HandItem" value="handDrone"/>
 		</entity_class>
 		
 		<entity_class name="NPCMechRustyDrone" extends="NPCMechMeleeTemplate" >
-			<property name="Tags" value="entity,mech,npc"/>
+			<property name="Tags" value="entity,cp,mech,npc"/>
 			<property name="Faction" value="mechs"/>		
 		    <property name="ReplaceMaterial0" value="#@modfolder(0-CreaturePackMechs):Resources/RustyDroidMat.unity3d?RustyDroid"/>
 		</entity_class>
 			
 		<entity_class name="NPCMechRobot" extends="NPCMechMeleeTemplate" >
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Robot.unity3d?Robot_X" /> <!-- Free CC model by Willy Decarpentrie -->
-			<property name="Tags" value="entity,mech,npc"/>
+			<property name="Tags" value="entity,cp,mech,npc"/>
 			<property name="PhysicsBody" value="RobotRig"/>
 			<property name="Faction" value="mechs"/>
 			<property name="HandItem" value="handRobot"/>
@@ -179,7 +179,7 @@
 		
 		<entity_class name="NPCMechRobotArmy" extends="NPCMechRobot" >
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Robot.unity3d?Robot_X" />
-			<property name="Tags" value="entity,mech,npc"/>
+			<property name="Tags" value="entity,cp,mech,npc"/>
 			<property name="Faction" value="mechs"/>		
 			<property name="HandItem" value="handRobotArmy"/>
 		    <property name="ReplaceMaterial0" value="#@modfolder(0-CreaturePackMechs):Resources/RobotArmyMat.unity3d?metal_albedo"/>
@@ -190,7 +190,7 @@
 		<entity_class name="NPCMechSphereI" extends="NPCMechMeleeTemplate" >
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Spheres.unity3d?SphereI_X" />	<!-- Free CC model by 3DHaupt -->
 			<property name="DeadBodyHitPoints" value="1000"/> 
-			<property name="Tags" value="entity,mech"/>
+			<property name="Tags" value="entity,cp,mech"/>
 			<property name="Faction" value="mechs"/>		
 			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 			<drop event="Harvest" name="resourceMechanicalParts" tag="salvageHarvest" count="10"/> 
@@ -209,7 +209,7 @@
 		<entity_class name="NPCMechSphereII" extends="NPCMechMeleeTemplate" >
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Spheres.unity3d?SphereII_X" />
 			<property name="DeadBodyHitPoints" value="1000"/> 
-			<property name="Tags" value="entity,mech,npc"/>	
+			<property name="Tags" value="entity,cp,mech,npc"/>	
 			<property name="Faction" value="mechs"/>		
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="500"/>
@@ -228,7 +228,7 @@
 		<entity_class name="NPCMechBee" extends="NPCMechMeleeTemplate" >
 			<property name="Class" value="EntityVulture"/>
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/MecBee.unity3d?Mecbee_X" /> <!--  Free CC model but cant find attribution yet  -->
-			<property name="Tags" value="entity,mech,npc"/>
+			<property name="Tags" value="entity,cp,mech,npc"/>
 			<property name="Faction" value="mechs"/>		
 			<property name="HandItem" value="handMecBee"/>
 			<property name="AIPathCostScale" value=".9, 1"/>

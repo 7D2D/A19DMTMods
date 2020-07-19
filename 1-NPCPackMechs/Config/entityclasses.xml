@@ -13,7 +13,7 @@
 <!-- Melee and Ranged templates -->
 		
 		<entity_class name="NPCMechMeleeTemplate" >
-			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Drone.unity3d?Drone_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Drone_X"/>
 			<property name="EntityType" value="Player"/>
 			<property name="ModelType" value="Standard"/>
 			<property name="Mass" value="150"/>
@@ -138,7 +138,7 @@
 <!--  End Of template section  -->
 
 		<entity_class name="NPCMechDrone" extends="NPCMechMeleeTemplate">
-			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Drone.unity3d?Drone_X"/>	<!-- Free CC model by Willy Decarpentrie -->
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Drone_X"/>	<!-- Free CC model by Willy Decarpentrie -->
 			<property name="Tags" value="entity,cp,mech,npc"/>			
 			<property name="Faction" value="mechs"/>
 			<property name="HandItem" value="handDrone"/>
@@ -151,7 +151,7 @@
 		</entity_class>
 			
 		<entity_class name="NPCMechRobot" extends="NPCMechMeleeTemplate" >
-			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Robot.unity3d?Robot_X" /> <!-- Free CC model by Willy Decarpentrie -->
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Robot_X" /> <!-- Free CC model by Willy Decarpentrie -->
 			<property name="Tags" value="entity,cp,mech,npc"/>
 			<property name="PhysicsBody" value="RobotRig"/>
 			<property name="Faction" value="mechs"/>
@@ -178,7 +178,7 @@
 		</entity_class>
 		
 		<entity_class name="NPCMechRobotArmy" extends="NPCMechRobot" >
-			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Robot.unity3d?Robot_X" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Robot_X" />
 			<property name="Tags" value="entity,cp,mech,npc"/>
 			<property name="Faction" value="mechs"/>		
 			<property name="HandItem" value="handRobotArmy"/>
@@ -188,7 +188,7 @@
 		</entity_class>					
 		
 		<entity_class name="NPCMechSphereI" extends="NPCMechMeleeTemplate" >
-			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Spheres.unity3d?SphereI_X" />	<!-- Free CC model by 3DHaupt -->
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?SphereI_X" />	<!-- Free CC model by 3DHaupt -->
 			<property name="DeadBodyHitPoints" value="1000"/> 
 			<property name="Tags" value="entity,cp,mech"/>
 			<property name="Faction" value="mechs"/>		
@@ -207,7 +207,7 @@
 		</entity_class> 
 		
 		<entity_class name="NPCMechSphereII" extends="NPCMechMeleeTemplate" >
-			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/Spheres.unity3d?SphereII_X" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?SphereII_X" />
 			<property name="DeadBodyHitPoints" value="1000"/> 
 			<property name="Tags" value="entity,cp,mech,npc"/>	
 			<property name="Faction" value="mechs"/>		
@@ -227,7 +227,7 @@
 		
 		<entity_class name="NPCMechBee" extends="NPCMechMeleeTemplate" >
 			<property name="Class" value="EntityVulture"/>
-			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/MecBee.unity3d?Mecbee_X" /> <!--  Free CC model but cant find attribution yet  -->
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Mecbee_X" /> <!--  Free CC model but cant find attribution yet  -->
 			<property name="Tags" value="entity,cp,mech,npc"/>
 			<property name="Faction" value="mechs"/>		
 			<property name="HandItem" value="handMecBee"/>

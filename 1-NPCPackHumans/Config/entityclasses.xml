@@ -29,7 +29,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="IsEnemyEntity" value="false"/> 
 			<property name="LootListAlive" value="62"/>
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll_X"/>
 			<property name="AvatarController" value="AvatarZombie01Controller"/>
 			<property name="HideInSpawnMenu" value="true"/> <!-- A19  -->
 			<property name="ModelType" value="Standard"/>
@@ -269,7 +269,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="7"/>			
 			<property name="Names" value="TemplateTom" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 
 			<property name="RightHandJointName" value="RightWeapon" />  
 			<property name="HandItem" value="handEmpty"/>			
 		</entity_class>	
@@ -279,7 +279,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="7"/>	
 			<property name="Names" value="TemplateTom" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 
 			<property name="RightHandJointName" value="RightWeapon" /> 
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="meleeBanditClubWood"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeBanditClubWood"/>
@@ -291,7 +291,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="7"/>	
 			<property name="Names" value="TemplateTom" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="meleeBanditKnifeIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeBanditKnifeIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="meleeBanditKnifeIron"/> 
@@ -302,7 +302,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="6"/> <!-- Walktype for rifles  -->
 			<property name="Names" value="TemplateTom" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 
 			<property name="RightHandJointName" value="Gunjoint" />  <!--  Rifle spawn point  -->
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/>
@@ -314,7 +314,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="6"/>
 			<property name="Names" value="TemplateTom" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 
 			<property name="RightHandJointName" value="Gunjoint" />  
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
@@ -326,7 +326,7 @@
 			<property name="Faction" value="whiteriver"/>
             <property name="WalkType" value="6"/>
 			<property name="Names" value="TemplateTom" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 			
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 			
             <property name="RightHandJointName" value="Gunjoint" />  
             <property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/>
             <property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/>
@@ -338,7 +338,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="2"/> <!-- Walktype for Pistols  -->
 			<property name="Names" value="TemplateTom" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 
 			<property name="RightHandJointName" value="RightWeapon" />  
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/>
@@ -350,7 +350,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="6"/>
 			<property name="Names" value="TemplateTom" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/> 
@@ -361,7 +361,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="3"/>
 			<property name="Names" value="TemplateTom" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 			
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 			
 			<property name="RightHandJointName" value="LeftWeapon" />  <!--  Bows go in lefthand  -->
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/>
@@ -373,7 +373,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="6"/>
 			<property name="Names" value="TemplateTom" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 			
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 			
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/> 
@@ -387,7 +387,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="7"/>			
 			<property name="Names" value="TemplateTammy" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 			<property name="RightHandJointName" value="RightWeapon" />  
 			<property name="HandItem" value="handEmpty"/>			
 		</entity_class>	
@@ -397,7 +397,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="7"/>	
 			<property name="Names" value="TemplateTammy" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 			<property name="RightHandJointName" value="RightWeapon" /> 
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="meleeBanditClubWood"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeBanditClubWood"/>
@@ -409,7 +409,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="7"/>	
 			<property name="Names" value="TemplateTammy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="meleeBanditKnifeIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeBanditKnifeIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="meleeBanditKnifeIron"/> 
@@ -420,7 +420,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="6"/> <!-- Walktype for rifles  -->
 			<property name="Names" value="TemplateTammy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 			<property name="RightHandJointName" value="Gunjoint" />  <!--  Rifle spawn point  -->
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditSMG5,handChefKnife,ammoNPC9mmBulletBall"/>
@@ -432,7 +432,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="6"/>
 			<property name="Names" value="TemplateTammy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 			<property name="RightHandJointName" value="Gunjoint" />  
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
@@ -444,7 +444,7 @@
 			<property name="Faction" value="whiteriver"/>
             <property name="WalkType" value="6"/>
 			<property name="Names" value="TemplateTammy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>			
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>			
             <property name="RightHandJointName" value="Gunjoint" />  
             <property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/>
             <property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditHuntingRifle,handChefKnife,ammoNPC762mmBulletAP"/>
@@ -456,7 +456,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="2"/> <!-- Walktype for Pistols  -->
 			<property name="Names" value="TemplateTammy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/> 
 			<property name="RightHandJointName" value="RightWeapon" />  
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditPistol,handChefKnife,ammoNPC9mmBulletBall"/>
@@ -468,7 +468,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="6"/>
 			<property name="Names" value="TemplateTammy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditXBow,handChefKnife,ammoNPCCrossbowBoltIron"/> 
@@ -479,7 +479,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="3"/>
 			<property name="Names" value="TemplateTammy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>			
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>			
 			<property name="RightHandJointName" value="LeftWeapon" />  <!--  Bows go in lefthand  -->
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditBow,handChefKnife,ammoNPCArrowIron"/>
@@ -491,7 +491,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="WalkType" value="6"/>
 			<property name="Names" value="TemplateTammy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 			
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 			
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditPumpShotgun,handChefKnife,ammoNPCShotgunShell"/> 
@@ -540,7 +540,7 @@
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/> 
 			<property name="MoveSpeed" value="0.3"/> <!--  Examples in case you want to add additional property changes not in the parent template, like a different speed or hiring price  -->
 			<property name="MoveSpeedAggro" value="1.1,1.1"/> 
 			<property name="MoveSpeedPanic" value="1.4"/>
@@ -552,63 +552,63 @@
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/>
 		</entity_class>
 		
 		<entity_class name="npcFarmerKnife" extends="npcKnifeMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcFarmerSMG" extends="npcSMGMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcFarmerAK47" extends="npcAK47MaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/>
 		</entity_class>
 		
 		<entity_class name="npcFarmerHunter" extends="npcHunterMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/>
         </entity_class>    		
 		
 		<entity_class name="npcFarmerPistol" extends="npcPistolMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/>
 		</entity_class>			
 		
 		<entity_class name="npcFarmerXBow" extends="npcXBowMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcFarmerBow" extends="npcBowMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/>
 		</entity_class> 
 		
 		<entity_class name="npcFarmerShotty" extends="npcShottyMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Franky,Fabien,Felix,Finn,Franklin, Finnegan,Forrest,Floyd,Filip,Ford" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/FarmerFrankie.unity3d?FarmerRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?FarmerRagdoll2_X"/>
 		</entity_class> 
 
 		<!--  Baker  -->
@@ -617,21 +617,21 @@
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll2_X"/> 
 		</entity_class>	
 
 		<entity_class name="npcBakerClub" extends="npcClubMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll2_X"/> 
 		</entity_class>
 		
 		<entity_class name="npcBakerKnife" extends="npcKnifeMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll2_X"/> 
 		</entity_class>	
 		
 		<entity_class name="npcBakerSMG" extends="npcSMGMaleTemplate"> 
@@ -639,42 +639,42 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll2_X"/> 
 		</entity_class>	
 		
 		<entity_class name="npcBakerAK47" extends="npcAK47MaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll2_X"/> 
 		</entity_class>
 		
 		<entity_class name="npcBakerHunter" extends="npcHunterMaleTemplate"> 
             <property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll2_X"/> 
         </entity_class>    		
 		
 		<entity_class name="npcBakerPistol" extends="npcPistolMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll2_X"/> 
 		</entity_class>			
 		
 		<entity_class name="npcBakerXBow" extends="npcXBowMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll2_X"/> 
 		</entity_class>	
 		
 		<entity_class name="npcBakerBow" extends="npcBowMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Baker.unity3d?BakerRagdoll2_X"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?BakerRagdoll2_X"/> 
 		</entity_class> 		
 		
 		<!--  Nurse  -->
@@ -683,62 +683,62 @@
 			<property name="Tags" value="entity,cp,female,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 		
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 		
 		</entity_class>	
 
 		<entity_class name="npcNurseClub" extends="npcClubFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>
 		
 		<entity_class name="npcNurseKnife" extends="npcKnifeFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>	
 		
 		<entity_class name="npcNurseSMG" extends="npcSMGFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>	
 		
 		<entity_class name="npcNurseAK47" extends="npcAK47FemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>
 		<entity_class name="npcNurseHunter" extends="npcHunterFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
         </entity_class>    		
 		
 		<entity_class name="npcNursePistol" extends="npcPistolFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>			
 		
 		<entity_class name="npcNurseXBow" extends="npcXBowFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>	
 		
 		<entity_class name="npcNurseBow" extends="npcBowFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/NurseNancy.unity3d?NurseNancy_X"/> 	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class> 		
 
 		<!--  Eve  -->	
@@ -747,62 +747,62 @@
 			<property name="Tags" value="entity,cp,female,npc,melee"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>	
 
 		<entity_class name="npcEveClub" extends="npcClubFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,melee"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>
 		
 		<entity_class name="npcEveKnife" extends="npcKnifeFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,melee"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcEveSMG" extends="npcSMGFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcEveAK47" extends="npcAK47FemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>
 		<entity_class name="npcEveHunter" extends="npcHunterFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
         </entity_class>    		
 		
 		<entity_class name="npcEvePistol" extends="npcPistolFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>			
 		
 		<entity_class name="npcEveXBow" extends="npcXBowFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcEveBow" extends="npcBowFemaleTemplate"> 
 			<property name="Tags" value="entity,cp,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Eve.unity3d?EveRagdoll2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class> 	
 
 		<!--  Heavy Guy  -->
@@ -811,63 +811,63 @@
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Hank,Hero,Homer,Guy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HeavyGuy2_X"/>
 		</entity_class>	
 
 		<entity_class name="npcHeavyGuyClub" extends="npcClubMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Hank,Hero,Homer,Guy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HeavyGuy2_X"/>
 		</entity_class>
 		
 		<entity_class name="npcHeavyGuyKnife" extends="npcKnifeMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Hank,Hero,Homer,Guy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HeavyGuy2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcHeavyGuySMG" extends="npcSMGMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Hank,Hero,Homer,Guy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HeavyGuy2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcHeavyGuyAK47" extends="npcAK47MaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Hank,Hero,Homer,Guy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HeavyGuy2_X"/>
 		</entity_class>
 		
 		<entity_class name="npcHeavyGuyHunter" extends="npcHunterMaleTemplate"> 
             <property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Hank,Hero,Homer,Guy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HeavyGuy2_X"/>
         </entity_class>    		
 		
 		<entity_class name="npcHeavyGuyPistol" extends="npcPistolMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Hank,Hero,Homer,Guy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HeavyGuy2_X"/>
 		</entity_class>			
 		
 		<entity_class name="npcHeavyGuyXBow" extends="npcXBowMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Hank,Hero,Homer,Guy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HeavyGuy2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcHeavyGuyBow" extends="npcBowMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Hank,Hero,Homer,Guy" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/HeavyGuy.unity3d?HeavyGuy2_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HeavyGuy2_X"/>
 		</entity_class> 		
 
 
@@ -878,63 +878,63 @@
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
 		</entity_class>	
 
 		<entity_class name="npcCowboyClub" extends="npcClubMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
 		</entity_class>
 		
 		<entity_class name="npcCowboyKnife" extends="npcKnifeMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
 		</entity_class>	
 		
 		<entity_class name="npcCowboySMG" extends="npcSMGMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
 		</entity_class>	
 		
 		<entity_class name="npcCowboyAK47" extends="npcAK47MaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
 		</entity_class>
 		
 		<entity_class name="npcCowboyHunter" extends="npcHunterMaleTemplate"> 
             <property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
         </entity_class>    		
 		
 		<entity_class name="npcCowboyPistol" extends="npcPistolMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
 		</entity_class>			
 		
 		<entity_class name="npcCowboyXBow" extends="npcXBowMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
 		</entity_class>	
 		
 		<entity_class name="npcCowboyBow" extends="npcBowMaleTemplate"> 
 			<property name="Tags" value="entity,cp,male,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Rifleman.unity3d?CowboyBasic_X"/>	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
 		</entity_class> 				
 		
 		<!--  Joel  -->
@@ -942,7 +942,7 @@
 		<entity_class name="npcJoel" extends="npcMeleeMaleTemplate"> <!--  Joel has a weapon already so lets test this  -->
 			<property name="Tags" value="entity,cp,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Joel.unity3d?JoelRagdoll_X"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?JoelRagdoll_X"/>
 			<property name="HandItem" value="handChefKnife"/>
 			<property name="MoveSpeed" value="0.3"/> 
 			<property name="MoveSpeedAggro" value="1.1, 1.1"/> 
@@ -1080,7 +1080,7 @@
 			<property name="Class" value="EntitySurvivor"/> 
 			<property name="Tags" value="entity,cp,male,human,trader,melee"/>
 			<property name="AvatarController" value="AvatarZombie01Controller"/>
-			<property name="Mesh" value="#@modfolder:Resources/Joel.unity3d?JoelRagdoll_X"/> 
+			<property name="Mesh" value="#@modfolder:Resources/XythHumans.unity3d?JoelRagdoll_X"/> 
 			<property name="HideInSpawnMenu" value="true"/>
 			<property name="PhysicsBody" value="traderStandard"/>
 			<property name="PainResistPerHit" value=".65"/>
@@ -1128,7 +1128,7 @@
 			<property name="HideInSpawnMenu" value="true"/>	
 			<property name="Faction" value="whiteriver"/>
 			<property name="AvatarController" value="AvatarZombie01Controller"/>
-			<property name="Mesh" value="#@modfolder:Resources/Rifleman.unity3d?RifleManAll_X"/> 
+			<property name="Mesh" value="#@modfolder:Resources/XythHumans.unity3d?RifleManAll_X"/> 
 			<property name="PhysicsBody" value="mixamoConvertedStandard"/>
 			<property name="Mass" value="150"/> 
 			<property name="RightHandJointName" value="Muzzle" />

@@ -6,7 +6,7 @@
 <!--  Lets get rid of the creaturepackmechs that are also in the NPC pack  -->
 
 		
-	<remove xpath="//entity_class[starts-with(@name, 'mech')]" />
+	<remove xpath="/entity_classes/entity_class[starts-with(@name, 'mech')]" />
 
 
 	<append xpath="/entity_classes">		
@@ -50,10 +50,12 @@
 			<property name="AITask-1" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0"/>
 			<property name="AITask-2" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
 			<property name="AITask-3" value="Look"/>
-			<property name="AITask-4" value="WanderSDX, Mods"/>
-			<property name="AITask-5" value="ApproachDistraction"/>
-			<property name="AITask-6" value="BreakBlock"/>
-			<property name="AITask-7" value="" />
+			<property name="AITask-4" value="ApproachDistraction"/>
+			<property name="AITask-5" value="ApproachSpot"/> 
+			<property name="AITask-6" value="WanderSDX, Mods"/>
+			<property name="AITask-7" value="BreakBlock"/>
+			<property name="AITask-8" value="Territorial"/>
+			<property name="AITask-9" value="" />
 			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
             <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
             <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
@@ -87,8 +89,8 @@
 				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryBleeding,buffInjuryBleedingZombie,buffInfectionCatch"/>
 				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffLegSprained,buffLegBroken,buffArmSprained,buffPlayerFallingDamage"/>
 			</effect_group>	
-			<effect_group name="UseFactions"> <!-- This activates thr Usefactions Buff which tells the game not to use DMT faction classes  -->
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="UseFactions"/>		
+			<effect_group name="UseFactions"> <!-- This activates thr Usefactions Buff which tells the game to use DMT faction classes  -->
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="UseFactionsYes"/>		
 			</effect_group>	
 			<!--<effect_group name="ragtestforNREs">
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ragtest"/>		
@@ -182,6 +184,11 @@
 			<property name="Tags" value="entity,cp,mech,npc"/>
 			<property name="Faction" value="mechs"/>		
 			<property name="HandItem" value="handRobotArmy"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceMechanicalParts" tag="salvageHarvest" count="10"/> 
+			<drop event="Harvest" name="resourceScrapIron" tag="salvageHarvest" count="9"/>
+			<drop event="Harvest" name="resourceElectricParts" tag="salvageHarvest" count="12"/> 
+			<drop event="Harvest" name="resourceScrapPolymers" tag="salvageHarvest" count="9"/>						
 		    <property name="ReplaceMaterial0" value="#@modfolder(0-CreaturePackMechs):Resources/RobotArmyMat.unity3d?metal_albedo"/>
 		    <property name="ReplaceMaterial1" value="#@modfolder(0-CreaturePackMechs):Resources/RobotArmyMat.unity3d?paint_albedo"/>
 			<property name="ReplaceMaterial2" value="#@modfolder(0-CreaturePackMechs):Resources/RobotArmyMat.unity3d?rubber_albedo"/>

@@ -1,6 +1,6 @@
 <configs>
 
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'mech')]" />
+	<remove xpath="/entitygroups/entitygroup/entity[starts-with(@name, 'mech')]" />
 
 	<append xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombiesAll')]">
 		<entity name="NPCMechDrone" prob=".03" />

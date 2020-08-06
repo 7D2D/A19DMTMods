@@ -121,15 +121,15 @@
 			<property name="LegCrippleScale" value="0"/>
 			<property name="RightHandJointName" value="Gunjoint" /> 
 			<property name="HandItem" value="gunBanditPistol"/> 
-			<property name="AITask-1" value="RangedAttackTarget2" data="itemType=0;attackPeriod=10"/> 
+			<property name="AITask-1" value="RangedAttackTargetSDX, Mods" data="itemType=0;attackPeriod=10"/> 
 			<property name="AITask-2" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0"/>
-			<property name="AITask-3" value="BreakBlock"/> 
-			<property name="AITask-4" value="ApproachDistraction"/>
-			<property name="AITask-5" value="ApproachSpot"/>
-			<property name="AITask-6" value="Territorial"/>
-			<property name="AITask-7" value="Look"/> 
-			<property name="AITask-8" value="WanderSDX, Mods"/>
-			<property name="AITask-9" value=""/>	
+			<property name="AITask-3" value="Look"/>	
+            <property name="AITask-4" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
+            <property name="AITask-5" value="WanderSDX, Mods"/>
+			<property name="AITask-6" value="ApproachDistraction"/>
+			<property name="AITask-7" value="ApproachSpot"/> 
+			<property name="AITask-8" value="Territorial"/>
+            <property name="AITask-9" value="" />
 			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
             <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
             <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 

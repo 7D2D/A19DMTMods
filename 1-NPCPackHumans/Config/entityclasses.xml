@@ -22,7 +22,8 @@
 
 
 		<entity_class name="npcMeleeMaleTemplate"> <!-- If you want to make a bandit without spawning in weapons, use this template  -->
-			<property name="Class" value="EntityAliveSDX, Mods" /> 
+			<property name="Class" value="EntityAliveSDX, Mods" />
+			<property name="IsChunkObserver" value="false"/>
 			<property name="NPCID" value="spheretest"/>
 			<property name="EntityType" value="Player"/>
 			<property name="Tags" value="entity,cp,male,npc,melee"/> <!-- entity/sex/type/role/attacktype/name: Entity is required for code filtering, sex for sound filtering, type/role and Atype for buff filtering.  These DO NOT Extend! -->
@@ -177,9 +178,9 @@
 				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffLegSprained,buffLegBroken,buffArmSprained,buffPlayerFallingDamage"/>
 			</effect_group>	
 			<effect_group name="SelfMedicate Effects">
-				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value=".1"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-			</effect_group>	
+			</effect_group>		
 			<effect_group name="IsHuman"> <!-- This activates thr IsHuman Buff which sets an animator parameter value to path to only human animations  -->
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="IsHuman"/>		
 			</effect_group>	
@@ -680,62 +681,62 @@
 		<!--  Nurse  -->
 		
 		<entity_class name="npcNurseEmptyHand" extends="npcEmptyHandFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,melee"/>
+			<property name="Tags" value="entity,female,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 		
 		</entity_class>	
 
 		<entity_class name="npcNurseClub" extends="npcClubFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,melee"/>
+			<property name="Tags" value="entity,female,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>
 		
 		<entity_class name="npcNurseKnife" extends="npcKnifeFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,melee"/>
+			<property name="Tags" value="entity,female,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>	
 		
 		<entity_class name="npcNurseSMG" extends="npcSMGFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>	
 		
 		<entity_class name="npcNurseAK47" extends="npcAK47FemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>
 		<entity_class name="npcNurseHunter" extends="npcHunterFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
         </entity_class>    		
 		
 		<entity_class name="npcNursePistol" extends="npcPistolFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>			
 		
 		<entity_class name="npcNurseXBow" extends="npcXBowFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
 		</entity_class>	
 		
 		<entity_class name="npcNurseBow" extends="npcBowFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?NurseNancy_X"/> 	
@@ -744,62 +745,62 @@
 		<!--  Eve  -->	
 		
 		<entity_class name="npcEveEmptyHand" extends="npcEmptyHandFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,melee"/>
+			<property name="Tags" value="entity,female,npc,melee"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>	
 
 		<entity_class name="npcEveClub" extends="npcClubFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,melee"/>
+			<property name="Tags" value="entity,female,npc,melee"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>
 		
 		<entity_class name="npcEveKnife" extends="npcKnifeFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,melee"/>
+			<property name="Tags" value="entity,female,npc,melee"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcEveSMG" extends="npcSMGFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcEveAK47" extends="npcAK47FemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>
 		<entity_class name="npcEveHunter" extends="npcHunterFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
         </entity_class>    		
 		
 		<entity_class name="npcEvePistol" extends="npcPistolFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>			
 		
 		<entity_class name="npcEveXBow" extends="npcXBowFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
 		</entity_class>	
 		
 		<entity_class name="npcEveBow" extends="npcBowFemaleTemplate"> 
-			<property name="Tags" value="entity,cp,female,npc,ranged"/>
+			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="bandits"/>
 			<property name="Names" value="Eve,Eva,Evelyn,Edie" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?EveRagdoll2_X"/>
@@ -940,7 +941,7 @@
 		<!--  Joel  -->
 		
 		<entity_class name="npcJoel" extends="npcMeleeMaleTemplate"> <!--  Joel has a weapon already so lets test this  -->
-			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Tags" value="entity,male,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?JoelRagdoll_X"/>
 			<property name="HandItem" value="handChefKnife"/>

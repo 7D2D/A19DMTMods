@@ -1,0 +1,24 @@
+<npc>
+
+
+	  <append xpath="/npc">
+		<npc_info
+		id="NPCAnimalGeneric"
+		name="NPCAnimal"
+		name_key="npc_traitorJoel"
+		faction="whiteriver"
+		portrait="npc_joel"
+		greeting_type="nearby"
+		stance="Like" voice_set="trader"
+		trader_id="1" dialog_id="GenericNPCAnimal" />
+	  </append>
+
+
+	<append xpath="/npc/factions" >	
+		<faction name="pets">
+			<relationship name="trader" value="neutral"/>
+			<relationship name="undead" value="hate"/>
+			<relationship name="*" value="neutral"/>
+		</faction>		
+	</append>
+</npc>

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xml>
   <ModInfo>
-    <Name value="1-NPCPackMechs" />
-    <Description value="Extends 0-CreaturePacksMechs with DMT added functionality" />
+    <Name value="1-NPCPackAnimals" />
+    <Description value="Extends 0-CreaturePacksAnimals with DMT added functionality" />
     <Author value="XythCommunityProject" />
-    <Version value="18.4.1.6" />
+    <Version value="18.4.1.1" />
     <Website value="" />
   </ModInfo>
   <DMT>
     <dependencies>
       <dependancy>0-SphereIICore</dependancy>
       <dependancy>SphereII NPC Dialog Windows</dependancy>
-      <dependancy>0-CreaturePackMechs</dependancy>
+      <dependancy>0-CreaturePackAnimals</dependancy>
     </dependencies>
     <conflicts />
   </DMT>

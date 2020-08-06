@@ -14,6 +14,8 @@
 		
 		<entity_class name="NPCMechMeleeTemplate" >
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Drone_X"/>
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="IsChunkObserver" value="false"/>
 			<property name="EntityType" value="Player"/>
 			<property name="ModelType" value="Standard"/>
 			<property name="Mass" value="150"/>
@@ -91,7 +93,11 @@
 			</effect_group>	
 			<effect_group name="UseFactions"> <!-- This activates thr Usefactions Buff which tells the game to use DMT faction classes  -->
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="UseFactionsYes"/>		
-			</effect_group>	
+			</effect_group>
+			<effect_group name="SelfMedicate Effects">
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value=".1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+			</effect_group>					
 			<!--<effect_group name="ragtestforNREs">
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ragtest"/>		
 			</effect_group>-->				
@@ -104,38 +110,36 @@
 			<property name="HireCost" value="1000" />
 		</entity_class> 
 
-		<entity_class name="NPCMechRangedTemplate" extends="NPCMechMeleeTemplate">
-			<property name="Faction" value="mechs"/>
-			<property name="Tags" value="entity,cp,npc,mech"/>
-			<property name="MoveSpeed" value="0.3"/> 
-			<property name="MoveSpeedAggro" value="1.1,1.1"/> 
-			<property name="MoveSpeedPanic" value="1.1"/>
-			<property name="AITask-1" value="RangedAttackTargetSDX, Mods" data="itemType=0;attackPeriod=10"/> <!--  New class  -->
-			<property name="AITask-2" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0" />
-			<property name="AITask-3" value="Look"/>	
-            <property name="AITask-4" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
-            <property name="AITask-5" value="WanderSDX, Mods"/>
-			<!--<property name="AITask-5" value="ApproachDistraction"/> -->
-            <property name="AITask-6" value="" />
-            <property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
+		<entity_class name="NPCMechRangedTemplate" extends="NPCMechMeleeTemplate"> 	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/RobotTest.unity3d?RobotTest_X" />
+			<property name="AvatarController" value="AvatarAnimalControllerSDX, Mods"/> 
+			<property name='Class' value='EntityAliveSDX, Mods' />
+			<property name="Tags" value="entity,mech,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="HideInSpawnMenu" value="false"/>
+			<property name="SightRange" value="70"/>
+			<property name="LegCrippleScale" value="0"/>
+			<property name="RightHandJointName" value="Gunjoint" /> 
+			<property name="HandItem" value="gunBanditHuntingRifle"/>
+			<property name="AITask-1" value="RangedAttackTarget2" data="itemType=0;attackPeriod=10"/> 
+			<property name="AITask-2" value="RangedAttackTarget2" data="itemType=0;attackPeriod=10"/> 
+			<property name="AITask-3" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0"/>
+			<property name="AITask-4" value="RunawayWhenHurt" data="runChance=.7;healthPer=.5;healthPerMax=0.75"/> 
+			<property name="AITask-5" value="BreakBlock"/> 
+			<property name="AITask-6" value="ApproachDistraction"/>
+			<property name="AITask-7" value="ApproachSpot"/>
+			<property name="AITask-8" value="Territorial"/>
+			<property name="AITask-9" value="Look"/> 
+			<property name="AITask-10" value="WanderSDX, Mods"/>
+			<property name="AITask-11" value=""/>	
+			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
             <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
             <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-            <property name="AITarget-4" value="" />
-			<effect_group name="Base Effects">
-				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
-				<passive_effect name="HealthMax" operation="base_set" value="400"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="StaminaMax" operation="base_set" value="200"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10" />
-				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
-				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryBleeding,buffInjuryBleedingZombie,buffInfectionCatch"/>
-				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffLegSprained,buffLegBroken,buffArmSprained,buffPlayerFallingDamage"/>
-			</effect_group>	
-			<effect_group name="UseFactions"> <!-- This activates thr Usefactions Buff which tells the game not to use DMT faction classes  -->
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="UseFactions"/>		
-			</effect_group>	
-		</entity_class> 
-
+			<property name="AITarget-4" value=""/>				
+			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditSMG5Hidden,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditSMG5Hidden,ammoNPC9mmBulletBall"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditSMG5Hidden,ammoNPC9mmBulletBall"/> 			
+		</entity_class>			
 
 <!--  End Of template section  -->
 
@@ -233,7 +237,7 @@
 		</entity_class> 
 		
 		<entity_class name="NPCMechBee" extends="NPCMechMeleeTemplate" >
-			<property name="Class" value="EntityVulture"/>
+			<property name="Class" value="EntityHornet"/>
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Mecbee_X" /> <!--  Free CC model but cant find attribution yet  -->
 			<property name="Tags" value="entity,cp,mech,npc"/>
 			<property name="Faction" value="mechs"/>		
@@ -255,7 +259,29 @@
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 			</effect_group>
 		</entity_class> 
-
+		<entity_class name="NPCMechBeeRanged" extends="NPCMechRangedTemplate" >
+			<property name="Class" value="EntityHornet"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Mecbee_X" /> <!--  Free CC model but cant find attribution yet  -->
+			<property name="Tags" value="entity,cp,mech,npc"/>
+			<property name="Faction" value="mechs"/>		
+			<property name="HandItem" value="handMecBee"/>
+			<property name="AIPathCostScale" value=".9, 1"/>
+			<property name="SightRange" value="70"/>
+			<property name="MoveSpeed" value="1"/>
+			<property name="MoveSpeedAggro" value="2.1, 2.1"/> <!-- Used when player in vehicle -->
+			<property name="MaxTurnSpeed" value="190"/>
+			<property name="DeadBodyHitPoints" value="100"/>
+			<property name="SizeScale" value="1.2"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceMechanicalParts" tag="salvageHarvest" count="1"/> 
+			<drop event="Harvest" name="resourceScrapIron" tag="salvageHarvest" count="3"/>
+			<drop event="Harvest" name="resourceElectricParts" tag="salvageHarvest" count="3"/> 
+			<drop event="Harvest" name="resourceScrapPolymers" tag="salvageHarvest" count="2"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="50"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+			</effect_group>
+		</entity_class> 
 
 <!-- Loot drop containers  -->
 		

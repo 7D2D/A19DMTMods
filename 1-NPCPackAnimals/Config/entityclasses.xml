@@ -1,0 +1,266 @@
+<configs>
+	<append xpath="/entity_classes">		
+<!-- Melee and Ranged templates -->
+		
+		<entity_class name="NPCAnimalMeleeTemplate" >
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="IsChunkObserver" value="false"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackAnimals):Resources/XythAnimals.unity3d?ArcticFox_X"/>
+			<property name="EntityType" value="Player"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="Mass" value="150"/>
+			<property name="Weight" value="70"/>
+			<property name="PushFactor" value="10"/>				
+			<property name="Tags" value="entity,cp,npc,animal"/>			
+			<property name="Prefab" value="NPC"/>
+			<property name='Class' value='EntityAliveSDX, Mods' />
+			<property name="Parent" value="Enemies"/>
+			<property name="AvatarController" value="AvatarAnimalController"/> 
+			<property name="RotateToGround" value="false"/>
+			<property name="HasRagdoll" value="true"/> <!-- No ragdoll on these entities, but when both Ragdoll and Rootmotion is false, the entity will not animate attacks on dedicated servers.  Set it to true even without a ragdoll but you MUST NOT have an E_Biped_Root tag on the entity or it will NRE  -->
+			<property name="HasDeathAnim" value="true"/>
+			<property name="RootMotion" value="false"/>
+			<property name="RagdollOnDeathChance" value="0"/>
+			<property name="Mass" value="120"/>			
+			<property name="ExperienceGain" value="230"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="HandItem" value="meleeHandAnimalCoyote"/>
+			<property name="SurfaceCategory" value="organic"/>
+			<property name="AttackTimeoutDay" value="1.5"/>
+			<property name="AttackTimeoutNight" value="1.5"/>
+			<property name="NPCID" value="NPCAnimalGeneric"/>
+			<property name="IsEnemyEntity" value="false"/> 		
+			<property name="MoveSpeed" value=".3"/>
+			<property name="MoveSpeedAggro" value="1.2, 1.2"/> 
+			<property name="MoveSpeedPanic" value="1.2"/>
+			<property name="PainResistPerHit" value=".5"/>			
+			<property name="WalkType" value="7"/>
+			<property name="RightHandJointName" value="Head" />  	<!-- This is for fixed weapons under the hand, needs changing for spawned melee  -->			
+			<!--<property name="PathingBlocks" value="PathingCube" />   commented out in the template due to performance hit.  Enable in a specific entity as desired -->
+			<property name="AIPathCostScale" value=".9, 1"/>
+			<property name="AINoiseSeekDist" value="20"/>	
+			<property name="AITask-1" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0"/>
+			<property name="AITask-2" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
+			<property name="AITask-3" value="Look"/>
+			<property name="AITask-4" value="ApproachDistraction"/>
+			<property name="AITask-5" value="ApproachSpot"/> 
+			<property name="AITask-6" value="GuardSDX, Mods"/>
+			<property name="AITask-7" value="BreakBlock"/>
+			<property name="AITask-8" value="Territorial"/>
+			<property name="AITask-9" value="WanderSDX, Mods" />
+			<property name="AITask-10" value="" />
+			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
+            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
+            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
+			<property name="AITarget-4" value=""/>
+			<property name="MaxViewAngle" value="210"/>
+			<property name="SightRange" value="70"/>
+			<property name="JumpMaxDistance" value="3.0, 4.0"/>
+			<property name="SoundRandomTime" value="20.0"/>
+			<property name="SoundRandom" value="wolfroam"/>
+			<property name="SoundAlert" value="wolfalert"/>
+			<property name="SoundHurt" value="wolfpain"/>
+			<property name="SoundDeath" value="wolfdeath"/>
+			<property name="SoundAttack" value="wolfattack"/>
+			<property name="SoundSense" value="wolfsense"/>
+			<property name="SoundGiveUp" value="wolfgiveup"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
+				<passive_effect name="HealthMax" operation="base_set" value="100"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="100"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10" />
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryBleeding,buffInjuryBleedingZombie,buffInfectionCatch"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffLegSprained,buffLegBroken,buffArmSprained,buffPlayerFallingDamage"/>
+			</effect_group>	
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="10"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="5"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="8"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+			<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<property name="Immunity" value="sickness;disease;wellness"/>
+			<property name="LootListAlive" value="62"/>
+			<property name="TimeStayAfterDeath" value="300"/>
+			<property name="DeadBodyHitPoints" value="800"/>
+
+			<effect_group name="UseFactions"> <!-- This activates the Usefactions Buff which tells the game to use DMT faction classes  -->
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="UseFactionsYes"/>		
+			</effect_group>	
+			<effect_group name="SelfMedicate Effects">
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value=".1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+			</effect_group>		
+			<!--<effect_group name="ragtestforNREs">
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="ragtest"/>		
+			</effect_group>-->				
+			<property name="ExperienceGain" value="1000"/> 
+			<property name="LootDropProb" value="0"/> 
+<!--			<property name="LootDropEntityClass" value="EntityLootContainerMechNPC"/>	-->
+			<!--<property name="MapIcon" value="ui_game_symbol_bullet_point"/> -->
+			<property name="Names" value="Buster, Sally, Fluffy" />		
+			<property name="HireCurrency" value="foodRawMeat" />
+			<property name="HireCost" value="10" />
+		</entity_class> 
+
+		<entity_class name="NPCAnimalRangedTemplate" extends="NPCAnimalMeleeTemplate">
+			<property name="Faction" value="whiteriver"/>
+			<property name="Tags" value="entity,cp,npc,pets"/>
+			<property name="MoveSpeed" value="0.3"/> 
+			<property name="MoveSpeedAggro" value="1.1,1.1"/> 
+			<property name="MoveSpeedPanic" value="1.1"/>
+			<property name="AITask-1" value="RangedAttackTargetSDX, Mods" data="itemType=0;attackPeriod=10"/> <!--  New class  -->
+			<property name="AITask-2" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0" />
+			<property name="AITask-3" value="Look"/>	
+            <property name="AITask-4" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
+            <property name="AITask-5" value="WanderSDX, Mods"/>
+			<!--<property name="AITask-5" value="ApproachDistraction"/> -->
+            <property name="AITask-6" value="" />
+            <property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
+            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
+            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
+            <property name="AITarget-4" value="" />
+			<effect_group name="Base Effects">
+				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
+				<passive_effect name="HealthMax" operation="base_set" value="400"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="200"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10" />
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryBleeding,buffInjuryBleedingZombie,buffInfectionCatch"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffLegSprained,buffLegBroken,buffArmSprained,buffPlayerFallingDamage"/>
+			</effect_group>	
+			<effect_group name="UseFactions"> <!-- This activates thr Usefactions Buff which tells the game not to use DMT faction classes  -->
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="UseFactionsYes"/>		
+			</effect_group>	
+		</entity_class> 
+
+<!--  End Of template section  -->
+
+		<entity_class name="NPCAnimalFox" extends="NPCAnimalMeleeTemplate">
+			<property name="Tags" value="entity,cp,animal,npc,NPCAnimalFox"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="MapIcon" value="ui_game_symbol_tracking_wolf"/>
+			<property name="TrackerIcon" value="ui_game_symbol_tracking_wolf"/>
+			<property name="HasRagdoll" value="false"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="RootMotion" value="false"/>
+			<property name="PhysicsBody" value="ArcticFox"/>
+			<property name="IsEntityAnimal" value="true"/> 
+			<property name="IsEnemyEntity" value="false"/> 			
+			<property name="Mesh" value="#@modfolder(0-CreaturePackAnimals):Resources/XythAnimals.unity3d?ArcticFox_X"/>
+			<property name="HandItem" value="meleeHandAnimalFox"/>
+			<property name="ExperienceGain" value="206"/>
+			<property name="DeadBodyHitPoints" value="200"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="10"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="5"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="8"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+			<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		</entity_class>
+		<entity_class name="NPCAnimalGoat" extends="NPCAnimalMeleeTemplate">
+			<property name="Tags" value="entity,cp,animal,npc,NPCAnimalGoat"/>
+			<property name="Faction" value="whiteriver"/>	
+			<property name="PhysicsBody" value="Goat"/>
+			<property name="ExperienceGain" value="130"/>
+			<property name="HasRagdoll" value="true"/> 
+			<property name="HasDeathAnim" value="true"/>
+			<property name="RootMotion" value="false"/>
+			<property name="RagdollOnDeathChance" value="0"/>
+			<property name="IsEntityAnimal" value="true"/>
+			<property name="IsEnemyEntity" value="false"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackAnimals):Resources/XythAnimals.unity3d?Goat_X"/>
+			<property name="HandItem" value="meleeHandAnimalGoat"/>					
+			<property name="SoundRandom" value="GoatBell"/>
+			<property name="SoundAlert" value="GoatBaah"/>
+			<property name="SoundHurt" value="GoatBleat"/>
+			<property name="SoundDeath" value="GoatBleat"/>
+			<property name="SoundAttack" value="GoatBaah"/>
+			<property name="SoundSense" value="GoatBaah"/>
+			<property name="SoundGiveUp" value="GoatBaah"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="15"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="7"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="6"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="15"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
+			<property name="DeadBodyHitPoints" value="200"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="150"/>
+			</effect_group>
+		</entity_class>	
+		
+		<entity_class name="NPCAnimalWolfhound" extends="NPCAnimalMeleeTemplate">
+			<property name="Tags" value="entity,cp,animal,npc,NPCAnimalWolfhound"/>
+			<property name="Faction" value="whiteriver"/>				
+			<property name="Prefab" value="NPC"/>
+			<property name="Class" value="EntityAnimalStag"/>
+			<property name="PhysicsBody" value="Goat"/>
+			<property name="ExperienceGain" value="130"/>
+			<property name="HasRagdoll" value="true"/> 
+			<property name="HasDeathAnim" value="true"/>
+			<property name="RootMotion" value="false"/>
+			<property name="RagdollOnDeathChance" value="0"/>
+			<property name="IsEntityAnimal" value="true"/>
+			<property name="IsEnemyEntity" value="false"/> 
+			<property name="Mesh" value="#@modfolder(0-CreaturePackAnimals):Resources/XythAnimals.unity3d?WolfhoundDark"/>
+			<property name="HandItem" value="meleeHandAnimalDireWolf"/>					
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="15"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="7"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="6"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="15"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
+			<property name="DeadBodyHitPoints" value="200"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="150"/>
+			</effect_group>
+		</entity_class>	
+
+		<entity_class name="NPCAnimalBeagle" extends="NPCAnimalMeleeTemplate">
+			<property name="Mesh" value="#@modfolder(0-CreaturePackAnimals):Resources/XythAnimals.unity3d?BeagleDark"/>
+			<property name="Tags" value="entity,cp,animal,npc,NPCAnimalBeagle"/>
+			<property name="Faction" value="whiteriver"/>					
+			<property name="HandItem" value="meleeHandAnimalFox"/>					
+			<property name="SoundRandom" value="coyoteroam"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="10"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="10"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+			<property name="DeadBodyHitPoints" value="200"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="100"/>
+			</effect_group>
+		</entity_class>	
+
+		<entity_class name="NPCAnimalPug" extends="NPCAnimalMeleeTemplate">
+			<property name="Mesh" value="#@modfolder(0-CreaturePackAnimals):Resources/XythAnimals.unity3d?PugDark"/>
+			<property name="Tags" value="entity,cp,animal,npc,NPCAnimalPug"/>
+			<property name="Faction" value="whiteriver"/>	
+			<property name="Weight" value="20"/>
+			<property name="HandItem" value="meleeHandAnimalFox"/>					
+			<property name="SoundRandom" value="coyoteroam"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="5"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+			<property name="DeadBodyHitPoints" value="100"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="100"/>
+			</effect_group>
+		</entity_class>			
+		
+	</append>
+</configs>

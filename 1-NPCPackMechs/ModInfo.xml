@@ -4,7 +4,7 @@
     <Name value="1-NPCPackMechs" />
     <Description value="Extends 0-CreaturePacksMechs with DMT added functionality" />
     <Author value="XythCommunityProject" />
-    <Version value="18.4.1.62" />
+     <Version value="19.0.3.00" />
     <Website value="" />
   </ModInfo>
   <DMT>

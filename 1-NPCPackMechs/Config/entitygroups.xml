@@ -3,13 +3,14 @@
 	<remove xpath="/entitygroups/entitygroup/entity[starts-with(@name, 'mech')]" />
 
 	<append xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombiesAll')]">
-		<entity name="NPCMechDrone" prob=".03" />
-		<entity name="NPCMechRustyDrone" prob=".03" />
-		<entity name="NPCMechRobot" prob=".03" />
-		<entity name="NPCMechRobotArmy" prob=".03" />		
-		<entity name="NPCMechSphereI" prob=".03" />
-		<entity name="NPCMechSphereII" prob=".03" />
-		<entity name="NPCMechBee" prob=".03" />
+		<entity name="NPCMechDrone" prob=".01" />
+		<entity name="NPCMechRustyDrone" prob=".01" />
+		<entity name="NPCMechRobot" prob=".01" />
+		<entity name="NPCMechRobotArmy" prob=".01" />		
+		<entity name="NPCMechSphereI" prob=".01" />
+		<entity name="NPCMechSphereII" prob=".01" />
+		<entity name="NPCMechBee" prob=".01" />
+		<entity name="NPCMechBeeRanged" prob=".01" />
 	</append> 
 	<append xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombiesNight')]">
 		<entity name="NPCMechDrone" prob=".3" />
@@ -19,5 +20,6 @@
 		<entity name="NPCMechSphereI" prob=".3" />
 		<entity name="NPCMechSphereII" prob=".3" />
 		<entity name="NPCMechBee" prob=".3" />
+		<entity name="NPCMechBeeRanged" prob=".3" />
 	</append> 
 </configs>

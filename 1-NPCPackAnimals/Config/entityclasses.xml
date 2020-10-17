@@ -4,7 +4,7 @@
 		
 		<entity_class name="NPCAnimalMeleeTemplate" >
 			<property name="HideInSpawnMenu" value="true"/>
-			<property name="IsChunkObserver" value="false"/>
+			<property name="IsChunkObserver" value="true"/>
 			<property name="Mesh" value="#@modfolder(0-CreaturePackAnimals):Resources/XythAnimals.unity3d?ArcticFox_X"/>
 			<property name="EntityType" value="Player"/>
 			<property name="ModelType" value="Standard"/>
@@ -303,6 +303,44 @@
 			<property name="AITarget-4" value=""/>
 		</entity_class>			
 		
-		
+		<entity_class name="NPCAnimalGermanShepherd" extends="NPCAnimalMeleeTemplate">
+			<property name="Mesh" value="#@modfolder(0-CreaturePackAnimals):Resources/XythAnimals.unity3d?GermanShepherd_X"/>
+			<property name="Tags" value="entity,cp,animal,npc,NPCAnimalGermanShepherd"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="AvatarController" value="AvatarAnimalController"/> 
+			<property name="Weight" value="60"/>
+			<property name="HandItem" value="meleeHandAnimalFox"/>	
+			<property name="PhysicsBody" value="wolf"/>
+			<property name="SoundRandom" value="coyoteroam"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="5"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+			<property name="DeadBodyHitPoints" value="100"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="300"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="60"/>
+			</effect_group>
+			<property name="RootMotion" value="false"/>
+			<property name="HasRagdoll" value="true"/> 
+			<property name="SizeScale" value="1"/> 
+			<property name="RagdollOnDeathChance" value="0"/>
+			<property name="Mass" value="80"/>
+			<property name="RotateToGround" value="false"/>
+			<property name="Names" value="Killer, Butch, Zelda" />	
+			<property name="AITask-1" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0"/>
+			<property name="AITask-2" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
+			<property name="AITask-3" value="ApproachSpot"/> 
+			<property name="AITask-4" value="BreakBlock"/>
+			<property name="AITask-5" value="Territorial"/>
+			<property name="AITask-6" value="WanderSDX, Mods" />
+			<property name="AITask-7" value="" />
+			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
+            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
+            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
+			<property name="AITarget-4" value=""/>
+		</entity_class>					
 	</append>
 </configs>

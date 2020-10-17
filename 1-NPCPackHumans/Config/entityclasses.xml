@@ -23,7 +23,7 @@
 
 		<entity_class name="npcMeleeMaleTemplate"> <!-- If you want to make a bandit without spawning in weapons, use this template  -->
 			<property name="Class" value="EntityAliveSDX, Mods" />
-			<property name="IsChunkObserver" value="false"/>
+<!--			<property name="IsChunkObserver" value="true"/> -->
 			<property name="NPCID" value="spheretest"/>
 			<property name="EntityType" value="Player"/>
 			<property name="Tags" value="entity,cp,male,npc,melee"/> <!-- entity/sex/type/role/attacktype/name: Entity is required for code filtering, sex for sound filtering, type/role and Atype for buff filtering.  These DO NOT Extend! -->
@@ -36,7 +36,6 @@
 			<property name="ModelType" value="Standard"/>
 			<property name="HasRagdoll" value="true"/>
 			<property name="Prefab" value="NPC"/>
-			<!--<property name="Class" value="EntityEnemyAnimal"/> -->
 			<property name="Parent" value="Enemies"/>
 			<property name="Mass" value="150"/>
 			<property name="Weight" value="70"/>			
@@ -708,6 +707,21 @@
 
 <!-- Xyth NPC Characters  Version order: Fixed weapon, Empty Hand, then melee and ranged types  -->
 
+		<entity_class name="npcXyth" extends="npcEmptyHandMaleTemplate">
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="NPCID" value="xythtest"/>
+			<property name="Names" value="Xyth" />	
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Xyth.unity3d?Xyth_X"/> 
+			<property name="MoveSpeed" value="0.3"/> <!--  Examples in case you want to add additional property changes not in the parent template, like a different speed or hiring price  -->
+			<property name="PhysicsBody" value="xythrig"/>
+			<property name="LookAtAngle" value="60"/> <!--  bad rig locl rotation on neck  -->
+			<property name="MoveSpeedAggro" value="1.1,1.1"/> 
+			<property name="MoveSpeedPanic" value="1.4"/>
+			<property name="HireCurrency" value="casinoCoin" />
+			<property name="HireCost" value="1000" />		
+		</entity_class> 
+		
 <!--		<entity_class name="NPCMinstrel" extends="NPCHumanMeleeTemplate" >
 			<property name='Class' value='EntityAliveSDX, Mods' />
 			<property name="PhysicsBody" value="mixamoConvertedStandard"/>
@@ -1126,8 +1140,782 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
 			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?CowboyBasic_X"/>	
-		</entity_class> 				
+		</entity_class> 
+
+
+		<!--  Harley  -->	
 		
+		<entity_class name="npcHarleyEmptyHand" extends="npcEmptyHandFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Harley, Quinn, HarleyQuinn" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HarleyQuinn2_X"/>
+		</entity_class>	
+
+		<entity_class name="npcHarleyClub" extends="npcClubFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Harley, Quinn, HarleyQuinn" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HarleyQuinn2_X"/>
+		</entity_class>
+		
+		<entity_class name="npcHarleyKnife" extends="npcKnifeFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Harley, Quinn, HarleyQuinn" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HarleyQuinn2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcHarleySMG" extends="npcSMGFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Harley, Quinn, HarleyQuinn" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HarleyQuinn2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcHarleyAK47" extends="npcAK47FemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Harley, Quinn, HarleyQuinn" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HarleyQuinn2_X"/>
+		</entity_class>
+		<entity_class name="npcHarleyHunter" extends="npcHunterFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Harley, Quinn, HarleyQuinn" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HarleyQuinn2_X"/>
+        </entity_class>    		
+		
+		<entity_class name="npcHarleyPistol" extends="npcPistolFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Harley, Quinn, HarleyQuinn" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HarleyQuinn2_X"/>
+		</entity_class>			
+		
+		<entity_class name="npcHarleyXBow" extends="npcXBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Harley, Quinn, HarleyQuinn" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HarleyQuinn2_X"/>
+		</entity_class>	
+		
+		<entity_class name="npcHarleyBow" extends="npcBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="bandits"/>
+			<property name="Names" value="Harley, Quinn, HarleyQuinn" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?HarleyQuinn2_X"/>
+		</entity_class> 	
+
+		<!--  SoldierGirl01  -->	
+		
+		<entity_class name="npcSoldierGirl01EmptyHand" extends="npcEmptyHandFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Sally, Sue, Sis" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?ArmyDoctor2Dark"/>
+		</entity_class>	
+
+		<entity_class name="npcSoldierGirl01Club" extends="npcClubFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Sally, Sue, Sis" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+		</entity_class>
+		
+		<entity_class name="npcSoldierGirl01Knife" extends="npcKnifeFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Sally, Sue, Sis" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierGirl01SMG" extends="npcSMGFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Sally, Sue, Sis" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierGirl01AK47" extends="npcAK47FemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Sally, Sue, Sis" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+		</entity_class>
+		<entity_class name="npcSoldierGirl01Hunter" extends="npcHunterFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Sally, Sue, Sis" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+        </entity_class>    		
+		
+		<entity_class name="npcSoldierGirl01Pistol" extends="npcPistolFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Sally, Sue, Sis" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+		</entity_class>			
+		
+		<entity_class name="npcSoldierGirl01XBow" extends="npcXBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Sally, Sue, Sis" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierGirl01Bow" extends="npcBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="Sally, Sue, Sis" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+		</entity_class> 	
+
+
+		<!--  Delta Guy  -->
+		
+		<entity_class name="npcSoldierDeltaEmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Delta2Dark"/>
+		</entity_class>	
+
+		<entity_class name="npcSoldierDeltaClub" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Delta2Dark"/>
+		</entity_class>
+		
+		<entity_class name="npcSoldierDeltaKnife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Delta2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierDeltaSMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Delta2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierDeltaAK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Delta2Dark"/>
+		</entity_class>
+		
+		<entity_class name="npcSoldierDeltaHunter" extends="npcHunterMaleTemplate"> 
+            <property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Delta2Dark"/>
+        </entity_class>    		
+		
+		<entity_class name="npcSoldierDeltaPistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Delta2Dark"/>
+		</entity_class>			
+		
+		<entity_class name="npcSoldierDeltaXBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Delta2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierDeltaBow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Delta2Dark"/>
+		</entity_class> 
+
+
+		<!--  Hunter  -->
+		
+		<entity_class name="npcSoldierHunterEmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?HunterDark"/>
+		</entity_class>	
+
+		<entity_class name="npcSoldierHunterClub" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?HunterDark"/>
+		</entity_class>
+		
+		<entity_class name="npcSoldierHunterKnife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?HunterDark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierHunterSMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?HunterDark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierHunterAK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?HunterDark"/>
+		</entity_class>
+		
+		<entity_class name="npcSoldierHunterHunter" extends="npcHunterMaleTemplate"> 
+            <property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?HunterDark"/>
+        </entity_class>    		
+		
+		<entity_class name="npcSoldierHunterPistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?HunterDark"/>
+		</entity_class>			
+		
+		<entity_class name="npcSoldierHunterXBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?HunterDark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierHunterBow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?HunterDark"/>
+		</entity_class> 
+
+		<!--  NationalGuard  -->
+		
+		<entity_class name="npcSoldierNationalGuardEmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?NationalGuard2Dark"/>
+		</entity_class>	
+
+		<entity_class name="npcSoldierNationalGuardClub" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?NationalGuard2Dark"/>
+		</entity_class>
+		
+		<entity_class name="npcSoldierNationalGuardKnife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?NationalGuard2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierNationalGuardSMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?NationalGuard2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierNationalGuardAK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?NationalGuard2Dark"/>
+		</entity_class>
+		
+		<entity_class name="npcSoldierNationalGuardHunter" extends="npcHunterMaleTemplate"> 
+            <property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?NationalGuard2Dark"/>
+        </entity_class>    		
+		
+		<entity_class name="npcSoldierNationalGuardPistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?NationalGuard2Dark"/>
+		</entity_class>			
+		
+		<entity_class name="npcSoldierNationalGuardXBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?NationalGuard2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierNationalGuardBow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?NationalGuard2Dark"/>
+		</entity_class> 
+
+
+		<!--  Ranger  -->
+		
+		<entity_class name="npcSoldierRangerEmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Ranger2Dark"/>
+		</entity_class>	
+
+		<entity_class name="npcSoldierRangerClub" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Ranger2Dark"/>
+		</entity_class>
+		
+		<entity_class name="npcSoldierRangerKnife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Ranger2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierRangerSMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Ranger2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierRangerAK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Ranger2Dark"/>
+		</entity_class>
+		
+		<entity_class name="npcSoldierRangerHunter" extends="npcHunterMaleTemplate"> 
+            <property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Ranger2Dark"/>
+        </entity_class>    		
+		
+		<entity_class name="npcSoldierRangerPistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Ranger2Dark"/>
+		</entity_class>			
+		
+		<entity_class name="npcSoldierRangerXBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Ranger2Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcSoldierRangerBow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,cp,male,npc,ranged"/>
+			<property name="Faction" value="whiteriver"/>
+			<property name="Names" value="BillyBob,Tex,Gomer,Kemosabe" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?Ranger2Dark"/>
+		</entity_class> 
+		
+		
+	<!-- Whisperers    -->	
+		
+			
+		<entity_class name="npcWhispererAlphaEmptyHand" extends="npcEmptyHandFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Alpha" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererADark"/>
+		</entity_class>	
+
+		<entity_class name="npcWhispererAlphaClub" extends="npcClubFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Alpha" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererADark"/>
+		</entity_class>
+		
+		<entity_class name="npcWhispererAlphaKnife" extends="npcKnifeFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Alpha" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererADark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererAlphaSMG" extends="npcSMGFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Alpha" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererADark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererAlphaAK47" extends="npcAK47FemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Alpha" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererADark"/>
+		</entity_class>
+		<entity_class name="npcWhispererAlphaHunter" extends="npcHunterFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Alpha" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererADark"/>
+        </entity_class>    		
+		
+		<entity_class name="npcWhispererAlphaPistol" extends="npcPistolFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Alpha" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererADark"/>
+		</entity_class>			
+		
+		<entity_class name="npcWhispererAlphaXBow" extends="npcXBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Alpha" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererADark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererAlphaBow" extends="npcBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Alpha" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererADark"/>
+		</entity_class> 			
+		
+			
+		<entity_class name="npcWhispererFemale01EmptyHand" extends="npcEmptyHandFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF01Dark"/>
+		</entity_class>	
+
+		<entity_class name="npcWhispererFemale01Club" extends="npcClubFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF01Dark"/>
+		</entity_class>
+		
+		<entity_class name="npcWhispererFemale01Knife" extends="npcKnifeFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF01Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererFemale01SMG" extends="npcSMGFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF01Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererFemale01AK47" extends="npcAK47FemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF01Dark"/>
+		</entity_class>
+		<entity_class name="npcWhispererFemale01Hunter" extends="npcHunterFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF01Dark"/>
+        </entity_class>    		
+		
+		<entity_class name="npcWhispererFemale01Pistol" extends="npcPistolFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF01Dark"/>
+		</entity_class>			
+		
+		<entity_class name="npcWhispererFemale01XBow" extends="npcXBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF01Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererFemale01Bow" extends="npcBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF01Dark"/>
+		</entity_class> 					
+		
+		
+		<entity_class name="npcWhispererFemale02EmptyHand" extends="npcEmptyHandFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF02Dark"/>
+		</entity_class>	
+
+		<entity_class name="npcWhispererFemale02Club" extends="npcClubFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF02Dark"/>
+		</entity_class>
+		
+		<entity_class name="npcWhispererFemale02Knife" extends="npcKnifeFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF02Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererFemale02SMG" extends="npcSMGFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF02Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererFemale02AK47" extends="npcAK47FemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF02Dark"/>
+		</entity_class>
+		<entity_class name="npcWhispererFemale02Hunter" extends="npcHunterFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF02Dark"/>
+        </entity_class>    		
+		
+		<entity_class name="npcWhispererFemale02Pistol" extends="npcPistolFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF02Dark"/>
+		</entity_class>			
+		
+		<entity_class name="npcWhispererFemale02XBow" extends="npcXBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF02Dark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererFemale02Bow" extends="npcBowFemaleTemplate"> 
+			<property name="Tags" value="entity,female,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererF02Dark"/>
+		</entity_class> 					
+
+		
+		<entity_class name="npcWhispererBetaEmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Beta" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererBDark"/>
+		</entity_class>	
+
+		<entity_class name="npcWhispererBetaClub" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Beta" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererBDark"/>
+		</entity_class>
+		
+		<entity_class name="npcWhispererBetaKnife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Beta" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererBDark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererBetaSMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Beta" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererBDark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererBetaAK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Beta" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererBDark"/>
+		</entity_class>
+		<entity_class name="npcWhispererBetaHunter" extends="npcHunterMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Beta" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererBDark"/>
+        </entity_class>    		
+		
+		<entity_class name="npcWhispererBetaPistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Beta" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererBDark"/>
+		</entity_class>			
+		
+		<entity_class name="npcWhispererBetaXBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Beta" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererBDark"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererBetaBow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="Beta" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererBDark"/>
+		</entity_class> 					
+		
+		
+		<entity_class name="npcWhispererMale01EmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+		</entity_class>	
+
+		<entity_class name="npcWhispererMale01Club" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+		</entity_class>
+		
+		<entity_class name="npcWhispererMale01Knife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererMale01SMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererMale01AK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+		</entity_class>
+		<entity_class name="npcWhispererMale01Hunter" extends="npcHunterMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+        </entity_class>    		
+		
+		<entity_class name="npcWhispererMale01Pistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+		</entity_class>			
+		
+		<entity_class name="npcWhispererMale01XBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererMale01Bow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+		</entity_class> 					
+		
+		
+		<entity_class name="npcWhispererMale02EmptyHand" extends="npcEmptyHandMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+		</entity_class>	
+
+		<entity_class name="npcWhispererMale02Club" extends="npcClubMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+		</entity_class>
+		
+		<entity_class name="npcWhispererMale02Knife" extends="npcKnifeMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,melee"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererMale02SMG" extends="npcSMGMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererMale02AK47" extends="npcAK47MaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+		</entity_class>
+		<entity_class name="npcWhispererMale02Hunter" extends="npcHunterMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+        </entity_class>    		
+		
+		<entity_class name="npcWhispererMale02Pistol" extends="npcPistolMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+		</entity_class>			
+		
+		<entity_class name="npcWhispererMale02XBow" extends="npcXBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+		</entity_class>	
+		
+		<entity_class name="npcWhispererMale02Bow" extends="npcBowMaleTemplate"> 
+			<property name="Tags" value="entity,male,npc,ranged"/>
+			<property name="Faction" value="whisperers"/>
+			<property name="Names" value="One,Two,Three,Four,Five,Six" />
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+		</entity_class> 					
+		
+
 		<!--  Joel  -->
 		
 		<entity_class name="npcJoel" extends="npcMeleeMaleTemplate"> <!--  Joel has a weapon already so lets test this  -->
@@ -1186,202 +1974,5 @@
 
 <!--  Testing  -->
 
-		<!--<entity_class name="npcTurret" extends="npcHumanRangedTemplate">
-			<property name="Mesh" value="#@modfolder:Resources/Turret.unity3d?MecTurret_X" />	
-			<property name="Tags" value="entity,cp,mech"/>			
-			<property name="HasRagdoll" value="true"/>
-			<property name="HasDeathAnim" value="true"/>
-			<property name="RootMotion" value="false"/>
-			<property name="RagdollOnDeathChance" value="0"/>
-			<property name="Mass" value="120"/>			
-			<property name="ExperienceGain" value="230"/>
-			<property name="Faction" value="whiteriver"/>
-			<property name="HandItem" value="handDrone"/>
-			<property name="SurfaceCategory" value="metal"/>
-			<property name="AttackTimeoutDay" value="1.5"/>
-			<property name="AttackTimeoutNight" value="1.5"/>
-			<property name="RightHandJointName" value="Gunjoint" />  
-			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
-			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/>
-			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditAk47,handChefKnife,ammoNPC762mmBulletBall"/> 
-			<property name="AITask-1" value="RangedAttackTargetSDX, Mods" data="itemType=0;attackPeriod=10"/>
-			<property name="AITask-2" value="ApproachAndAttackSDX, Mods" data="class=Entity,0" />
-			<property name="AITask-3" value="Look"/>	
-            <property name="AITask-4" value="" />
-            <property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=Entity"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=Entity"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=Entity,80"/> 
-            <property name="AITarget-4" value="" />			
-			<property name="SoundRandomTime" value="20.0"/>
-			<property name="SoundRandom" value="DroneRandom" />
-			<property name="SoundAlert" value="DroneRandom" />
-			<property name="SoundAttack" value="DroneRandom" />
-			<property name="SoundDeath" value="DroneDie" />
-			<property name="SoundHurt" value="DroneRandom" />
-			<property name="SoundSense" value="DroneRandom" /> 
-			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-			<drop event="Harvest" name="resourceMechanicalParts" tag="salvageHarvest" count="10"/> 
-			<drop event="Harvest" name="resourceScrapIron" tag="salvageHarvest" count="9"/>
-			<drop event="Harvest" name="resourceElectricParts" tag="salvageHarvest" count="12"/> 
-			<drop event="Harvest" name="resourceScrapPolymers" tag="salvageHarvest" count="9"/>
-			<property name="Immunity" value="sickness;disease;wellness"/>
-			<property name="MoveSpeed" value="0"/>
-			<property name="MoveSpeedAggro" value="0, 0"/> 
-			<property name="MoveSpeedPanic" value="0"/>
-			<property name="DeadBodyHitPoints" value="800"/>
-			<property name="TimeStayAfterDeath" value="300"/>
-			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="400"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="StaminaMax" operation="base_set" value="200"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10" />
-				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryBleeding,buffInjuryBleedingZombie,buffInfectionCatch"/>
-			</effect_group>
-		</entity_class> -->
 	</append>
-	
-		<!-- Old edits used for selective changes to CPHuman files held in case needed later  -->
-				<!-- Edits to make a few NPC groups join factions other than whiteriver  -->
-
-				<!--<set xpath="//entity_class[starts-with(@name, 'npcRaider')]/property[@name='Faction']/@value">bandits</set>
-				<set xpath="//entity_class[starts-with(@name, 'npcGhost')]/property[@name='Faction']/@value">whisperers</set>
-				<set xpath="//entity_class[starts-with(@name, 'npcGupSoldier')]/property[@name='Faction']/@value">redteam</set>
-				<set xpath="//entity_class[starts-with(@name, 'npcDelta')]/property[@name='Faction']/@value">blueteam</set>
-				<set xpath="//entity_class[starts-with(@name, 'npcRanger')]/property[@name='Faction']/@value">blueteam</set>
-				<set xpath="//entity_class[starts-with(@name, 'npcNational')]/property[@name='Faction']/@value">greenteam</set>
-				<set xpath="//entity_class[starts-with(@name, 'npcArmy')]/property[@name='Faction']/@value">greenteam</set> -->
-				
-				<!--  Lets get rid of the all creaturepackHumans that are also in the NPC pack  -->
-				<!--<remove xpath="//entity_class[starts-with(@name, 'humanRaider')]" />
-				<remove xpath="//entity_class[starts-with(@name, 'humanDelta')]" />	-->		
-				
-				<!--  Edits to convert the remaining CreaturePackHumans to faction based targeting  -->
-
-				<!--<remove xpath="//entity_class[@name='humanMeleeMaleTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanMeleeMaleTemplate']/property[@value='SetNearestEntityAsTarget']" />
-				
-				<remove xpath="//entity_class[@name='humanRangedMaleTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanRangedMaleTemplate']/property[@value='SetNearestEntityAsTarget']" />
-				
-				<remove xpath="//entity_class[@name='humanMeleeMaleSurvivorTimidTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanMeleeMaleSurvivorTimidTemplate']/property[@value='SetNearestEntityAsTarget']" />
-				
-				<remove xpath="//entity_class[@name='humanMeleeMaleSurvivorTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanMeleeMaleSurvivorTemplate']/property[@value='SetNearestEntityAsTarget']" />
-				
-				<remove xpath="//entity_class[@name='humanRangedMaleSurvivorTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanRangedMaleSurvivorTemplate']/property[@value='SetNearestEntityAsTarget']" />
-				
-				<remove xpath="//entity_class[@name='humanMeleeFemaleSurvivorTimidTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanMeleeFemaleSurvivorTimidTemplate']/property[@value='SetNearestEntityAsTarget']" />
-				
-				<remove xpath="//entity_class[@name='humanMeleeFemaleSurvivorTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanMeleeFemaleSurvivorTemplate']/property[@value='SetNearestEntityAsTarget']" />
-				
-				<remove xpath="//entity_class[@name='humanRangedFemaleSurvivorTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanRangedFemaleSurvivorTemplate']/property[@value='SetNearestEntityAsTarget']" />		
-				
-				<remove xpath="//entity_class[@name='humanHarleyBanditSleeperPistol']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanHarleyBanditSleeperPistol']/property[@value='SetNearestEntityAsTarget']" /> 		
-				
-				<remove xpath="//entity_class[@name='humanHarleyBanditSleeperSlugger']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanHarleyBanditSleeperSlugger']/property[@value='SetNearestEntityAsTarget']" /> 
-				
-				<remove xpath="//entity_class[@name='humanMeleeMaleTraderTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanMeleeMaleTraderTemplate']/property[@value='SetNearestEntityAsTarget']" /> 		
-				
-				<remove xpath="//entity_class[@name='humanRangedMaleTraderTemplate']/property[@value='ApproachAndAttackTarget']" />
-				<remove xpath="//entity_class[@name='humanRangedMaleTraderTemplate']/property[@value='SetNearestEntityAsTarget']" /> 
-				
-				<insertAfter xpath="//entity_class[@name='humanMeleeMaleTemplate']/property[@value='ApproachDistraction']" >		
-					<property name="AITask-5" value="ApproachAndAttackSDX, Mods" data="class=Entity,90"/>
-				</insertAfter>
-				<insertAfter xpath="//entity_class[@name='humanMeleeMaleTemplate']/property[@value='BlockingTargetTask']" >		
-					<property name="AITarget-4" value="SetAsTargetNearestEnemySDX, Mods" data="class=Entity,90"/> 
-				</insertAfter>
-				
-				<insertAfter xpath="//entity_class[@name='humanRangedMaleTemplate']/property[@value='RangedAttackTarget']" >		
-					<property name="AITask-5" value="ApproachAndAttackSDX, Mods" data="class=Entity,90"/>
-				</insertAfter>
-				<insertAfter xpath="//entity_class[@name='humanRangedMaleTemplate']/property[@value='BlockingTargetTask']" >		
-					<property name="AITarget-4" value="SetAsTargetNearestEnemySDX, Mods" data="class=Entity,90"/> 
-				</insertAfter> -->	
-
-<!--		<entity_class name="humanMeleeMaleTraderTemplate" extends="humanMeleeMaleTemplate">
-			<property name="Class" value="EntitySurvivor"/> 
-			<property name="Tags" value="entity,cp,male,human,trader,melee"/>
-			<property name="AvatarController" value="AvatarZombie01Controller"/>
-			<property name="Mesh" value="#@modfolder:Resources/XythHumans.unity3d?JoelRagdoll_X"/> 
-			<property name="HideInSpawnMenu" value="true"/>
-			<property name="PhysicsBody" value="traderStandard"/>
-			<property name="PainResistPerHit" value=".65"/>
-			<property name="SightRange" value="50"/>
-			<property name="RightHandJointName" value="RightWeapon" />
-			<property name="HandItem" value="handChefKnife"/>
-			<property name="MoveSpeed" value="0.25"/> 
-			<property name="MoveSpeedAggro" value="1.1, 1.1"/> 
-			<property name="MoveSpeedPanic" value="1.1"/>
-			<property name="MoveSpeedRand" value="-.2, .25"/> 				
-			<property name="AIPathCostScale" value=".9, 1"/>
-			<property name="AINoiseSeekDist" value="20"/>
-			<property name="Faction" value="whiteriver"/>
-			<property name="LootListAlive" value="62"/>
-			<property name="NPCID" value="traderJoel"/>
-			<property name="SoundHurt" value="Player_Male/player1painlg"/>
-			<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
-			<property name="SoundDeath" value="Player_Male/player1death"/>
-			<property name="SoundStamina" value="Player_Male/player1stamina"/>
-			<property name="SoundDrownPain" value="Player_Male/player1drownpain"/>
-			<property name="SoundWaterSurface" value="Player_Male/player1drownsurface"/>
-			<property name="SoundDrownDeath" value="Player_Male/player1drowndeath"/>
-			<property name="SoundJump" value="Player_Male/player1Jump"/>
-			<property name="SoundLandSoft" value="Player_Male/player1LandSoft"/>
-			<property name="SoundLandHard" value="Player_Male/player1LandHard"/>
-			<property name="SoundPlayerLandThump" value="PlayerLandThump"/>
-			<property name="AttackTimeoutDay" value=".8"/>
-			<property name="AttackTimeoutNight" value=".8"/>
-			<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityZombie,0,EntityBandit,0,EntityEnemyAnimal,0,EntityPlayer,0"/>
-			<property name="AITask-2" value="ApproachDistraction"/> 
-			<property name="AITask-3" value="ApproachSpot"/> 
-			<property name="AITask-4" value="Look"/>
-			<property name="AITask-5" value="BreakBlock"/> 
-			<property name="AITask-6" value="Wander"/> 
-			<property name="AITask-7" value=""/>
-			<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityZombie,EntityEnemyAnimal,EntityBandit"/> 
-			<property name="AITarget-2" value="BlockingTargetTask"/> 
-			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityBandit,0,0,EntityZombie,0,0,EntityEnemyAnimal,0,0"/> 
-			<property name="AITarget-4" value=""/> 
-		</entity_class> 
-
-		<entity_class name="humanRangedMaleTraderTemplate" extends="humanMeleeMaleTraderTemplate">
-			<property name="Class" value="EntitySurvivor"/> 
-			<property name="Tags" value="entity,cp,male,human,trader,ranged"/>
-			<property name="HideInSpawnMenu" value="true"/>	
-			<property name="Faction" value="whiteriver"/>
-			<property name="AvatarController" value="AvatarZombie01Controller"/>
-			<property name="Mesh" value="#@modfolder:Resources/XythHumans.unity3d?RifleManAll_X"/> 
-			<property name="PhysicsBody" value="mixamoConvertedStandard"/>
-			<property name="Mass" value="150"/> 
-			<property name="RightHandJointName" value="Muzzle" />
-			<property name="HandItem" value="handBanditMP7"/> 
-			<property name="MoveSpeed" value="0.25"/> 
-			<property name="MoveSpeedAggro" value="1.1, 1.1"/> 
-			<property name="MoveSpeedPanic" value="1.1"/>
-			<property name="MoveSpeedRand" value="-.2, .25"/> 				
-			<property name="LootListAlive" value="62"/>
-			<property name="NPCID" value="traderWeapons"/>
-			<property name="AITask-1" value="RangedAttackTarget" data="itemType=1;cooldown=3;duration=4;minRange=3;maxRange=80"/>
-			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityZombie,0,EntityBandit,0,EntityEnemyAnimal,0,EntityPlayer,0"/>
-			<property name="AITask-3" value="ApproachDistraction"/> 
-			<property name="AITask-4" value="ApproachSpot"/> 
-			<property name="AITask-5" value="Look"/>
-			<property name="AITask-6" value="BreakBlock"/> 
-			<property name="AITask-7" value="Wander"/> 
-			<property name="AITask-8" value=""/>
-			<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityZombie,EntityEnemyAnimal,EntityBandit"/> 
-			<property name="AITarget-2" value="BlockingTargetTask"/> 
-			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityBandit,0,0,EntityZombie,0,0,EntityEnemyAnimal,0,0"/> 
-			<property name="AITarget-4" value=""/> 
-		</entity_class> -->
-
 </configs>

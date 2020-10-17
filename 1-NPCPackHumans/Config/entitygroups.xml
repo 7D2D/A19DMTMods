@@ -1,257 +1,95 @@
 <configs>
 	<remove xpath="//entitygroup[starts-with(@name, 'Bandits')]" />
 	<remove xpath="//entitygroup[starts-with(@name, 'Survivors')]" />
-
-	<!--  If There is an NPC version of a CP Human, stop the CPHuman from spawning  -->   
+	<remove xpath="//entitygroup[starts-with(@name, 'SoldiersAll')]" />
+	<remove xpath="//entitygroup[starts-with(@name, 'VaultAll')]" />
 	
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanEve')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanFarmer')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanCowboy')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanHarley')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanBaker')]" />	
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanJoel')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanNurse')]" />
+	<!-- Stop the CPHumans from spawning  -->   
+	<remove xpath="//entitygroup/entity[starts-with(@name, 'human')]" />
+<!--	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanEve')]" />
+		<remove xpath="//entitygroup/entity[starts-with(@name, 'humanNurse')]" />  -->
 	
-<!--	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanGuppySoldier07')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanGuppySoldier08')]" /> 
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanDelta')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanArmy')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanMalePower')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanNational')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanRaider')]" />	
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanGuppySoldier01')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanGuppySoldier06')]" />	
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanGuppySoldier07')]" />
-	<remove xpath="//entitygroup/entity[starts-with(@name, 'humanGuppySoldier08')]" /> -->
-
-
-	<append xpath="/entitygroups"> <!-- Not sure what groups we need yet, making placeholders   -->
+	<append xpath="/entitygroups"> 
 	
-<!--		<entitygroup name="npcMeleeAll">
+<!--	<entitygroup name="npcMeleeAll">
 			<entity name="npcRanger" prob="0.01" />
-			<entity name="npcRangerEmptyHand" prob="0.01" />
-			<entity name="npcRangerClub" prob="0.01" />
-			<entity name="npcRangerKnife" prob="0.01" />
 		</entitygroup>
 		
 		<entitygroup name="npcRangedAll">
 			<entity name="npcRangerSMG" prob="0.01" />
-			<entity name="npcRangerAK47" prob="0.01" />
-			<entity name="npcRangerHunter" prob="0.01" />
-			<entity name="npcRangerPistol" prob="0.01" /> 
-			<entity name="npcRangerXBow" prob="0.01" />
-			<entity name="npcRangerBow" prob="0.01" />
 		</entitygroup>	
 		
 		<entitygroup name="npcSoldiersAll">
-			<entity name="npcRanger" prob="0.01" />
-			<entity name="npcRangerEmptyHand" prob="0.01" />
-			<entity name="npcRangerClub" prob="0.01" />
-			<entity name="npcRangerKnife" prob="0.01" />
-			<entity name="npcRangerSMG" prob="0.01" />
-			<entity name="npcRangerAK47" prob="0.01" />
-			<entity name="npcRangerHunter" prob="0.01" />
-			<entity name="npcRangerPistol" prob="0.01" /> 
-			<entity name="npcRangerXBow" prob="0.01" />
-			<entity name="npcRangerBow" prob="0.01" />
-			<entity name="npcHunter" prob="0.01" />
-			<entity name="npcHunterEmptyHand" prob="0.01" />
-			<entity name="npcHunterClub" prob="0.01" />
-			<entity name="npcHunterKnife" prob="0.01" />
-			<entity name="npcHunterSMG" prob="0.01" />
-			<entity name="npcHunterAK47" prob="0.01" />
-			<entity name="npcHunterRifle" prob="0.01" />
-			<entity name="npcHunterPistol" prob="0.01" />
-			<entity name="npcHunterXBow" prob="0.01" />
-			<entity name="npcHunterBow" prob="0.01" />
-			<entity name="npcGhost" prob="0.01" />
-			<entity name="npcGhostEmptyHand" prob="0.01" />
-			<entity name="npcGhostClub" prob="0.01" />
-			<entity name="npcGhostKnife" prob="0.01" />
-			<entity name="npcGhostSMG" prob="0.01" />
-			<entity name="npcGhostAK47" prob="0.01" />
-			<entity name="npcGhostHunter" prob="0.01" />
-			<entity name="npcGhostPistol" prob="0.01" />
-			<entity name="npcGhostXBow" prob="0.01" />
-			<entity name="npcGhostBow" prob="0.01" />
-			<entity name="npcNationalGuardMedic" prob="0.01" />
-			<entity name="npcNationalGuardMedicEmptyHand" prob="0.01" />
-			<entity name="npcNationalGuardMedicClub" prob="0.01" />
-			<entity name="npcNationalGuardMedicKnife" prob="0.01" />
-			<entity name="npcNationalGuardMedicSMG" prob="0.01" />
-			<entity name="npcNationalGuardMedicAK47" prob="0.01" />
-			<entity name="npcNationalGuardMedicHunter" prob="0.01" />
-			<entity name="npcNationalGuardMedicPistol" prob="0.01" />
-			<entity name="npcNationalGuardMedicXBow" prob="0.01" />
-			<entity name="npcNationalGuardMedicBow" prob="0.01" />
-			<entity name="npcArmyDoctorEmptyHand" prob="0.01" />
-			<entity name="npcArmyDoctorClub" prob="0.01" />
-			<entity name="npcArmyDoctorKnife" prob="0.01" />
-			<entity name="npcArmyDoctorSMG" prob="0.01" />
-			<entity name="npcArmyDoctorAK47" prob="0.01" />
-			<entity name="npcArmyDoctorHunter" prob="0.01" />
-			<entity name="npcArmyDoctorPistol" prob="0.01" />
-			<entity name="npcArmyDoctorXBow" prob="0.01" />
-			<entity name="npcArmyDoctorBow" prob="0.01" />
-			<entity name="npcDeltaEmptyHand" prob="0.01" />
-			<entity name="npcDeltaClub" prob="0.01" />
-			<entity name="npcDeltaKnife" prob="0.01" />
-			<entity name="npcDeltaSMG" prob="0.01" />
-			<entity name="npcDeltaAK47" prob="0.01" />
-			<entity name="npcDeltaHunter" prob="0.01" />
-			<entity name="npcDeltaPistol" prob="0.01" />
-			<entity name="npcDeltaXBow" prob="0.01" />
-			<entity name="npcDeltaBow" prob="0.01" />
-			<entity name="npcNationalGuard" prob="0.01" />
-			<entity name="npcNationalGuardEmptyHand" prob="0.01" />
-			<entity name="npcNationalGuardClub" prob="0.01" />
-			<entity name="npcNationalGuardKnife" prob="0.01" />
-			<entity name="npcNationalGuardSMG" prob="0.01" />
-			<entity name="npcNationalGuardAK47" prob="0.01" />
-			<entity name="npcNationalGuardHunter" prob="0.01" />
-			<entity name="npcNationalGuardPistol" prob="0.01" />
-			<entity name="npcNationalGuardXBow" prob="0.01" />
-			<entity name="npcGupSoldier1EmptyHand" prob="0.01" />
-			<entity name="npcGupSoldier1Club" prob="0.01" />
-			<entity name="npcGupSoldier1Knife" prob="0.01" />
-			<entity name="npcGupSoldier1SMG" prob="0.01" />
-			<entity name="npcGupSoldier1AK47" prob="0.01" />
-			<entity name="npcGupSoldier1Hunter" prob="0.01" />
-			<entity name="npcGupSoldier1Pistol" prob="0.01" /> 
-			<entity name="npcGupSoldier1XBow" prob="0.01" />
-			<entity name="npcGupSoldier1Bow" prob="0.01" />
-			<entity name="npcGupSoldier6EmptyHand" prob="0.01" />
-			<entity name="npcGupSoldier6Club" prob="0.01" />
-			<entity name="npcGupSoldier6Knife" prob="0.01" />
-			<entity name="npcGupSoldier6SMG" prob="0.01" />
-			<entity name="npcGupSoldier6AK47" prob="0.01" />
-			<entity name="npcGupSoldier6Hunter" prob="0.01" />
-			<entity name="npcGupSoldier6Pistol" prob="0.01" /> 
-			<entity name="npcGupSoldier6XBow" prob="0.01" />
-			<entity name="npcGupSoldier6Bow" prob="0.01" />
-			<entity name="npcGupSoldier7EmptyHand" prob="0.01" />
-			<entity name="npcGupSoldier7Club" prob="0.01" />
-			<entity name="npcGupSoldier7Knife" prob="0.01" />
-			<entity name="npcGupSoldier7SMG" prob="0.01" />
-			<entity name="npcGupSoldier7AK47" prob="0.01" />
-			<entity name="npcGupSoldier7Hunter" prob="0.01" />
-			<entity name="npcGupSoldier7Pistol" prob="0.01" /> 
-			<entity name="npcGupSoldier7XBow" prob="0.01" />
-			<entity name="npcGupSoldier7Bow" prob="0.01" />
-			<entity name="npcGupSoldier8EmptyHand" prob="0.01" />
-			<entity name="npcGupSoldier8Club" prob="0.01" />
-			<entity name="npcGupSoldier8Knife" prob="0.01" />
-			<entity name="npcGupSoldier8SMG" prob="0.01" />
-			<entity name="npcGupSoldier8AK47" prob="0.01" />
-			<entity name="npcGupSoldier8Hunter" prob="0.01" />
-			<entity name="npcGupSoldier8Pistol" prob="0.01" /> 
-			<entity name="npcGupSoldier8XBow" prob="0.01" />
 			<entity name="npcGupSoldier8Bow" prob="0.01" />
 		</entitygroup>	
 		
 		<entitygroup name="npcCiviliansAll">
 			<entity name="npcFarmer" prob="0.01" />
-			<entity name="npcFarmerEmptyHand" prob="0.01" />
-			<entity name="npcFarmerClub" prob="0.01" />
-			<entity name="npcFarmerKnife" prob="0.01" />
-			<entity name="npcFarmerSMG" prob="0.01" />
-			<entity name="npcFarmerAK47" prob="0.01" />
-			<entity name="npcFarmerHunter" prob="0.01" />
-			<entity name="npcFarmerPistol" prob="0.01" /> 
-			<entity name="npcFarmerXBow" prob="0.01" />
-			<entity name="npcFarmerBow" prob="0.01" />
-			<entity name="npcBaker" prob="0.01" />
-			<entity name="npcBakerEmptyHand" prob="0.01" />
-			<entity name="npcBakerClub" prob="0.01" />
-			<entity name="npcBakerKnife" prob="0.01" />
-			<entity name="npcBakerSMG" prob="0.01" />
-			<entity name="npcBakerAK47" prob="0.01" />
-			<entity name="npcBakerHunter" prob="0.01" />
-			<entity name="npcBakerPistol" prob="0.01" />
-			<entity name="npcBakerXBow" prob="0.01" />
-			<entity name="npcBakerBow" prob="0.01" />
-			<entity name="npcNurse" prob="0.01" />
-			<entity name="npcNurseEmptyHand" prob="0.01" />
-			<entity name="npcNurseClub" prob="0.01" />
-			<entity name="npcNurseKnife" prob="0.01" />
-			<entity name="npcNurseSMG" prob="0.01" />
-			<entity name="npcNurseAK47" prob="0.01" />
-			<entity name="npcNurseHunter" prob="0.01" />
-			<entity name="npcNursePistol" prob="0.01" />
-			<entity name="npcNurseXBow" prob="0.01" />
-			<entity name="npcNurseBow" prob="0.01" />
-			<entity name="npcEveEmptyHand" prob="0.01" />
-			<entity name="npcEveClub" prob="0.01" />
-			<entity name="npcEveKnife" prob="0.01" />
-			<entity name="npcEveSMG" prob="0.01" />
-			<entity name="npcEveAK47" prob="0.01" />
-			<entity name="npcEveHunter" prob="0.01" />
-			<entity name="npcEvePistol" prob="0.01" />
-			<entity name="npcEveXBow" prob="0.01" />
-			<entity name="npcEveBow" prob="0.01" />
-			<entity name="npcHeavyGuyEmptyHand" prob="0.01" />
-			<entity name="npcHeavyGuyClub" prob="0.01" />
-			<entity name="npcHeavyGuyKnife" prob="0.01" />
-			<entity name="npcHeavyGuySMG" prob="0.01" />
-			<entity name="npcHeavyGuyAK47" prob="0.01" />
-			<entity name="npcHeavyGuyHunter" prob="0.01" />
-			<entity name="npcHeavyGuyPistol" prob="0.01" />
-			<entity name="npcHeavyGuyXBow" prob="0.01" />
-			<entity name="npcHeavyGuyBow" prob="0.01" />
-			<entity name="npcJoel" prob="0.02" />
-			<entity name="npcAmmo" prob="0.02" />
-			<entity name="npcCowboyEmptyHand" prob="0.01" />
-			<entity name="npcCowboyClub" prob="0.01" />
-			<entity name="npcCowboyKnife" prob="0.01" />
-			<entity name="npcCowboySMG" prob="0.01" />
-			<entity name="npcCowboyAK47" prob="0.01" />
-			<entity name="npcCowboyHunter" prob="0.01" />
-			<entity name="npcCowboyPistol" prob="0.01" />
-			<entity name="npcCowboyXBow" prob="0.01" />
-			<entity name="npcCowboyBow" prob="0.01" />		
-			<entity name="npcJoel" prob="0.02" />
 		</entitygroup>	
 		
 		<entitygroup name="npcGupSoldiersAll">
 			<entity name="npcGupSoldier1EmptyHand" prob="0.01" />
-			<entity name="npcGupSoldier1Club" prob="0.01" />
-			<entity name="npcGupSoldier1Knife" prob="0.01" />
-			<entity name="npcGupSoldier1SMG" prob="0.01" />
-			<entity name="npcGupSoldier1AK47" prob="0.01" />
-			<entity name="npcGupSoldier1Hunter" prob="0.01" />
-			<entity name="npcGupSoldier1Pistol" prob="0.01" /> 
-			<entity name="npcGupSoldier1XBow" prob="0.01" />
-			<entity name="npcGupSoldier1Bow" prob="0.01" />
-			<entity name="npcGupSoldier6EmptyHand" prob="0.01" />
-			<entity name="npcGupSoldier6Club" prob="0.01" />
-			<entity name="npcGupSoldier6Knife" prob="0.01" />
-			<entity name="npcGupSoldier6SMG" prob="0.01" />
-			<entity name="npcGupSoldier6AK47" prob="0.01" />
-			<entity name="npcGupSoldier6Hunter" prob="0.01" />
-			<entity name="npcGupSoldier6Pistol" prob="0.01" /> 
-			<entity name="npcGupSoldier6XBow" prob="0.01" />
-			<entity name="npcGupSoldier6Bow" prob="0.01" />
-			<entity name="npcGupSoldier7EmptyHand" prob="0.01" />
-			<entity name="npcGupSoldier7Club" prob="0.01" />
-			<entity name="npcGupSoldier7Knife" prob="0.01" />
-			<entity name="npcGupSoldier7SMG" prob="0.01" />
-			<entity name="npcGupSoldier7AK47" prob="0.01" />
-			<entity name="npcGupSoldier7Hunter" prob="0.01" />
-			<entity name="npcGupSoldier7Pistol" prob="0.01" /> 
-			<entity name="npcGupSoldier7XBow" prob="0.01" />
-			<entity name="npcGupSoldier7Bow" prob="0.01" />
-			<entity name="npcGupSoldier8EmptyHand" prob="0.01" />
-			<entity name="npcGupSoldier8Club" prob="0.01" />
-			<entity name="npcGupSoldier8Knife" prob="0.01" />
-			<entity name="npcGupSoldier8SMG" prob="0.01" />
-			<entity name="npcGupSoldier8AK47" prob="0.01" />
-			<entity name="npcGupSoldier8Hunter" prob="0.01" />
-			<entity name="npcGupSoldier8Pistol" prob="0.01" /> 
-			<entity name="npcGupSoldier8XBow" prob="0.01" />
-			<entity name="npcGupSoldier8Bow" prob="0.01" />
 		</entitygroup>		-->
+		
 	</append> 
 	<append xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombiesAll')]">	
+		<entity name="npcWhispererAlphaEmptyHand" prob="0.03" />
+		<entity name="npcWhispererAlphaClub" prob="0.03" />
+		<entity name="npcWhispererAlphaKnife" prob="0.03" />
+		<entity name="npcWhispererAlphaSMG" prob="0.03" />
+		<entity name="npcWhispererAlphaAK47" prob="0.03" />
+		<entity name="npcWhispererAlphaHunter" prob="0.03" />
+		<entity name="npcWhispererAlphaPistol" prob="0.03" /> 
+		<entity name="npcWhispererAlphaXBow" prob="0.03" />
+		<entity name="npcWhispererAlphaBow" prob="0.03" />
+		<entity name="npcWhispererBetaEmptyHand" prob="0.03" />
+		<entity name="npcWhispererBetaClub" prob="0.03" />
+		<entity name="npcWhispererBetaKnife" prob="0.03" />
+		<entity name="npcWhispererBetaSMG" prob="0.03" />
+		<entity name="npcWhispererBetaAK47" prob="0.03" />
+		<entity name="npcWhispererBetaHunter" prob="0.03" />
+		<entity name="npcWhispererBetaPistol" prob="0.03" /> 
+		<entity name="npcWhispererBetaXBow" prob="0.03" />
+		<entity name="npcWhispererBetaBow" prob="0.03" />
+		<entity name="npcWhispererFemale01EmptyHand" prob="0.03" />
+		<entity name="npcWhispererFemale01Club" prob="0.03" />
+		<entity name="npcWhispererFemale01Knife" prob="0.03" />
+		<entity name="npcWhispererFemale01SMG" prob="0.03" />
+		<entity name="npcWhispererFemale01AK47" prob="0.03" />
+		<entity name="npcWhispererFemale01Hunter" prob="0.03" />
+		<entity name="npcWhispererFemale01Pistol" prob="0.03" /> 
+		<entity name="npcWhispererFemale01XBow" prob="0.03" />
+		<entity name="npcWhispererFemale01Bow" prob="0.03" />
+		<entity name="npcWhispererFemale02EmptyHand" prob="0.03" />
+		<entity name="npcWhispererFemale02Club" prob="0.03" />
+		<entity name="npcWhispererFemale02Knife" prob="0.03" />
+		<entity name="npcWhispererFemale02SMG" prob="0.03" />
+		<entity name="npcWhispererFemale02AK47" prob="0.03" />
+		<entity name="npcWhispererFemale02Hunter" prob="0.03" />
+		<entity name="npcWhispererFemale02Pistol" prob="0.03" /> 
+		<entity name="npcWhispererFemale02XBow" prob="0.03" />
+		<entity name="npcWhispererFemale02Bow" prob="0.03" />
+		<entity name="npcWhispererMale01EmptyHand" prob="0.03" />
+		<entity name="npcWhispererMale01Club" prob="0.03" />
+		<entity name="npcWhispererMale01Knife" prob="0.03" />
+		<entity name="npcWhispererMale01SMG" prob="0.03" />
+		<entity name="npcWhispererMale01AK47" prob="0.03" />
+		<entity name="npcWhispererMale01Hunter" prob="0.03" />
+		<entity name="npcWhispererMale01Pistol" prob="0.03" /> 
+		<entity name="npcWhispererMale01XBow" prob="0.03" />
+		<entity name="npcWhispererMale01Bow" prob="0.03" />
+		<entity name="npcWhispererMale02EmptyHand" prob="0.03" />
+		<entity name="npcWhispererMale02Club" prob="0.03" />
+		<entity name="npcWhispererMale02Knife" prob="0.03" />
+		<entity name="npcWhispererMale02SMG" prob="0.03" />
+		<entity name="npcWhispererMale02AK47" prob="0.03" />
+		<entity name="npcWhispererMale02Hunter" prob="0.03" />
+		<entity name="npcWhispererMale02Pistol" prob="0.03" /> 
+		<entity name="npcWhispererMale02XBow" prob="0.03" />
+		<entity name="npcWhispererMale02Bow" prob="0.03" />				
+	</append> 
+	
+	<append xpath="/entitygroups/entitygroup[ starts-with(@name, 'EnemyAnimals')]">	
 		<entity name="npcEveEmptyHand" prob=".03" />
 		<entity name="npcEveClub" prob=".03" />
 		<entity name="npcEveKnife" prob=".03" />
@@ -264,12 +102,16 @@
 		<entity name="npcHeavyGuyEmptyHand" prob=".03" />
 		<entity name="npcHeavyGuyClub" prob=".03" />
 		<entity name="npcHeavyGuyKnife" prob=".03" />
-		<entity name="npcHeavyGuySMG" prob=".01" />
-		<entity name="npcHeavyGuyAK47" prob=".01" />
-		<entity name="npcHeavyGuyHunter" prob=".01" />
 		<entity name="npcHeavyGuyPistol" prob=".02" />
-		<entity name="npcHeavyGuyXBow" prob=".02" />
 		<entity name="npcHeavyGuyBow" prob=".02" />	
+		<entity name="npcHarleyEmptyHand" prob=".03" />
+		<entity name="npcHarleyClub" prob=".03" />
+		<entity name="npcHarleyKnife" prob=".03" />
+		<entity name="npcHarleyPistol" prob=".02" />
+		<entity name="npcHarleyBow" prob=".02" />
+	</append> 
+		
+	<append xpath="/entitygroups/entitygroup[ starts-with(@name, 'WildGameForest')]">	
 		<entity name="npcFarmerEmptyHand" prob=".03" />
 		<entity name="npcFarmerClub" prob=".03" />
 		<entity name="npcFarmerKnife" prob=".03" />
@@ -291,11 +133,7 @@
 		<entity name="npcNurseEmptyHand" prob=".03" />
 		<entity name="npcNurseClub" prob=".03" />
 		<entity name="npcNurseKnife" prob=".03" />
-		<entity name="npcNurseSMG" prob=".01" />
-		<entity name="npcNurseAK47" prob=".01" />
-		<entity name="npcNurseHunter" prob=".01" />
 		<entity name="npcNursePistol" prob=".02" />
-		<entity name="npcNurseXBow" prob=".02" />
 		<entity name="npcNurseBow" prob=".02" />
 		<entity name="npcJoel" prob=".03" />
 		<entity name="npcCowboyEmptyHand" prob=".03" />
@@ -306,132 +144,110 @@
 		<entity name="npcCowboyHunter" prob=".01" />
 		<entity name="npcCowboyPistol" prob=".02" />
 		<entity name="npcCowboyXBow" prob=".02" />
-		<entity name="npcCowboyBow" prob=".02" />		
+		<entity name="npcCowboyBow" prob=".02" />	
+		<entity name="npcSoldierRangerEmptyHand" prob=".03" />
+		<entity name="npcSoldierRangerClub" prob=".03" />
+		<entity name="npcSoldierRangerKnife" prob=".03" />
+		<entity name="npcSoldierRangerSMG" prob=".03" />
+		<entity name="npcSoldierRangerAK47" prob=".03" />
+		<entity name="npcSoldierRangerHunter" prob=".03" />
+		<entity name="npcSoldierRangerPistol" prob=".03" /> 
+		<entity name="npcSoldierRangerXBow" prob=".03" />
+		<entity name="npcSoldierRangerBow" prob=".03" />
+		<entity name="npcSoldierHunterEmptyHand" prob=".03" />
+		<entity name="npcSoldierHunterClub" prob=".03" />
+		<entity name="npcSoldierHunterKnife" prob=".03" />
+		<entity name="npcSoldierHunterSMG" prob=".03" />
+		<entity name="npcSoldierHunterAK47" prob=".03" />
+		<entity name="npcSoldierHunterHunter" prob=".03" />
+		<entity name="npcSoldierHunterPistol" prob=".03" />
+		<entity name="npcSoldierHunterXBow" prob=".03" />
+		<entity name="npcSoldierHunterBow" prob=".03" />
+		<entity name="npcSoldierGirl01EmptyHand" prob=".03" />
+		<entity name="npcSoldierGirl01Club" prob=".03" />
+		<entity name="npcSoldierGirl01Knife" prob=".03" />
+		<entity name="npcSoldierGirl01SMG" prob=".03" />
+		<entity name="npcSoldierGirl01AK47" prob=".03" />
+		<entity name="npcSoldierGirl01Hunter" prob=".03" />
+		<entity name="npcSoldierGirl01Pistol" prob=".03" />
+		<entity name="npcSoldierGirl01XBow" prob=".03" />
+		<entity name="npcSoldierGirl01Bow" prob=".03" />
+		<entity name="npcSoldierDeltaEmptyHand" prob=".03" />
+		<entity name="npcSoldierDeltaClub" prob=".03" />
+		<entity name="npcSoldierDeltaKnife" prob=".03" />
+		<entity name="npcSoldierDeltaSMG" prob=".03" />
+		<entity name="npcSoldierDeltaAK47" prob=".03" />
+		<entity name="npcSoldierDeltaHunter" prob=".03" />
+		<entity name="npcSoldierDeltaPistol" prob=".03" />
+		<entity name="npcSoldierDeltaXBow" prob=".03" />
+		<entity name="npcSoldierDeltaBow" prob=".03" />
+		<entity name="npcSoldierNationalGuardEmptyHand" prob=".03" />
+		<entity name="npcSoldierNationalGuardClub" prob=".03" />
+		<entity name="npcSoldierNationalGuardKnife" prob=".03" />
+		<entity name="npcSoldierNationalGuardSMG" prob=".03" />
+		<entity name="npcSoldierNationalGuardAK47" prob=".03" />
+		<entity name="npcSoldierNationalGuardHunter" prob=".03" />
+		<entity name="npcSoldierNationalGuardPistol" prob=".03" />
+		<entity name="npcSoldierNationalGuardXBow" prob=".03" /> 		
 	</append> 
 	<append xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombiesNight')]">
-		<entity name="npcEveEmptyHand" prob=".03" />
-		<entity name="npcEveClub" prob=".03" />
-		<entity name="npcEveKnife" prob=".03" />
-		<entity name="npcEveSMG" prob=".03" />
-		<entity name="npcEveAK47" prob=".03" />
-		<entity name="npcEveHunter" prob=".03" />
-		<entity name="npcEvePistol" prob=".03" />
-		<entity name="npcEveXBow" prob=".03" />
-		<entity name="npcEveBow" prob=".03" />
-		<entity name="npcHeavyGuyEmptyHand" prob=".03" />
-		<entity name="npcHeavyGuyClub" prob=".03" />
-		<entity name="npcHeavyGuyKnife" prob=".03" />
-		<entity name="npcHeavyGuySMG" prob=".03" />
-		<entity name="npcHeavyGuyAK47" prob=".03" />
-		<entity name="npcHeavyGuyHunter" prob=".03" />
-		<entity name="npcHeavyGuyPistol" prob=".03" />
-		<entity name="npcHeavyGuyXBow" prob=".03" />
-		<entity name="npcHeavyGuyBow" prob=".03" />	
-		<entity name="npcFarmerEmptyHand" prob=".03" />
-		<entity name="npcFarmerClub" prob=".03" />
-		<entity name="npcFarmerKnife" prob=".03" />
-		<entity name="npcFarmerSMG" prob=".03" />
-		<entity name="npcFarmerAK47" prob=".03" />
-		<entity name="npcFarmerHunter" prob=".03" />
-		<entity name="npcFarmerPistol" prob=".03" /> 
-		<entity name="npcFarmerXBow" prob=".03" />
-		<entity name="npcFarmerBow" prob=".03" />
-		<entity name="npcBakerEmptyHand" prob=".03" />
-		<entity name="npcBakerClub" prob=".03" />
-		<entity name="npcBakerKnife" prob=".03" />
-		<entity name="npcBakerSMG" prob=".03" />
-		<entity name="npcBakerAK47" prob=".03" />
-		<entity name="npcBakerHunter" prob=".03" />
-		<entity name="npcBakerPistol" prob=".03" />
-		<entity name="npcBakerXBow" prob=".03" />
-		<entity name="npcBakerBow" prob=".03" />
-		<entity name="npcNurseEmptyHand" prob=".03" />
-		<entity name="npcNurseClub" prob=".03" />
-		<entity name="npcNurseKnife" prob=".03" />
-		<entity name="npcNurseSMG" prob=".03" />
-		<entity name="npcNurseAK47" prob=".03" />
-		<entity name="npcNurseHunter" prob=".03" />
-		<entity name="npcNursePistol" prob=".03" />
-		<entity name="npcNurseXBow" prob=".03" />
-		<entity name="npcNurseBow" prob=".03" />
-		<entity name="npcJoel" prob=".03" />
-		<entity name="npcCowboyEmptyHand" prob=".03" />
-		<entity name="npcCowboyClub" prob=".03" />
-		<entity name="npcCowboyKnife" prob=".03" />
-		<entity name="npcCowboySMG" prob=".03" />
-		<entity name="npcCowboyAK47" prob=".03" />
-		<entity name="npcCowboyHunter" prob=".03" />
-		<entity name="npcCowboyPistol" prob=".03" />
-		<entity name="npcCowboyXBow" prob=".03" />
-		<entity name="npcCowboyBow" prob=".03" />		
-<!--		<entity name="npcRanger" prob=".03" />
-		<entity name="npcRangerEmptyHand" prob=".03" />
-		<entity name="npcRangerClub" prob=".03" />
-		<entity name="npcRangerKnife" prob=".03" />
-		<entity name="npcRangerSMG" prob=".03" />
-		<entity name="npcRangerAK47" prob=".03" />
-		<entity name="npcRangerHunter" prob=".03" />
-		<entity name="npcRangerPistol" prob=".03" /> 
-		<entity name="npcRangerXBow" prob=".03" />
-		<entity name="npcRangerBow" prob=".03" />
-		<entity name="npcHunter" prob=".03" />
-		<entity name="npcHunterEmptyHand" prob=".03" />
-		<entity name="npcHunterClub" prob=".03" />
-		<entity name="npcHunterKnife" prob=".03" />
-		<entity name="npcHunterSMG" prob=".03" />
-		<entity name="npcHunterAK47" prob=".03" />
-		<entity name="npcHunterRifle" prob=".03" />
-		<entity name="npcHunterPistol" prob=".03" />
-		<entity name="npcHunterXBow" prob=".03" />
-		<entity name="npcHunterBow" prob=".03" />
-		<entity name="npcGhost" prob=".03" />
-		<entity name="npcGhostEmptyHand" prob=".03" />
-		<entity name="npcGhostClub" prob=".03" />
-		<entity name="npcGhostKnife" prob=".03" />
-		<entity name="npcGhostSMG" prob=".03" />
-		<entity name="npcGhostAK47" prob=".03" />
-		<entity name="npcGhostHunter" prob=".03" />
-		<entity name="npcGhostPistol" prob=".03" />
-		<entity name="npcGhostXBow" prob=".03" />
-		<entity name="npcGhostBow" prob=".03" />
-		<entity name="npcNationalGuardMedic" prob=".03" />
-		<entity name="npcNationalGuardMedicEmptyHand" prob=".03" />
-		<entity name="npcNationalGuardMedicClub" prob=".03" />
-		<entity name="npcNationalGuardMedicKnife" prob=".03" />
-		<entity name="npcNationalGuardMedicSMG" prob=".03" />
-		<entity name="npcNationalGuardMedicAK47" prob=".03" />
-		<entity name="npcNationalGuardMedicHunter" prob=".03" />
-		<entity name="npcNationalGuardMedicPistol" prob=".03" />
-		<entity name="npcNationalGuardMedicXBow" prob=".03" />
-		<entity name="npcNationalGuardMedicBow" prob=".03" />
-		<entity name="npcArmyDoctorEmptyHand" prob=".03" />
-		<entity name="npcArmyDoctorClub" prob=".03" />
-		<entity name="npcArmyDoctorKnife" prob=".03" />
-		<entity name="npcArmyDoctorSMG" prob=".03" />
-		<entity name="npcArmyDoctorAK47" prob=".03" />
-		<entity name="npcArmyDoctorHunter" prob=".03" />
-		<entity name="npcArmyDoctorPistol" prob=".03" />
-		<entity name="npcArmyDoctorXBow" prob=".03" />
-		<entity name="npcArmyDoctorBow" prob=".03" />
-		<entity name="npcDeltaEmptyHand" prob=".03" />
-		<entity name="npcDeltaClub" prob=".03" />
-		<entity name="npcDeltaKnife" prob=".03" />
-		<entity name="npcDeltaSMG" prob=".03" />
-		<entity name="npcDeltaAK47" prob=".03" />
-		<entity name="npcDeltaHunter" prob=".03" />
-		<entity name="npcDeltaPistol" prob=".03" />
-		<entity name="npcDeltaXBow" prob=".03" />
-		<entity name="npcDeltaBow" prob=".03" />
-		<entity name="npcNationalGuard" prob=".03" />
-		<entity name="npcNationalGuardEmptyHand" prob=".03" />
-		<entity name="npcNationalGuardClub" prob=".03" />
-		<entity name="npcNationalGuardKnife" prob=".03" />
-		<entity name="npcNationalGuardSMG" prob=".03" />
-		<entity name="npcNationalGuardAK47" prob=".03" />
-		<entity name="npcNationalGuardHunter" prob=".03" />
-		<entity name="npcNationalGuardPistol" prob=".03" />
-		<entity name="npcNationalGuardXBow" prob=".03" />
-		<entity name="npcRaiderPestEmptyHand" prob=".03" />
+		<entity name="npcWhispererAlphaEmptyHand" prob="0.03" />
+		<entity name="npcWhispererAlphaClub" prob="0.03" />
+		<entity name="npcWhispererAlphaKnife" prob="0.03" />
+		<entity name="npcWhispererAlphaSMG" prob="0.03" />
+		<entity name="npcWhispererAlphaAK47" prob="0.03" />
+		<entity name="npcWhispererAlphaHunter" prob="0.03" />
+		<entity name="npcWhispererAlphaPistol" prob="0.03" /> 
+		<entity name="npcWhispererAlphaXBow" prob="0.03" />
+		<entity name="npcWhispererAlphaBow" prob="0.03" />
+		<entity name="npcWhispererBetaEmptyHand" prob="0.03" />
+		<entity name="npcWhispererBetaClub" prob="0.03" />
+		<entity name="npcWhispererBetaKnife" prob="0.03" />
+		<entity name="npcWhispererBetaSMG" prob="0.03" />
+		<entity name="npcWhispererBetaAK47" prob="0.03" />
+		<entity name="npcWhispererBetaHunter" prob="0.03" />
+		<entity name="npcWhispererBetaPistol" prob="0.03" /> 
+		<entity name="npcWhispererBetaXBow" prob="0.03" />
+		<entity name="npcWhispererBetaBow" prob="0.03" />
+		<entity name="npcWhispererFemale01EmptyHand" prob="0.03" />
+		<entity name="npcWhispererFemale01Club" prob="0.03" />
+		<entity name="npcWhispererFemale01Knife" prob="0.03" />
+		<entity name="npcWhispererFemale01SMG" prob="0.03" />
+		<entity name="npcWhispererFemale01AK47" prob="0.03" />
+		<entity name="npcWhispererFemale01Hunter" prob="0.03" />
+		<entity name="npcWhispererFemale01Pistol" prob="0.03" /> 
+		<entity name="npcWhispererFemale01XBow" prob="0.03" />
+		<entity name="npcWhispererFemale01Bow" prob="0.03" />
+		<entity name="npcWhispererFemale02EmptyHand" prob="0.03" />
+		<entity name="npcWhispererFemale02Club" prob="0.03" />
+		<entity name="npcWhispererFemale02Knife" prob="0.03" />
+		<entity name="npcWhispererFemale02SMG" prob="0.03" />
+		<entity name="npcWhispererFemale02AK47" prob="0.03" />
+		<entity name="npcWhispererFemale02Hunter" prob="0.03" />
+		<entity name="npcWhispererFemale02Pistol" prob="0.03" /> 
+		<entity name="npcWhispererFemale02XBow" prob="0.03" />
+		<entity name="npcWhispererFemale02Bow" prob="0.03" />
+		<entity name="npcWhispererMale01EmptyHand" prob="0.03" />
+		<entity name="npcWhispererMale01Club" prob="0.03" />
+		<entity name="npcWhispererMale01Knife" prob="0.03" />
+		<entity name="npcWhispererMale01SMG" prob="0.03" />
+		<entity name="npcWhispererMale01AK47" prob="0.03" />
+		<entity name="npcWhispererMale01Hunter" prob="0.03" />
+		<entity name="npcWhispererMale01Pistol" prob="0.03" /> 
+		<entity name="npcWhispererMale01XBow" prob="0.03" />
+		<entity name="npcWhispererMale01Bow" prob="0.03" />
+		<entity name="npcWhispererMale02EmptyHand" prob="0.03" />
+		<entity name="npcWhispererMale02Club" prob="0.03" />
+		<entity name="npcWhispererMale02Knife" prob="0.03" />
+		<entity name="npcWhispererMale02SMG" prob="0.03" />
+		<entity name="npcWhispererMale02AK47" prob="0.03" />
+		<entity name="npcWhispererMale02Hunter" prob="0.03" />
+		<entity name="npcWhispererMale02Pistol" prob="0.03" /> 
+		<entity name="npcWhispererMale02XBow" prob="0.03" />
+		<entity name="npcWhispererMale02Bow" prob="0.03" />				
+
+
+<!--		<entity name="npcRaiderPestEmptyHand" prob=".03" />
 		<entity name="npcRaiderPestClub" prob=".03" />
 		<entity name="npcRaiderPestKnife" prob=".03" />
 		<entity name="npcRaiderPestSMG" prob=".03" />
@@ -475,424 +291,7 @@
 		<entity name="npcRaiderRatHunter" prob=".03" />
 		<entity name="npcRaiderRatPistol" prob=".03" /> 
 		<entity name="npcRaiderRatXBow" prob=".03" />
-		<entity name="npcRaiderRatBow" prob=".03" />
-		<entity name="npcRaiderBettieEmptyHand" prob=".03" />
-		<entity name="npcRaiderBettieClub" prob=".03" />
-		<entity name="npcRaiderBettieKnife" prob=".03" />
-		<entity name="npcRaiderBettieSMG" prob=".03" />
-		<entity name="npcRaiderBettieAK47" prob=".03" />
-		<entity name="npcRaiderBettieHunter" prob=".03" />
-		<entity name="npcRaiderBettiePistol" prob=".03" /> 
-		<entity name="npcRaiderBettieXBow" prob=".03" />
-		<entity name="npcRaiderBettieBow" prob=".03" />
-		<entity name="npcRaiderGinaEmptyHand" prob=".03" />
-		<entity name="npcRaiderGinaClub" prob=".03" />
-		<entity name="npcRaiderGinaKnife" prob=".03" />
-		<entity name="npcRaiderGinaSMG" prob=".03" />
-		<entity name="npcRaiderGinaAK47" prob=".03" />
-		<entity name="npcRaiderGinaHunter" prob=".03" />
-		<entity name="npcRaiderGinaPistol" prob=".03" /> 
-		<entity name="npcRaiderGinaXBow" prob=".03" />
-		<entity name="npcRaiderGinaBow" prob=".03" />
-		<entity name="npcRaiderHedyEmptyHand" prob=".03" />
-		<entity name="npcRaiderHedyClub" prob=".03" />
-		<entity name="npcRaiderHedyKnife" prob=".03" />
-		<entity name="npcRaiderHedySMG" prob=".03" />
-		<entity name="npcRaiderHedyAK47" prob=".03" />
-		<entity name="npcRaiderHedyHunter" prob=".03" />
-		<entity name="npcRaiderHedyPistol" prob=".03" /> 
-		<entity name="npcRaiderHedyXBow" prob=".03" />
-		<entity name="npcRaiderHedyBow" prob=".03" />
-		<entity name="npcRaiderJayneEmptyHand" prob=".03" />
-		<entity name="npcRaiderJayneClub" prob=".03" />
-		<entity name="npcRaiderJayneKnife" prob=".03" />
-		<entity name="npcRaiderJayneSMG" prob=".03" />
-		<entity name="npcRaiderJayneAK47" prob=".03" />
-		<entity name="npcRaiderJayneHunter" prob=".03" />
-		<entity name="npcRaiderJaynePistol" prob=".03" /> 
-		<entity name="npcRaiderJayneXBow" prob=".03" />
-		<entity name="npcRaiderJayneBow" prob=".03" />
-		<entity name="npcGupSoldier1EmptyHand" prob=".03" />
-		<entity name="npcGupSoldier1Club" prob=".03" />
-		<entity name="npcGupSoldier1Knife" prob=".03" />
-		<entity name="npcGupSoldier1SMG" prob=".03" />
-		<entity name="npcGupSoldier1AK47" prob=".03" />
-		<entity name="npcGupSoldier1Hunter" prob=".03" />
-		<entity name="npcGupSoldier1Pistol" prob=".03" /> 
-		<entity name="npcGupSoldier1XBow" prob=".03" />
-		<entity name="npcGupSoldier1Bow" prob=".03" />
-		<entity name="npcGupSoldier6EmptyHand" prob=".03" />
-		<entity name="npcGupSoldier6Club" prob=".03" />
-		<entity name="npcGupSoldier6Knife" prob=".03" />
-		<entity name="npcGupSoldier6SMG" prob=".03" />
-		<entity name="npcGupSoldier6AK47" prob=".03" />
-		<entity name="npcGupSoldier6Hunter" prob=".03" />
-		<entity name="npcGupSoldier6Pistol" prob=".03" /> 
-		<entity name="npcGupSoldier6XBow" prob=".03" />
-		<entity name="npcGupSoldier6Bow" prob=".03" />
-		<entity name="npcGupSoldier7EmptyHand" prob=".03" />
-		<entity name="npcGupSoldier7Club" prob=".03" />
-		<entity name="npcGupSoldier7Knife" prob=".03" />
-		<entity name="npcGupSoldier7SMG" prob=".03" />
-		<entity name="npcGupSoldier7AK47" prob=".03" />
-		<entity name="npcGupSoldier7Hunter" prob=".03" />
-		<entity name="npcGupSoldier7Pistol" prob=".03" /> 
-		<entity name="npcGupSoldier7XBow" prob=".03" />
-		<entity name="npcGupSoldier7Bow" prob=".03" />
-		<entity name="npcGupSoldier8EmptyHand" prob=".03" />
-		<entity name="npcGupSoldier8Club" prob=".03" />
-		<entity name="npcGupSoldier8Knife" prob=".03" />
-		<entity name="npcGupSoldier8SMG" prob=".03" />
-		<entity name="npcGupSoldier8AK47" prob=".03" />
-		<entity name="npcGupSoldier8Hunter" prob=".03" />
-		<entity name="npcGupSoldier8Pistol" prob=".03" /> 
-		<entity name="npcGupSoldier8XBow" prob=".03" />
-		<entity name="npcGupSoldier8Bow" prob=".03" />	-->	
+		<entity name="npcRaiderRatBow" prob=".03" /> -->
 	</append> 
 	
-<!--		<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesAll']/entity[@name='zombieBoe']" >
-			<entity name="npcWhispererBeta" prob="0.03" />
-			<entity name="npcWhispererBetaClub" prob="0.03" />
-			<entity name="npcWhispererBetaKnife" prob="0.03" />
-			<entity name="npcWhispererBetaSMG" prob="0.03" />
-			<entity name="npcWhispererBetaAK47" prob="0.03" />
-			<entity name="npcWhispererBetaHunter" prob="0.03" />
-			<entity name="npcWhispererBetaPistol" prob="0.03" /> 
-			<entity name="npcWhispererBetaXBow" prob="0.03" />
-			<entity name="npcWhispererBetaBow" prob="0.03" />
-			<entity name="npcWhisperer" prob="0.03" />
-			<entity name="npcWhispererClub" prob="0.03" />
-			<entity name="npcWhispererKnife" prob="0.03" />
-			<entity name="npcWhispererSMG" prob="0.03" />
-			<entity name="npcWhispererAK47" prob="0.03" />
-			<entity name="npcWhispererHunter" prob="0.03" />
-			<entity name="npcWhispererPistol" prob="0.03" /> 
-			<entity name="npcWhispererXBow" prob="0.03" />
-			<entity name="npcWhispererBow" prob="0.03" />
-			<entity name="npcWhisperer2" prob="0.03" />
-			<entity name="npcWhisperer2Club" prob="0.03" />
-			<entity name="npcWhisperer2Knife" prob="0.03" />
-			<entity name="npcWhisperer2SMG" prob="0.03" />
-			<entity name="npcWhisperer2AK47" prob="0.03" />
-			<entity name="npcWhisperer2Hunter" prob="0.03" />
-			<entity name="npcWhisperer2Pistol" prob="0.03" /> 
-			<entity name="npcWhisperer2XBow" prob="0.03" />
-			<entity name="npcWhisperer2Bow" prob="0.03" />
-			<entity name="npcWhispererAlpha" prob="0.03" />
-			<entity name="npcWhispererAlphaClub" prob="0.03" />
-			<entity name="npcWhispererAlphaKnife" prob="0.03" />
-			<entity name="npcWhispererAlphaSMG" prob="0.03" />
-			<entity name="npcWhispererAlphaAK47" prob="0.03" />
-			<entity name="npcWhispererAlphaHunter" prob="0.03" />
-			<entity name="npcWhispererAlphaPistol" prob="0.03" /> 
-			<entity name="npcWhispererAlphaXBow" prob="0.03" />
-			<entity name="npcWhispererAlphaBow" prob="0.03" />
-			<entity name="npcWhispererGamma" prob="0.03" />
-			<entity name="npcWhispererGammaClub" prob="0.03" />
-			<entity name="npcWhispererGammaKnife" prob="0.03" />
-			<entity name="npcWhispererGammaSMG" prob="0.03" />
-			<entity name="npcWhispererGammaAK47" prob="0.03" />
-			<entity name="npcWhispererGammaHunter" prob="0.03" />
-			<entity name="npcWhispererGammaPistol" prob="0.03" /> 
-			<entity name="npcWhispererGammaXBow" prob="0.03" />
-			<entity name="npcWhispererGammaBow" prob="0.03" />
-			<entity name="npcWhispererFemale" prob="0.03" />
-			<entity name="npcWhispererFemaleClub" prob="0.03" />
-			<entity name="npcWhispererFemaleKnife" prob="0.03" />
-			<entity name="npcWhispererFemaleSMG" prob="0.03" />
-			<entity name="npcWhispererFemaleAK47" prob="0.03" />
-			<entity name="npcWhispererFemaleHunter" prob="0.03" />
-			<entity name="npcWhispererFemalePistol" prob="0.03" /> 
-			<entity name="npcWhispererFemaleXBow" prob="0.03" />
-			<entity name="npcWhispererFemaleBow" prob="0.03" />
-		</insertAfter>
-	
-		<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesNight']/entity[@name='zombieBoe']" >
-			<entity name="npcWhispererBeta" prob="0.03" />
-			<entity name="npcWhispererBetaClub" prob="0.03" />
-			<entity name="npcWhispererBetaKnife" prob="0.03" />
-			<entity name="npcWhispererBetaSMG" prob="0.03" />
-			<entity name="npcWhispererBetaAK47" prob="0.03" />
-			<entity name="npcWhispererBetaHunter" prob="0.03" />
-			<entity name="npcWhispererBetaPistol" prob="0.03" /> 
-			<entity name="npcWhispererBetaXBow" prob="0.03" />
-			<entity name="npcWhispererBetaBow" prob="0.03" />
-			<entity name="npcWhisperer" prob="0.03" />
-			<entity name="npcWhispererClub" prob="0.03" />
-			<entity name="npcWhispererKnife" prob="0.03" />
-			<entity name="npcWhispererSMG" prob="0.03" />
-			<entity name="npcWhispererAK47" prob="0.03" />
-			<entity name="npcWhispererHunter" prob="0.03" />
-			<entity name="npcWhispererPistol" prob="0.03" /> 
-			<entity name="npcWhispererXBow" prob="0.03" />
-			<entity name="npcWhispererBow" prob="0.03" />
-			<entity name="npcWhisperer2" prob="0.03" />
-			<entity name="npcWhisperer2Club" prob="0.03" />
-			<entity name="npcWhisperer2Knife" prob="0.03" />
-			<entity name="npcWhisperer2SMG" prob="0.03" />
-			<entity name="npcWhisperer2AK47" prob="0.03" />
-			<entity name="npcWhisperer2Hunter" prob="0.03" />
-			<entity name="npcWhisperer2Pistol" prob="0.03" /> 
-			<entity name="npcWhisperer2XBow" prob="0.03" />
-			<entity name="npcWhisperer2Bow" prob="0.03" />
-			<entity name="npcWhispererAlpha" prob="0.03" />
-			<entity name="npcWhispererAlphaClub" prob="0.03" />
-			<entity name="npcWhispererAlphaKnife" prob="0.03" />
-			<entity name="npcWhispererAlphaSMG" prob="0.03" />
-			<entity name="npcWhispererAlphaAK47" prob="0.03" />
-			<entity name="npcWhispererAlphaHunter" prob="0.03" />
-			<entity name="npcWhispererAlphaPistol" prob="0.03" /> 
-			<entity name="npcWhispererAlphaXBow" prob="0.03" />
-			<entity name="npcWhispererAlphaBow" prob="0.03" />
-			<entity name="npcWhispererGamma" prob="0.03" />
-			<entity name="npcWhispererGammaClub" prob="0.03" />
-			<entity name="npcWhispererGammaKnife" prob="0.03" />
-			<entity name="npcWhispererGammaSMG" prob="0.03" />
-			<entity name="npcWhispererGammaAK47" prob="0.03" />
-			<entity name="npcWhispererGammaHunter" prob="0.03" />
-			<entity name="npcWhispererGammaPistol" prob="0.03" /> 
-			<entity name="npcWhispererGammaXBow" prob="0.03" />
-			<entity name="npcWhispererGammaBow" prob="0.03" />
-			<entity name="npcWhispererFemale" prob="0.03" />
-			<entity name="npcWhispererFemaleClub" prob="0.03" />
-			<entity name="npcWhispererFemaleKnife" prob="0.03" />
-			<entity name="npcWhispererFemaleSMG" prob="0.03" />
-			<entity name="npcWhispererFemaleAK47" prob="0.03" />
-			<entity name="npcWhispererFemaleHunter" prob="0.03" />
-			<entity name="npcWhispererFemalePistol" prob="0.03" /> 
-			<entity name="npcWhispererFemaleXBow" prob="0.03" />
-			<entity name="npcWhispererFemaleBow" prob="0.03" />		
-		</insertAfter>
-		<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesWasteland']/entity[@name='zombieBoe']" >
-			<entity name="npcWhispererBeta" prob="0.03" />
-			<entity name="npcWhispererBetaClub" prob="0.03" />
-			<entity name="npcWhispererBetaKnife" prob="0.03" />
-			<entity name="npcWhispererBetaSMG" prob="0.03" />
-			<entity name="npcWhispererBetaAK47" prob="0.03" />
-			<entity name="npcWhispererBetaHunter" prob="0.03" />
-			<entity name="npcWhispererBetaPistol" prob="0.03" /> 
-			<entity name="npcWhispererBetaXBow" prob="0.03" />
-			<entity name="npcWhispererBetaBow" prob="0.03" />
-			<entity name="npcWhisperer" prob="0.03" />
-			<entity name="npcWhispererClub" prob="0.03" />
-			<entity name="npcWhispererKnife" prob="0.03" />
-			<entity name="npcWhispererSMG" prob="0.03" />
-			<entity name="npcWhispererAK47" prob="0.03" />
-			<entity name="npcWhispererHunter" prob="0.03" />
-			<entity name="npcWhispererPistol" prob="0.03" /> 
-			<entity name="npcWhispererXBow" prob="0.03" />
-			<entity name="npcWhispererBow" prob="0.03" />
-			<entity name="npcWhisperer2" prob="0.03" />
-			<entity name="npcWhisperer2Club" prob="0.03" />
-			<entity name="npcWhisperer2Knife" prob="0.03" />
-			<entity name="npcWhisperer2SMG" prob="0.03" />
-			<entity name="npcWhisperer2AK47" prob="0.03" />
-			<entity name="npcWhisperer2Hunter" prob="0.03" />
-			<entity name="npcWhisperer2Pistol" prob="0.03" /> 
-			<entity name="npcWhisperer2XBow" prob="0.03" />
-			<entity name="npcWhisperer2Bow" prob="0.03" />
-			<entity name="npcWhispererAlpha" prob="0.03" />
-			<entity name="npcWhispererAlphaClub" prob="0.03" />
-			<entity name="npcWhispererAlphaKnife" prob="0.03" />
-			<entity name="npcWhispererAlphaSMG" prob="0.03" />
-			<entity name="npcWhispererAlphaAK47" prob="0.03" />
-			<entity name="npcWhispererAlphaHunter" prob="0.03" />
-			<entity name="npcWhispererAlphaPistol" prob="0.03" /> 
-			<entity name="npcWhispererAlphaXBow" prob="0.03" />
-			<entity name="npcWhispererAlphaBow" prob="0.03" />
-			<entity name="npcWhispererGamma" prob="0.03" />
-			<entity name="npcWhispererGammaClub" prob="0.03" />
-			<entity name="npcWhispererGammaKnife" prob="0.03" />
-			<entity name="npcWhispererGammaSMG" prob="0.03" />
-			<entity name="npcWhispererGammaAK47" prob="0.03" />
-			<entity name="npcWhispererGammaHunter" prob="0.03" />
-			<entity name="npcWhispererGammaPistol" prob="0.03" /> 
-			<entity name="npcWhispererGammaXBow" prob="0.03" />
-			<entity name="npcWhispererGammaBow" prob="0.03" />
-			<entity name="npcWhispererFemale" prob="0.03" />
-			<entity name="npcWhispererFemaleClub" prob="0.03" />
-			<entity name="npcWhispererFemaleKnife" prob="0.03" />
-			<entity name="npcWhispererFemaleSMG" prob="0.03" />
-			<entity name="npcWhispererFemaleAK47" prob="0.03" />
-			<entity name="npcWhispererFemaleHunter" prob="0.03" />
-			<entity name="npcWhispererFemalePistol" prob="0.03" /> 
-			<entity name="npcWhispererFemaleXBow" prob="0.03" />
-			<entity name="npcWhispererFemaleBow" prob="0.03" />		
-		</insertAfter>		
-		
-		<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight']/entity[@name='zombieBoeFeral']" >
-			<entity name="npcWhispererBeta" prob="0.03" />
-			<entity name="npcWhispererBetaClub" prob="0.03" />
-			<entity name="npcWhispererBetaKnife" prob="0.03" />
-			<entity name="npcWhispererBetaSMG" prob="0.03" />
-			<entity name="npcWhispererBetaAK47" prob="0.03" />
-			<entity name="npcWhispererBetaHunter" prob="0.03" />
-			<entity name="npcWhispererBetaPistol" prob="0.03" /> 
-			<entity name="npcWhispererBetaXBow" prob="0.03" />
-			<entity name="npcWhispererBetaBow" prob="0.03" />
-			<entity name="npcWhisperer" prob="0.03" />
-			<entity name="npcWhispererClub" prob="0.03" />
-			<entity name="npcWhispererKnife" prob="0.03" />
-			<entity name="npcWhispererSMG" prob="0.03" />
-			<entity name="npcWhispererAK47" prob="0.03" />
-			<entity name="npcWhispererHunter" prob="0.03" />
-			<entity name="npcWhispererPistol" prob="0.03" /> 
-			<entity name="npcWhispererXBow" prob="0.03" />
-			<entity name="npcWhispererBow" prob="0.03" />
-			<entity name="npcWhisperer2" prob="0.03" />
-			<entity name="npcWhisperer2Club" prob="0.03" />
-			<entity name="npcWhisperer2Knife" prob="0.03" />
-			<entity name="npcWhisperer2SMG" prob="0.03" />
-			<entity name="npcWhisperer2AK47" prob="0.03" />
-			<entity name="npcWhisperer2Hunter" prob="0.03" />
-			<entity name="npcWhisperer2Pistol" prob="0.03" /> 
-			<entity name="npcWhisperer2XBow" prob="0.03" />
-			<entity name="npcWhisperer2Bow" prob="0.03" />
-			<entity name="npcWhispererAlpha" prob="0.03" />
-			<entity name="npcWhispererAlphaClub" prob="0.03" />
-			<entity name="npcWhispererAlphaKnife" prob="0.03" />
-			<entity name="npcWhispererAlphaSMG" prob="0.03" />
-			<entity name="npcWhispererAlphaAK47" prob="0.03" />
-			<entity name="npcWhispererAlphaHunter" prob="0.03" />
-			<entity name="npcWhispererAlphaPistol" prob="0.03" /> 
-			<entity name="npcWhispererAlphaXBow" prob="0.03" />
-			<entity name="npcWhispererAlphaBow" prob="0.03" />
-			<entity name="npcWhispererGamma" prob="0.03" />
-			<entity name="npcWhispererGammaClub" prob="0.03" />
-			<entity name="npcWhispererGammaKnife" prob="0.03" />
-			<entity name="npcWhispererGammaSMG" prob="0.03" />
-			<entity name="npcWhispererGammaAK47" prob="0.03" />
-			<entity name="npcWhispererGammaHunter" prob="0.03" />
-			<entity name="npcWhispererGammaPistol" prob="0.03" /> 
-			<entity name="npcWhispererGammaXBow" prob="0.03" />
-			<entity name="npcWhispererGammaBow" prob="0.03" />
-			<entity name="npcWhispererFemale" prob="0.03" />
-			<entity name="npcWhispererFemaleClub" prob="0.03" />
-			<entity name="npcWhispererFemaleKnife" prob="0.03" />
-			<entity name="npcWhispererFemaleSMG" prob="0.03" />
-			<entity name="npcWhispererFemaleAK47" prob="0.03" />
-			<entity name="npcWhispererFemaleHunter" prob="0.03" />
-			<entity name="npcWhispererFemalePistol" prob="0.03" /> 
-			<entity name="npcWhispererFemaleXBow" prob="0.03" />
-			<entity name="npcWhispererFemaleBow" prob="0.03" />		
-		
-		</insertAfter>
-
-
-		<insertAfter xpath="/entitygroups/entitygroup[@name='ZombiesHoard']/entity[@name='zombieBoe']" >
-			<entity name="npcWhispererBeta" prob="0.03" />
-			<entity name="npcWhispererBetaClub" prob="0.03" />
-			<entity name="npcWhispererBetaKnife" prob="0.03" />
-			<entity name="npcWhispererBetaSMG" prob="0.03" />
-			<entity name="npcWhispererBetaAK47" prob="0.03" />
-			<entity name="npcWhispererBetaHunter" prob="0.03" />
-			<entity name="npcWhispererBetaPistol" prob="0.03" /> 
-			<entity name="npcWhispererBetaXBow" prob="0.03" />
-			<entity name="npcWhispererBetaBow" prob="0.03" />
-			<entity name="npcWhisperer" prob="0.03" />
-			<entity name="npcWhispererClub" prob="0.03" />
-			<entity name="npcWhispererKnife" prob="0.03" />
-			<entity name="npcWhispererSMG" prob="0.03" />
-			<entity name="npcWhispererAK47" prob="0.03" />
-			<entity name="npcWhispererHunter" prob="0.03" />
-			<entity name="npcWhispererPistol" prob="0.03" /> 
-			<entity name="npcWhispererXBow" prob="0.03" />
-			<entity name="npcWhispererBow" prob="0.03" />
-			<entity name="npcWhisperer2" prob="0.03" />
-			<entity name="npcWhisperer2Club" prob="0.03" />
-			<entity name="npcWhisperer2Knife" prob="0.03" />
-			<entity name="npcWhisperer2SMG" prob="0.03" />
-			<entity name="npcWhisperer2AK47" prob="0.03" />
-			<entity name="npcWhisperer2Hunter" prob="0.03" />
-			<entity name="npcWhisperer2Pistol" prob="0.03" /> 
-			<entity name="npcWhisperer2XBow" prob="0.03" />
-			<entity name="npcWhisperer2Bow" prob="0.03" />
-			<entity name="npcWhispererAlpha" prob="0.03" />
-			<entity name="npcWhispererAlphaClub" prob="0.03" />
-			<entity name="npcWhispererAlphaKnife" prob="0.03" />
-			<entity name="npcWhispererAlphaSMG" prob="0.03" />
-			<entity name="npcWhispererAlphaAK47" prob="0.03" />
-			<entity name="npcWhispererAlphaHunter" prob="0.03" />
-			<entity name="npcWhispererAlphaPistol" prob="0.03" /> 
-			<entity name="npcWhispererAlphaXBow" prob="0.03" />
-			<entity name="npcWhispererAlphaBow" prob="0.03" />
-			<entity name="npcWhispererGamma" prob="0.03" />
-			<entity name="npcWhispererGammaClub" prob="0.03" />
-			<entity name="npcWhispererGammaKnife" prob="0.03" />
-			<entity name="npcWhispererGammaSMG" prob="0.03" />
-			<entity name="npcWhispererGammaAK47" prob="0.03" />
-			<entity name="npcWhispererGammaHunter" prob="0.03" />
-			<entity name="npcWhispererGammaPistol" prob="0.03" /> 
-			<entity name="npcWhispererGammaXBow" prob="0.03" />
-			<entity name="npcWhispererGammaBow" prob="0.03" />
-			<entity name="npcWhispererFemale" prob="0.03" />
-			<entity name="npcWhispererFemaleClub" prob="0.03" />
-			<entity name="npcWhispererFemaleKnife" prob="0.03" />
-			<entity name="npcWhispererFemaleSMG" prob="0.03" />
-			<entity name="npcWhispererFemaleAK47" prob="0.03" />
-			<entity name="npcWhispererFemaleHunter" prob="0.03" />
-			<entity name="npcWhispererFemalePistol" prob="0.03" /> 
-			<entity name="npcWhispererFemaleXBow" prob="0.03" />
-			<entity name="npcWhispererFemaleBow" prob="0.03" />		
-		
-		</insertAfter>
-		
-		<insertAfter xpath="/entitygroups/entitygroup[@name='ZombieGhostTownGroup']/entity[@name='zombieBoe']" >	
-			<entity name="npcWhispererBeta" prob="0.03" />
-			<entity name="npcWhispererBetaClub" prob="0.03" />
-			<entity name="npcWhispererBetaKnife" prob="0.03" />
-			<entity name="npcWhispererBetaSMG" prob="0.03" />
-			<entity name="npcWhispererBetaAK47" prob="0.03" />
-			<entity name="npcWhispererBetaHunter" prob="0.03" />
-			<entity name="npcWhispererBetaPistol" prob="0.03" /> 
-			<entity name="npcWhispererBetaXBow" prob="0.03" />
-			<entity name="npcWhispererBetaBow" prob="0.03" />
-			<entity name="npcWhisperer" prob="0.03" />
-			<entity name="npcWhispererClub" prob="0.03" />
-			<entity name="npcWhispererKnife" prob="0.03" />
-			<entity name="npcWhispererSMG" prob="0.03" />
-			<entity name="npcWhispererAK47" prob="0.03" />
-			<entity name="npcWhispererHunter" prob="0.03" />
-			<entity name="npcWhispererPistol" prob="0.03" /> 
-			<entity name="npcWhispererXBow" prob="0.03" />
-			<entity name="npcWhispererBow" prob="0.03" />
-			<entity name="npcWhisperer2" prob="0.03" />
-			<entity name="npcWhisperer2Club" prob="0.03" />
-			<entity name="npcWhisperer2Knife" prob="0.03" />
-			<entity name="npcWhisperer2SMG" prob="0.03" />
-			<entity name="npcWhisperer2AK47" prob="0.03" />
-			<entity name="npcWhisperer2Hunter" prob="0.03" />
-			<entity name="npcWhisperer2Pistol" prob="0.03" /> 
-			<entity name="npcWhisperer2XBow" prob="0.03" />
-			<entity name="npcWhisperer2Bow" prob="0.03" />
-			<entity name="npcWhispererAlpha" prob="0.03" />
-			<entity name="npcWhispererAlphaClub" prob="0.03" />
-			<entity name="npcWhispererAlphaKnife" prob="0.03" />
-			<entity name="npcWhispererAlphaSMG" prob="0.03" />
-			<entity name="npcWhispererAlphaAK47" prob="0.03" />
-			<entity name="npcWhispererAlphaHunter" prob="0.03" />
-			<entity name="npcWhispererAlphaPistol" prob="0.03" /> 
-			<entity name="npcWhispererAlphaXBow" prob="0.03" />
-			<entity name="npcWhispererAlphaBow" prob="0.03" />
-			<entity name="npcWhispererGamma" prob="0.03" />
-			<entity name="npcWhispererGammaClub" prob="0.03" />
-			<entity name="npcWhispererGammaKnife" prob="0.03" />
-			<entity name="npcWhispererGammaSMG" prob="0.03" />
-			<entity name="npcWhispererGammaAK47" prob="0.03" />
-			<entity name="npcWhispererGammaHunter" prob="0.03" />
-			<entity name="npcWhispererGammaPistol" prob="0.03" /> 
-			<entity name="npcWhispererGammaXBow" prob="0.03" />
-			<entity name="npcWhispererGammaBow" prob="0.03" />
-			<entity name="npcWhispererFemale" prob="0.03" />
-			<entity name="npcWhispererFemaleClub" prob="0.03" />
-			<entity name="npcWhispererFemaleKnife" prob="0.03" />
-			<entity name="npcWhispererFemaleSMG" prob="0.03" />
-			<entity name="npcWhispererFemaleAK47" prob="0.03" />
-			<entity name="npcWhispererFemaleHunter" prob="0.03" />
-			<entity name="npcWhispererFemalePistol" prob="0.03" /> 
-			<entity name="npcWhispererFemaleXBow" prob="0.03" />
-			<entity name="npcWhispererFemaleBow" prob="0.03" />		
-		
-		</insertAfter> -->
-		
 </configs>

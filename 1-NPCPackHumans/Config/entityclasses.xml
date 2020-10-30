@@ -1794,62 +1794,62 @@
 			<property name="Tags" value="entity,male,npc,melee"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01Dark"/>
 		</entity_class>	
 
 		<entity_class name="npcWhispererMale01Club" extends="npcClubMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,melee"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01Dark"/>
 		</entity_class>
 		
 		<entity_class name="npcWhispererMale01Knife" extends="npcKnifeMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,melee"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01Dark"/>
 		</entity_class>	
 		
 		<entity_class name="npcWhispererMale01SMG" extends="npcSMGMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01Dark"/>
 		</entity_class>	
 		
 		<entity_class name="npcWhispererMale01AK47" extends="npcAK47MaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01Dark"/>
 		</entity_class>
 		<entity_class name="npcWhispererMale01Hunter" extends="npcHunterMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01Dark"/>
         </entity_class>    		
 		
 		<entity_class name="npcWhispererMale01Pistol" extends="npcPistolMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01Dark"/>
 		</entity_class>			
 		
 		<entity_class name="npcWhispererMale01XBow" extends="npcXBowMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01Dark"/>
 		</entity_class>	
 		
 		<entity_class name="npcWhispererMale01Bow" extends="npcBowMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM01Dark"/>
 		</entity_class> 					
 		
 		
@@ -1857,62 +1857,62 @@
 			<property name="Tags" value="entity,male,npc,melee"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02Dark"/>
 		</entity_class>	
 
 		<entity_class name="npcWhispererMale02Club" extends="npcClubMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,melee"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02Dark"/>
 		</entity_class>
 		
 		<entity_class name="npcWhispererMale02Knife" extends="npcKnifeMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,melee"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02Dark"/>
 		</entity_class>	
 		
 		<entity_class name="npcWhispererMale02SMG" extends="npcSMGMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02Dark"/>
 		</entity_class>	
 		
 		<entity_class name="npcWhispererMale02AK47" extends="npcAK47MaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02Dark"/>
 		</entity_class>
 		<entity_class name="npcWhispererMale02Hunter" extends="npcHunterMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02Dark"/>
         </entity_class>    		
 		
 		<entity_class name="npcWhispererMale02Pistol" extends="npcPistolMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02Dark"/>
 		</entity_class>			
 		
 		<entity_class name="npcWhispererMale02XBow" extends="npcXBowMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02Dark"/>
 		</entity_class>	
 		
 		<entity_class name="npcWhispererMale02Bow" extends="npcBowMaleTemplate"> 
 			<property name="Tags" value="entity,male,npc,ranged"/>
 			<property name="Faction" value="whisperers"/>
 			<property name="Names" value="One,Two,Three,Four,Five,Six" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Whispererz.unity3d?WhispererM02Dark"/>
 		</entity_class> 					
 		
 

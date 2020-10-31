@@ -1221,55 +1221,55 @@
 			<property name="Tags" value="entity,female,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Sally, Sue, Sis" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?ArmyDoctor2Dark"/>
 		</entity_class>
 		
 		<entity_class name="npcSoldierGirl01Knife" extends="npcKnifeFemaleTemplate"> 
 			<property name="Tags" value="entity,female,npc,melee"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Sally, Sue, Sis" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?ArmyDoctor2Dark"/>
 		</entity_class>	
 		
 		<entity_class name="npcSoldierGirl01SMG" extends="npcSMGFemaleTemplate"> 
 			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Sally, Sue, Sis" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?ArmyDoctor2Dark"/>
 		</entity_class>	
 		
 		<entity_class name="npcSoldierGirl01AK47" extends="npcAK47FemaleTemplate"> 
 			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Sally, Sue, Sis" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?ArmyDoctor2Dark"/>
 		</entity_class>
 		<entity_class name="npcSoldierGirl01Hunter" extends="npcHunterFemaleTemplate"> 
 			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Sally, Sue, Sis" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?ArmyDoctor2Dark"/>
         </entity_class>    		
 		
 		<entity_class name="npcSoldierGirl01Pistol" extends="npcPistolFemaleTemplate"> 
 			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Sally, Sue, Sis" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?ArmyDoctor2Dark"/>
 		</entity_class>			
 		
 		<entity_class name="npcSoldierGirl01XBow" extends="npcXBowFemaleTemplate"> 
 			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Sally, Sue, Sis" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?ArmyDoctor2Dark"/>
 		</entity_class>	
 		
 		<entity_class name="npcSoldierGirl01Bow" extends="npcBowFemaleTemplate"> 
 			<property name="Tags" value="entity,female,npc,ranged"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Sally, Sue, Sis" />
-			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/XythHumans.unity3d?ArmyDoctor2Dark"/>
+			<property name="Mesh" value="#@modfolder(0-CreaturePackHumans):Resources/Soldierz.unity3d?ArmyDoctor2Dark"/>
 		</entity_class> 	
 
 

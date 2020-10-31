@@ -186,6 +186,7 @@
 			<effect_group name="UseFactions"> <!-- This activates thr Usefactions Buff which tells the game not to use DMT faction classes  -->
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="UseFactionsYes"/>		
 			</effect_group>	
+
 			<property name="RotateToGround" value="false"/>	
 			<property name="PushFactor" value="10"/>
 		</entity_class>

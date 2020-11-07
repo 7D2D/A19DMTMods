@@ -105,6 +105,7 @@
 			<property name="Names" value="Buster, Sally, Fluffy" />		
 			<property name="HireCurrency" value="foodRawMeat" />
 			<property name="HireCost" value="10" />
+
 		</entity_class> 
 
 		<entity_class name="NPCAnimalRangedTemplate" extends="NPCAnimalMeleeTemplate">
@@ -201,9 +202,6 @@
 		<entity_class name="NPCAnimalWolfhound" extends="NPCAnimalMeleeTemplate">
 			<property name="Tags" value="entity,cp,animal,npc,NPCAnimalWolfhound"/>
 			<property name="Faction" value="whiteriver"/>				
-			<property name="Prefab" value="NPC"/>
-			<property name="Class" value="EntityAnimalStag"/>
-			<property name="PhysicsBody" value="Goat"/>
 			<property name="ExperienceGain" value="130"/>
 			<property name="HasRagdoll" value="true"/> 
 			<property name="HasDeathAnim" value="true"/>
@@ -330,17 +328,6 @@
 			<property name="Mass" value="80"/>
 			<property name="RotateToGround" value="false"/>
 			<property name="Names" value="Killer, Butch, Zelda" />	
-			<property name="AITask-1" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0"/>
-			<property name="AITask-2" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
-			<property name="AITask-3" value="ApproachSpot"/> 
-			<property name="AITask-4" value="BreakBlock"/>
-			<property name="AITask-5" value="Territorial"/>
-			<property name="AITask-6" value="WanderSDX, Mods" />
-			<property name="AITask-7" value="" />
-			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-			<property name="AITarget-4" value=""/>
 		</entity_class>					
 	</append>
 </configs>

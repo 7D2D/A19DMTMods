@@ -15,7 +15,7 @@
 		<entity_class name="NPCMechMeleeTemplate" >
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Drone_X"/>
 			<property name="HideInSpawnMenu" value="true"/>
-			<property name="IsChunkObserver" value="false"/>
+<!--			<property name="IsChunkObserver" value="true"/> -->
 			<property name="EntityType" value="Player"/>
 			<property name="ModelType" value="Standard"/>
 			<property name="Mass" value="150"/>
@@ -58,10 +58,11 @@
 			<property name="AITask-7" value="BreakBlock"/>
 			<property name="AITask-8" value="Territorial"/>
 			<property name="AITask-9" value="" />
-			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-			<property name="AITarget-4" value=""/>
+			<property name="AITarget-1" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-4" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-5" value=""/>
 			<property name="MaxViewAngle" value="210"/>
 			<property name="SightRange" value="70"/>
 			<property name="JumpMaxDistance" value="3.0, 4.0"/>
@@ -130,10 +131,11 @@
 			<property name="AITask-7" value="ApproachSpot"/> 
 			<property name="AITask-8" value="Territorial"/>
             <property name="AITask-9" value="" />
-			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-			<property name="AITarget-4" value=""/>				
+			<property name="AITarget-1" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-4" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-5" value=""/>		
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditSMG5Hidden,ammoNPC9mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditSMG5Hidden,ammoNPC9mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditSMG5Hidden,ammoNPC9mmBulletBall"/> 			
@@ -161,10 +163,11 @@
 			<property name="AITask-7" value="ApproachSpot"/> 
 			<property name="AITask-8" value="Territorial"/>
             <property name="AITask-9" value="" />
-			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-			<property name="AITarget-4" value=""/>				
+			<property name="AITarget-1" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-4" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-5" value=""/>		
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditSMG5Hidden,ammoNPC9mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditSMG5Hidden,ammoNPC9mmBulletBall"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditSMG5Hidden,ammoNPC9mmBulletBall"/> 			
@@ -253,7 +256,63 @@
 		    <property name="ReplaceMaterial1" value="#@modfolder(0-CreaturePackMechs):Resources/RobotArmyMat.unity3d?paint_albedo"/>
 			<property name="ReplaceMaterial2" value="#@modfolder(0-CreaturePackMechs):Resources/RobotArmyMat.unity3d?rubber_albedo"/>
 		</entity_class>					
-		
+		<entity_class name="NPCMechGunBot" extends="NPCMechRangedTemplate" >
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/GunBot.unity3d?GunBot_X" /> <!-- Free CC model by Willy Decarpentrie -->
+			<property name="Tags" value="entity,cp,mech,ranged,npc"/>
+			<property name="PhysicsBody" value="RobotRig"/>
+			<property name="Faction" value="mechs"/>
+			<property name="HandItem" value="gunBanditPistol"/> 
+			<property name="SoundRandomTime" value="20.0"/>
+			<property name="SoundRandom" value="RobotRandom" />
+			<property name="SoundAlert" value="RobotAlert" />
+			<property name="SoundAttack" value="RobotAttack" />
+			<property name="SoundDeath" value="RobotDie" />
+			<property name="SoundHurt" value="RobotRandom" />
+			<property name="SoundSense" value="RobotSense" /> 
+			<property name="RightHandJointName" value="Gunjoint" /> 
+			<property name="AITask-1" value="RangedAttackTargetSDX, Mods" data="itemType=0;attackPeriod=10"/> 
+			<property name="AITask-2" value="ApproachAndAttackSDX, Mods" data="class=EntityAlive,0"/>
+            <property name="AITask-3" value="ApproachAndFollowTargetSDX, Mods" data="incentives=Leader"/>
+			<property name="AITask-4" value="ApproachSpot"/>
+ 			<property name="AITask-5" value="Look"/>
+			<property name="AITask-6" value="WanderSDX, Mods"/>
+			<property name="AITask-7" value="Territorial"/>
+            <property name="AITask-8" value="" />
+			<property name="AITarget-1" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-4" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-5" value=""/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceMechanicalParts" tag="salvageHarvest" count="10"/> 
+			<drop event="Harvest" name="resourceScrapIron" tag="salvageHarvest" count="9"/>
+			<drop event="Harvest" name="resourceElectricParts" tag="salvageHarvest" count="12"/> 
+			<drop event="Harvest" name="resourceScrapPolymers" tag="salvageHarvest" count="9"/>			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="300"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="200"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10" />
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryBleeding,buffInjuryBleedingZombie,buffInfectionCatch"/>
+			</effect_group>
+			  <property name="ItemsOnEnterGame.GameModeSurvival" value="gunBanditM60Hidden,ammoNPC1mmBulletBall"/>
+			  <property name="ItemsOnEnterGame.GameModeSurvivalSP" value="gunBanditM60Hidden,ammoNPC1mmBulletBall"/>
+			  <property name="ItemsOnEnterGame.GameModeSurvivalMP" value="gunBanditM60Hidden,ammoNPC1mmBulletBall"/>	
+		</entity_class>		
+		<entity_class name="NPCMechRobotArmy" extends="NPCMechRobot" >
+			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?Robot_X" />
+			<property name="Tags" value="entity,cp,mech,npc"/>
+			<property name="Faction" value="mechs"/>		
+			<property name="HandItem" value="handRobotArmy"/>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceMechanicalParts" tag="salvageHarvest" count="10"/> 
+			<drop event="Harvest" name="resourceScrapIron" tag="salvageHarvest" count="9"/>
+			<drop event="Harvest" name="resourceElectricParts" tag="salvageHarvest" count="12"/> 
+			<drop event="Harvest" name="resourceScrapPolymers" tag="salvageHarvest" count="9"/>						
+		    <property name="ReplaceMaterial0" value="#@modfolder(0-CreaturePackMechs):Resources/RobotArmyMat.unity3d?metal_albedo"/>
+		    <property name="ReplaceMaterial1" value="#@modfolder(0-CreaturePackMechs):Resources/RobotArmyMat.unity3d?paint_albedo"/>
+			<property name="ReplaceMaterial2" value="#@modfolder(0-CreaturePackMechs):Resources/RobotArmyMat.unity3d?rubber_albedo"/>
+		</entity_class>				
 		<entity_class name="NPCMechSphereI" extends="NPCMechMeleeTemplate" >
 			<property name="Mesh" value="#@modfolder(0-CreaturePackMechs):Resources/XythMechs.unity3d?SphereI_X" />	<!-- Free CC model by 3DHaupt -->
 			<property name="DeadBodyHitPoints" value="1000"/> 

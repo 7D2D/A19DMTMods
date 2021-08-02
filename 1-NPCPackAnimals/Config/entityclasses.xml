@@ -49,10 +49,11 @@
 			<property name="AITask-8" value="Territorial"/>
 			<property name="AITask-9" value="WanderSDX, Mods" />
 			<property name="AITask-10" value="" />
-			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-			<property name="AITarget-4" value=""/>
+			<property name="AITarget-1" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-4" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-5" value=""/>
 			<property name="MaxViewAngle" value="210"/>
 			<property name="SightRange" value="70"/>
 			<property name="JumpMaxDistance" value="3.0, 4.0"/>
@@ -121,10 +122,11 @@
             <property name="AITask-5" value="WanderSDX, Mods"/>
 			<!--<property name="AITask-5" value="ApproachDistraction"/> -->
             <property name="AITask-6" value="" />
-            <property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-            <property name="AITarget-4" value="" />
+			<property name="AITarget-1" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-4" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-5" value=""/>
 			<effect_group name="Base Effects">
 				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
 				<passive_effect name="HealthMax" operation="base_set" value="400"/>
@@ -295,10 +297,11 @@
 			<property name="AITask-5" value="Territorial"/>
 			<property name="AITask-6" value="WanderSDX, Mods" />
 			<property name="AITask-7" value="" />
-			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-			<property name="AITarget-4" value=""/>
+			<property name="AITarget-1" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-4" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-5" value=""/>
 		</entity_class>			
 		
 		<entity_class name="NPCAnimalGermanShepherd" extends="NPCAnimalMeleeTemplate">

@@ -84,10 +84,11 @@
 			<property name="AITask-7" value="BreakBlock"/>
 			<property name="AITask-8" value="Territorial"/>
 			<property name="AITask-9" value="" />
-			<property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-			<property name="AITarget-4" value=""/>
+			<property name="AITarget-1" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-4" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-5" value=""/>
 			<property name="WalkType" value="7"/>
 			<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
 			<property name="SoundStamina" value="Player_Male/player1stamina"/>
@@ -235,10 +236,11 @@
 			<property name="AITask-8" value="ApproachSpot"/> 
 			<property name="AITask-9" value="Territorial"/>
             <property name="AITask-10" value="" />
-            <property name="AITarget-1" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>  
-            <property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/> 
-            <property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/> 
-            <property name="AITarget-4" value="" />
+			<property name="AITarget-1" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-2" value="SetAsTargetIfLeaderAttackedSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-3" value="SetAsTargetNearestEnemySDX, Mods" data="class=EntityAlive,80"/>
+			<property name="AITarget-4" value="SetAsTargetIfHurtSDX, Mods" data="class=EntityAlive"/>
+			<property name="AITarget-5" value=""/>
 		</entity_class>	
 		
 		<entity_class name="npcRangedFemaleTemplate" extends="npcRangedMaleTemplate">
